@@ -35,5 +35,8 @@
   "bugs": {
     "url": "https://github.com/michaelzhu1/Zoomm/issues"
   },
-  "homepage": "https://github.com/michaelzhu1/Zoomm#readme"
+  "homepage": "https://github.com/michaelzhu1/Zoomm#readme",
+  "devDependencies": {
+    "redux-devtools-extension": "^2.13.2"
+  }
 }
