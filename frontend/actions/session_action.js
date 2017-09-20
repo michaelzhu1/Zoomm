@@ -10,19 +10,19 @@ export const receiveCurrentUser = currentUser => ({
 
 export const receiveErrors = errors => ({
   type: RECEIVE_SESSION_ERRORS,
-  errors
+  errors: errors
 });
 
 export const signup = user => dispatch =>
   APIUtil.signup(user).then(
-    rspuser => dispatch(receiveCurrentUser(rspuser)),
-    err => dispatch(receiveErrors(err.responseJSON))
+    oldUser => dispatch(receiveCurrentUser(oldUser)),
+    error => dispatch(receiveErrors(error.responseJSON))
   );
 
 export const login = user => dispatch =>
   APIUtil.login(user).then(
-    rspuser => dispatch(receiveCurrentUser(rspuser)),
-    err => dispatch(receiveErrors(err.responseJSON))
+    oldUser => dispatch(receiveCurrentUser(oldUser)),
+    error => dispatch(receiveErrors(error.responseJSON))
   );
 
 export const logout = () => dispatch =>

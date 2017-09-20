@@ -1,0 +1,25 @@
+html {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  width: 80%;
+  margin: 0 auto;
+  font-family: $serif;
+  font-size: 12px;
+}
+
+button {
+  background-color: $light-blue;
+  border-color: $dark-blue;
+  color: white;
+  font-weight: bold;
+  padding: 7px 9px;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+  font-family: $sans-serif;
+  text-transform: uppercase;
+  font-size: 11px;
+  text-align: center;
+}
