@@ -8,7 +8,6 @@ import { UploadPhoto } from "./upload/upload_photo";
 const App = () => (
   <div>
     <header>
-      <h1>Zoomm</h1>
       <GreetingContainer />
     </header>
     <AuthRoute path="/login" component={SessionFormContainer} />
