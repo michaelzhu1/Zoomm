@@ -36,6 +36,10 @@
   min-width: 323px;
   min-height: 345px;
 }
+.login-form button {
+  display: flex;
+  margin: 0 auto;
+}
 
 input[type="text"] {
   width: 100%;
