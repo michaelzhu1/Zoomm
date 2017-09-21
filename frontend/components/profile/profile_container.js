@@ -4,7 +4,8 @@ import Profile from "./profile";
 import { fetchUser, updateUser } from "../../actions/profile_action";
 
 const mapStateToProps = (state, ownProps) => ({
-  user: state.user
+  user: state.user,
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
