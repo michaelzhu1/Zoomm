@@ -5,7 +5,6 @@ import { withRouter } from "react-router-dom";
 
 const mapStateToProps = state => {
   return {
-    testa: state,
     loggedIn: Boolean(state.session.currentUser),
     errors: state.errors
   };
@@ -15,6 +14,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   const formType = ownProps.location.pathname.slice(1);
   const processForm = formType === "login" ? login : signup;
   return {
+    loginGuest: user => dispatch(login(user)),
     processForm: user => dispatch(processForm(user)),
     formType
   };
