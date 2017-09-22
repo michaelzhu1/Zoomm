@@ -17,6 +17,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "superagent": "^3.6.0",
+    "video-react": "^0.8.8",
     "webpack": "^3.6.0"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
