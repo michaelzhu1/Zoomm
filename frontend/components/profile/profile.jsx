@@ -66,6 +66,7 @@ class Profile extends React.Component {
         >
           <h2 className="edit-form-greeting" ref={subtitle => (this.subtitle = subtitle)}>Hello {this.props.currentUser.username}!</h2>
           <div><i className="fa fa-user-circle-o fa-4x icon-profile" aria-hidden="true"></i></div>
+
           <form className="edit-profile-modal" onSubmit={this.handleSubmit}>
             <label>Username:</label>
             <input type="text" value={this.props.currentUser.username}
