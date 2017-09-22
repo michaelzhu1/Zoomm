@@ -4,6 +4,12 @@
   font-family: $serif;
 }
 
+body {
+  background-image: url(homepage.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .form-label {
   border-radius: 5px;
   background-color: #f2f2f2;
@@ -89,7 +95,7 @@ input[type="submit"]:hover {
   font-weight: bold;
 }
 .session-link {
-  color: $blue;
+  color: $lightest-blue;
   text-decoration: underline;
   margin: 0 auto;
 }
@@ -113,7 +119,12 @@ h1 {
   color: white;
 }
 
+h1 .homepage-nav-link {
+  margin-left: 10px;
+}
 
 h1 .homepage-nav-link:hover {
-  color: $darkest-blue;
+  // color: $blue;
+  color: black;
+  // background-color: $lightest-gray;
 }

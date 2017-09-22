@@ -31,15 +31,13 @@
 */
 @import "components/*";
 
-/* Font-awesome-sass
-*/
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-body {
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+// body {
+//   background-size: cover;
+//   background-repeat: no-repeat;
+// }
 
 // background-image: url(landscapegif.gif);
 // background-size: 100%;
