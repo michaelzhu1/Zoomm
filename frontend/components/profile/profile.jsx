@@ -30,7 +30,7 @@ class Profile extends React.Component {
 
   afterOpenModal() {
     // references are now sync'd and can be accessed.
-    this.subtitle.style.color = "#f00";
+    this.subtitle.style.color = "#6288a5";
   }
 
   closeModal() {
@@ -64,20 +64,23 @@ class Profile extends React.Component {
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <h2 ref={subtitle => (this.subtitle = subtitle)}>Hello</h2>
-          <button onClick={this.closeModal}>close</button>
-          <div>I am a modal</div>
-          <form onSubmit={this.handleSubmit}>
+          <h2 className="edit-form-greeting" ref={subtitle => (this.subtitle = subtitle)}>Hello {this.props.currentUser.username}!</h2>
+          <div><i className="fa fa-user-circle-o fa-4x icon-profile" aria-hidden="true"></i></div>
+          <form className="edit-profile-modal" onSubmit={this.handleSubmit}>
             <label>Username:</label>
             <input type="text" value={this.props.currentUser.username}
               readOnly/>
-            <label>Bio:</label>
-            <input type="text" onChange={this.update("bio")} value={this.state.user.bio}/>
+
+            <label>Bio:
+            <textarea className="bio-textarea" onChange={this.update("bio")} value={this.state.user.bio} />
+            </label>
             <label>Profile image url:</label>
             <input type="text" onChange={this.update("profile_img_url")} value={this.state.user.profile_img_url}/>
+
             <label>Cover image url:</label>
             <input type="text" onChange={this.update("cover_img_url")} value={this.state.user.cover_img_url}/>
-            <input type="submit" value={'Update Profile'}></input>
+
+            <input className="update-profile-button" type="submit" value={'Update Profile'}></input>
           </form>
         </Modal>
       </div>
@@ -87,15 +90,4 @@ class Profile extends React.Component {
 
 export default Profile;
 
-// render() {
-//   return (
-//     <div>
-//       <ul>
-//         grsegersg
-//         {Object.keys(this.props.user).map(k => {
-//           return <li>{this.props.user[k]}</li>;
-//           })}
-//         </ul>
-//       </div>
-//     );
-//   }
+// <button onClick={this.closeModal}>close</button>

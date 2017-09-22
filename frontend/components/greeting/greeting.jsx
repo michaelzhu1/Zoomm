@@ -13,14 +13,15 @@ const sessionLinks = () => (
 );
 
 const personalGreeting = (currentUser, logout) => (
-  <div>
-    <h2>What's up!!! {currentUser.username}!</h2>
+  <nav>
+    <h1>What's up!!! {currentUser.username}!
     <br />
     <Link to="/">HOME</Link>
     <br />
 
     <button onClick={logout}>Log Out</button>
-  </div>
+    </h1>
+  </nav>
 );
 
 const Greeting = ({ currentUser, logout }) =>

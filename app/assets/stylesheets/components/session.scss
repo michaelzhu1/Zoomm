@@ -29,19 +29,20 @@
   width: 60%;
   padding: 12px 20px;
   margin: 8px 0;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   border: 5px solid #ccc;
   border-radius: 10px;
   box-sizing: border-box;
   min-width: 323px;
-  min-height: 345px;
+  min-height: 355px;
 }
+
 .login-form button {
-  display: flex;
-  margin: 0 auto;
+  justify-content: center;
 }
 
-input[type="text"] {
+.login-form-container input[type="text"] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -49,8 +50,11 @@ input[type="text"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  font-size: 14px;
+  color: white;
+  font-family: $sans-serif;
 }
-input[type="password"] {
+.login-form-container input[type="password"] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -58,9 +62,10 @@ input[type="password"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  color: white;
 }
 
-input[type="submit"] {
+.login-form-container input[type="submit"] {
   width: 100%;
   background-color: #4caf50;
   color: white;
@@ -75,7 +80,7 @@ input[type="submit"] {
   text-align: center;
 }
 
-input[type="submit"]:hover {
+.login-form-container input[type="submit"]:hover {
   background-color: #45a049;
 }
 
@@ -85,13 +90,23 @@ input[type="submit"]:hover {
   font-weight: bold;
 }
 .session-link {
-  color: blue;
+  color: $blue;
   text-decoration: underline;
+  margin: 0 auto;
 }
 
+.error-messages {
+  color: #ff1919;
+}
+
+
 h1 {
+  margin: 15px 10px;
   font-size: 20px;
   display: inline-block;
   display: flex;
   justify-content: space-between;
+  font-family: 'Wendy One', sans-serif;
+  font-weight: bold;
+  color: white;
 }

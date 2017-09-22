@@ -33,13 +33,13 @@ class SessionForm extends React.Component {
 
   demoLogin() {
     if (this.props.formType === "login") {
-      return <button onClick={this.handleDemoLogin}>DEMO LOGIN</button>;
+      return <button className="demo-button" onClick={this.handleDemoLogin}>DEMO LOGIN</button>;
     }
   }
 
   errors() {
     return (
-      <ul>
+      <ul className="error-messages">
         {this.props.errors.session.map((error, i) => (
           <li key={`error${i}`}>{error}</li>
         ))}
@@ -51,14 +51,13 @@ class SessionForm extends React.Component {
     if (this.props.formType === "login") {
       return (
         <div>
-          <br />
-          <Link to="/signup">Please sign up</Link>
+          <Link className="session-link" to="/signup">Need an account?</Link>
         </div>
       );
     } else {
       return (
         <div>
-          <Link to="/login">Please log in</Link>
+          <Link className="session-link" to="/login">Already have an account?</Link>
         </div>
       );
     }
@@ -71,8 +70,7 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="login-form">
           Welcome to Zoomm!
           <br />
-          {formName}
-          <br />
+          {this.navLink()}
           {this.errors()}
           <br />
           <label>Username:</label>

@@ -31,8 +31,16 @@
 */
 @import "components/*";
 
+/* Font-awesome-sass
+*/
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 body {
+  // background-size: 100%;
   background-image: url("https://static.pexels.com/photos/1421/road-nature-hand-path.jpg");
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
 }
+
+// background-image: url(http://bestanimations.com/Nature/Water/rain/rain-nature-animated-gif-19.gif);

@@ -11,7 +11,7 @@ const App = () => (
     <header>
       <GreetingContainer />
     </header>
-    <Route path="/user/:userId" component={ProfileContainer} />
+    <ProtectedRoute path="/user/:userId" component={ProfileContainer} />
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
   </div>
