@@ -13,17 +13,19 @@ const sessionLinks = () => (
       <Link className="homepage-nav-link" to="/signup">
         Sign up!
       </Link>
+
     </h1>
   </nav>
 );
 
 const personalGreeting = (currentUser, logout) => (
-  <nav>
+  <nav className="splash-nav">
     <h1>
       What's up!!! {currentUser.username}!
       <br />
-      <Link to="/">HOME</Link>
+      <Link to="/">Zoomm</Link>
       <br />
+      <Link className="homepage-nav-link" to="/upload">Upload!</Link>
       <button onClick={logout}>Log Out</button>
     </h1>
   </nav>

@@ -55,8 +55,8 @@ class Profile extends React.Component {
   }
   render() {
     return (
-      <div>
-        <button onClick={this.openModal}>Edit Profile</button>
+      <div className="profile-form">
+        <button className="edit-profile-button" onClick={this.openModal}>Edit Profile</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}

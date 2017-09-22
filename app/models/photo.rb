@@ -11,4 +11,6 @@
 #
 
 class Photo < ApplicationRecord
+  validates :photo_url,:photo_title,:author_id, presence: true
+
 end
