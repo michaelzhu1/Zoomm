@@ -3,6 +3,7 @@ import React from "react";
 class UploadButton extends React.Component {
   constructor(props) {
     super(props);
+    this.upload = this.upload.bind(this);
   }
 
   upload(e) {
@@ -11,7 +12,7 @@ class UploadButton extends React.Component {
       window.CLOUDINARY_OPTIONS,
       function(error, images) {
         if (error === null) {
-          this.props.postImage(images[0].url);
+          this.props.postImage(images[0]);
         }
       }.bind(this)
     );
