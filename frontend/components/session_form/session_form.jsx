@@ -91,7 +91,7 @@ class SessionForm extends React.Component {
                 ? `${formName} with username...`
                 : `${formName} for a username`
             }
-            className="glowing-border"
+            className="glowing-border session-form-input"
           />
           <br />
           <label>Password: </label>
@@ -100,7 +100,7 @@ class SessionForm extends React.Component {
             value={this.state.password}
             onChange={this.update("password")}
             placeholder="Enter password..."
-            className="glowing-border"
+            className="glowing-border session-form-input"
           />
           <input type="submit" value={this.props.formType} />
           {this.demoLogin()}

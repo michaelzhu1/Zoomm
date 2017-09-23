@@ -102,7 +102,7 @@ class Profile extends React.Component {
               type="text"
               onChange={this.update("profile_img_url")}
               value={this.state.user.profile_img_url}
-              className="glowing-border"
+              className="glowing-border profile-form-input"
             />
 
             <label>Cover image url:</label>
@@ -110,7 +110,7 @@ class Profile extends React.Component {
               type="text"
               onChange={this.update("cover_img_url")}
               value={this.state.user.cover_img_url}
-              className="glowing-border"
+              className="glowing-border profile-form-input"
             />
 
             <input

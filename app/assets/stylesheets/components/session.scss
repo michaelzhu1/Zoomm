@@ -4,11 +4,11 @@
   font-family: $serif;
 }
 
-body {
-  background-image: url(homepage.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+// body {
+//   background-image: url(homepage.jpg);
+//   background-size: cover;
+//   background-repeat: no-repeat;
+// }
 
 .form-label {
   border-radius: 5px;
@@ -47,7 +47,29 @@ body {
   margin: 0 auto;
 }
 
-input[type="text"] {
+// input[type="text"] {
+//   width: 100%;
+//   padding: 12px 20px;
+//   margin: 8px 0;
+//   display: inline-block;
+//   border: 1px solid #ccc;
+//   border-radius: 4px;
+//   box-sizing: border-box;
+//   font-size: 14px;
+//   color: white;
+//   font-family: $sans-serif;
+// }
+// input[type="password"] {
+//   width: 100%;
+//   padding: 12px 20px;
+//   margin: 8px 0;
+//   display: inline-block;
+//   border: 1px solid #ccc;
+//   border-radius: 4px;
+//   box-sizing: border-box;
+//   color: white;
+// }
+.session-form-input {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -58,16 +80,6 @@ input[type="text"] {
   font-size: 14px;
   color: white;
   font-family: $sans-serif;
-}
-input[type="password"] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  color: white;
 }
 
 input[type="submit"] {

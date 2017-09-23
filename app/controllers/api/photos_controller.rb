@@ -1,7 +1,10 @@
 class Api::PhotosController < ApplicationController
+
+  before_action :require_logged_in
+
   def index
     @photos = Photo.all
-    render :index
+    render "api/photos/index"
   end
 
   def create
@@ -11,6 +14,12 @@ class Api::PhotosController < ApplicationController
       render "api/photos/show"
     else
     end
+  end
+
+  def destroy
+    @photo = Photo.find(params[:id])
+    @photo.destroy
+    render "api/photos/show"
   end
 
   private

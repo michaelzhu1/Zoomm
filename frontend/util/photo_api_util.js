@@ -1,14 +1,24 @@
-export const fetchPhotos = () => (
+export const fetchPhotos = () =>
   $.ajax({
     method: "GET",
     url: "/api/photos"
-  })
-);
+  });
 
-export const postPhoto = photo => (
+export const postPhoto = photo =>
   $.ajax({
     method: "POST",
     url: "/api/photos",
-    data: {photo}
-  })
-);
+    data: { photo }
+  });
+
+export const fetchPhoto = id =>
+  $.ajax({
+    method: "GET",
+    url: `api/photo/${id}`
+  });
+
+export const removePhoto = id =>
+  $.ajax({
+    method: "DELETE",
+    url: `/api/photos/${id}`
+  });

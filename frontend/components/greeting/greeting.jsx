@@ -27,6 +27,7 @@ const personalGreeting = (currentUser, logout) => (
       <Link to="/">Zoomm</Link>
       <br />
       <Link className="homepage-nav-link" to={`/user/${currentUser.id}/upload`}>
+        <i className="fa fa-cloud-upload" aria-hidden="true" />
         Upload!
       </Link>
       <button onClick={logout}>Log Out</button>

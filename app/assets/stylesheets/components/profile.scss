@@ -16,10 +16,22 @@ div .ReactModal__Content.ReactModal__Content--after-open {
   flex-direction: column;
 }
 
-.edit-profile-modal input[type='text'] {
+.edit-profile-modal input[type="text"] {
   color: black;
 }
 
+.profile-form-input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: white;
+  font-family: $sans-serif;
+}
 
 label {
   font-size: 14px;
@@ -43,12 +55,13 @@ label {
 }
 
 .edit-profile-modal {
-  float: left
+  float: left;
 }
 
-[class^="icon-"], [class*=" icon-"] {
-    display: inline-block;
-    width: 100%;
+[class^="icon-"],
+[class*=" icon-"] {
+  display: inline-block;
+  width: 100%;
 }
 
 .icon-profile {
