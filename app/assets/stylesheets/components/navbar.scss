@@ -4,12 +4,15 @@
 // }
 
 .splash-nav {
-  background-color: $dark-gray;
+  background-color: $darkest-gray;
   padding: 0;
   margin: 0;
   width: 100%;
 }
 
 nav h1 .homepage-nav-link {
-  color: white;
+  color: $gray;
+}
+nav h1 .homepage-nav-link:hover {
+  color: $lightest-gray;
 }

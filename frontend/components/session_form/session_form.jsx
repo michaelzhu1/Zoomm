@@ -33,7 +33,11 @@ class SessionForm extends React.Component {
 
   demoLogin() {
     if (this.props.formType === "login") {
-      return <button className="demo-button" onClick={this.handleDemoLogin}>DEMO LOGIN</button>;
+      return (
+        <button className="demo-button" onClick={this.handleDemoLogin}>
+          DEMO LOGIN
+        </button>
+      );
     }
   }
 
@@ -51,13 +55,17 @@ class SessionForm extends React.Component {
     if (this.props.formType === "login") {
       return (
         <div>
-          <Link className="session-link" to="/signup">Need an account?</Link>
+          <Link className="session-link" to="/signup">
+            Need an account?
+          </Link>
         </div>
       );
     } else {
       return (
         <div>
-          <Link className="session-link" to="/login">Already have an account?</Link>
+          <Link className="session-link" to="/login">
+            Already have an account?
+          </Link>
         </div>
       );
     }
@@ -83,6 +91,7 @@ class SessionForm extends React.Component {
                 ? `${formName} with username...`
                 : `${formName} for a username`
             }
+            className="glowing-border"
           />
           <br />
           <label>Password: </label>
@@ -91,6 +100,7 @@ class SessionForm extends React.Component {
             value={this.state.password}
             onChange={this.update("password")}
             placeholder="Enter password..."
+            className="glowing-border"
           />
           <input type="submit" value={this.props.formType} />
           {this.demoLogin()}

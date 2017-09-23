@@ -26,7 +26,7 @@ const personalGreeting = (currentUser, logout) => (
       <br />
       <Link to="/">Zoomm</Link>
       <br />
-      <Link className="homepage-nav-link" to="/upload">
+      <Link className="homepage-nav-link" to={`/user/${currentUser.id}/upload`}>
         Upload!
       </Link>
       <button onClick={logout}>Log Out</button>
