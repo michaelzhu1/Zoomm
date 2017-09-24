@@ -10,18 +10,23 @@ class Profile extends React.Component {
   render() {
     return (
       <div>
-        <ProfileUpdate user={this.props.user} currentUser={this.props.currentUser} fetchUser={this.props.fetchUser}
-          updateUser={this.props.updateUser}/>
-        <UserIndexPhotos fetchPhotos={this.props.fetchPhotos}
-          photos={this.props.photos}/>
+        <ProfileUpdate
+          user={this.props.user}
+          currentUser={this.props.currentUser}
+          fetchUser={this.props.fetchUser}
+          updateUser={this.props.updateUser}
+        />
+        <UserIndexPhotos
+          fetchPhotos={this.props.fetchPhotos}
+          photos={this.props.photos}
+          removePhoto={this.props.removePhoto}
+        />
       </div>
     );
   }
-
 }
 
 export default Profile;
-
 
 // add photoindex component
 // follower and following info
