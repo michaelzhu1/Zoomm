@@ -1,12 +1,15 @@
 import React from "react";
+import { Image, Transformation } from "cloudinary-react";
 
 class UserIndexPhotos extends React.Component {
   constructor(props) {
     super(props);
+    // this.state = this.props.photos;
   }
 
   componentDidMount() {
-    this.props.fetchPhotos();
+    // this.props.fetchPhotos();
+    console.log(this.props.photos);
   }
 
   render() {
@@ -16,7 +19,9 @@ class UserIndexPhotos extends React.Component {
           {this.props.photos.map(photo => {
             return (
               <li key={photo.id}>
-                <img src={photo.photo_url} />
+                <Image publicId={photo.photo_url} cloudName="foolishhunger">
+                  <Transformation width="200" crop="scale" />
+                </Image>
               </li>
             );
           })}
@@ -27,7 +32,3 @@ class UserIndexPhotos extends React.Component {
 }
 
 export default UserIndexPhotos;
-
-// this.props.photos.map(photo => {
-//   return <img src={photo.photo_url} />;
-// });
