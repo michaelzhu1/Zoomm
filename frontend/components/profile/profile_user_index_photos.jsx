@@ -111,6 +111,7 @@ class UserIndexPhotos extends React.Component {
               />
               <input type="submit" value="Save" />
             </form>
+            <button onClick={this.closeModal}>Cancel</button>
             <button onClick={this.deletePhoto}>Delete Photo</button>
           </div>
         </Modal>
