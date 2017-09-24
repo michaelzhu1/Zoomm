@@ -22,3 +22,10 @@ export const removePhoto = id =>
     method: "DELETE",
     url: `/api/photos/${id}`
   });
+
+export const updatePhoto = photo =>
+  $.ajax({
+    method:"PATCH",
+    url: `/api/photos/${photo.id}`,
+    data: {photo}
+  });

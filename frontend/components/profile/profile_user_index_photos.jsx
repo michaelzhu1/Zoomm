@@ -25,6 +25,7 @@ class UserIndexPhotos extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.deletePhoto = this.deletePhoto.bind(this);
     this.displayPhotos = this.displayPhotos.bind(this);
+    this.updatePhoto = this.updatePhoto.bind(this);
   }
   openModal() {
     this.setState({ modalIsOpen: true });
@@ -32,7 +33,7 @@ class UserIndexPhotos extends React.Component {
 
   afterOpenModal() {
     // references are now sync'd and can be accessed.
-    this.subtitle.style.color = "#6288a5";
+    // this.subtitle.style.color = "#6288a5";
   }
 
   closeModal() {
@@ -45,6 +46,11 @@ class UserIndexPhotos extends React.Component {
 
   deletePhoto() {
     this.props.removePhoto(this.state.photo.id);
+    this.closeModal();
+  }
+
+  updatePhoto() {
+    this.props.updatePhoto(this.state.photo);
     this.closeModal();
   }
 
@@ -88,12 +94,9 @@ class UserIndexPhotos extends React.Component {
           style={customStyles}
           contentLabel="PhotoUpload"
         >
-          <h2
-            className="edit-form-greeting"
-            ref={subtitle => (this.subtitle = subtitle)}
-          >
-            <div className="photo-info">
-              <img src={this.state.photo.photo_url} />
+          <div className="photo-info">
+            <img src={this.state.photo.photo_url} />
+            <form onSubmit={this.updatePhoto}>
               {this.props.currentUser.username}
               <input
                 type="text"
@@ -106,9 +109,10 @@ class UserIndexPhotos extends React.Component {
                 onChange={this.update("photo_description")}
                 className="photo-info-description"
               />
-              <button onClick={this.deletePhoto}>Delete Photo</button>
-            </div>
-          </h2>
+              <input type="submit" value="Save" />
+            </form>
+            <button onClick={this.deletePhoto}>Delete Photo</button>
+          </div>
         </Modal>
       </div>
     );

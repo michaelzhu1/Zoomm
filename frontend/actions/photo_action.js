@@ -19,6 +19,8 @@ export const deletePhoto = photo => ({
   photo
 });
 
+
+
 export const fetchPhotos = () => dispatch =>
   APIUtil.fetchPhotos().then(photos => dispatch(receiveAllPhotos(photos)));
 
@@ -27,3 +29,6 @@ export const postPhoto = photo => dispatch =>
 
 export const removePhoto = id => dispatch =>
   APIUtil.removePhoto(id).then(photo => dispatch(deletePhoto(photo)));
+
+export const updatePhoto = photo => dispatch =>
+  APIUtil.updatePhoto(photo).then(newPhoto => dispatch(receivePhoto(photo)));

@@ -13,6 +13,7 @@ class Api::PhotosController < ApplicationController
     if @photo.save
       render "api/photos/show"
     else
+      render json: @photo.erros.full_messages, status: 422
     end
   end
 
@@ -20,6 +21,15 @@ class Api::PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     @photo.destroy
     render "api/photos/show"
+  end
+
+  def update
+    @photo = Photo.find(params[:id])
+    if @photo.update(photo_params)
+      render "api/photos/show"
+    else
+      render json: @photo.erros.full_messages, status: 422
+    end
   end
 
   private

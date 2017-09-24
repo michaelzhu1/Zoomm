@@ -21,6 +21,7 @@ class Profile extends React.Component {
           photos={this.props.photos}
           removePhoto={this.props.removePhoto}
           currentUser={this.props.currentUser}
+          updatePhoto={this.props.updatePhoto}
         />
       </div>
     );

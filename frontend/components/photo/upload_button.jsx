@@ -1,30 +1,3 @@
-// import React from "react";
-//
-// class UploadButton extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.upload = this.upload.bind(this);
-//   }
-//
-//   upload(e) {
-//     e.preventDefault();
-//     cloudinary.openUploadWidget(
-//       window.CLOUDINARY_OPTIONS,
-//       function(error, images) {
-//         if (error === null) {
-//           this.props.postImage(images[0]);
-//         }
-//       }.bind(this)
-//     );
-//   }
-//
-//   render() {
-//     return <button onClick={this.upload}>Upload Photo</button>;
-//   }
-// }
-//
-// export default UploadButton;
-
 import React from "react";
 import ReactDOM from "react-dom";
 import Modal from "react-modal";
@@ -71,15 +44,10 @@ class UploadButton extends React.Component {
 
   componentDidMount() {
     this.props.fetchPhotos();
-    console.log(this.props);
   }
 
   uploadImage(image) {
-    // debugger
-    // const data = { photo_url: image.url, photo_title: "test" };
     this.setState({ photo_url: image.url });
-    // debugger
-    // this.props.postPhoto(data);
   }
 
   update(field) {
@@ -93,7 +61,11 @@ class UploadButton extends React.Component {
     // console.log(this.state);
     this.props.postPhoto(this.state);
     if (this.state.photo_title && this.state.photo_url) {
-      this.closeModal();
+      this.setState({
+        modalIsOpen: false,
+        photo_title: "",
+        photo_url: ""
+      });
     }
   }
 
@@ -155,8 +127,14 @@ class UploadButton extends React.Component {
             <div className="upload-thumbnail">
               <img src={this.state.photo_url} />
             </div>
-              <input className="upload-submit-button" type="submit" value="Submit your new baby!!!" />
-            <button className="upload-cancel-button" onClick={this.closeModal}>Cancel</button>
+            <input
+              className="upload-submit-button"
+              type="submit"
+              value="Submit your new baby!!!"
+            />
+            <button className="upload-cancel-button" onClick={this.closeModal}>
+              Cancel
+            </button>
           </form>
         </Modal>
       </div>
@@ -165,7 +143,3 @@ class UploadButton extends React.Component {
 }
 
 export default UploadButton;
-
-// <input type="text" value={this.state.photo.photo_title}></input>
-
-// <UploadButton uploadImage={this.uploadImage} />

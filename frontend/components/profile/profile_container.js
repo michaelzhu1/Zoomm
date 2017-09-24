@@ -2,7 +2,11 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import Profile from "./profile";
 import { fetchUser, updateUser } from "../../actions/profile_action";
-import { fetchPhotos, removePhoto } from "../../actions/photo_action";
+import {
+  fetchPhotos,
+  removePhoto,
+  updatePhoto
+} from "../../actions/photo_action";
 
 const mapStateToProps = (state, ownProps) => ({
   user: state.user,
@@ -14,7 +18,8 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchUser: id => dispatch(fetchUser(id)),
   updateUser: user => dispatch(updateUser(user)),
   fetchPhotos: () => dispatch(fetchPhotos()),
-  removePhoto: id => dispatch(removePhoto(id))
+  removePhoto: id => dispatch(removePhoto(id)),
+  updatePhoto: photo => dispatch(updatePhoto(photo))
 });
 
 export default withRouter(
