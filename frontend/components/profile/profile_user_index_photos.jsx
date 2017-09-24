@@ -83,6 +83,11 @@ class UserIndexPhotos extends React.Component {
     };
   }
 
+  // closePhotoModal() {
+  //   this.setState({ photo: {} });
+  //   this.closeModal();
+  // }
+
   render() {
     return (
       <div>

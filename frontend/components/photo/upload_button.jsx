@@ -39,7 +39,11 @@ class UploadButton extends React.Component {
   }
 
   closeModal() {
-    this.setState({ modalIsOpen: false });
+    this.setState({
+      modalIsOpen: false,
+      photo_title: "",
+      photo_url: ""
+    });
   }
 
   componentDidMount() {
