@@ -3,7 +3,6 @@ import GreetingContainer from "./greeting/greeting_container";
 import SessionFormContainer from "./session_form/session_form_container";
 import { Route } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
-import UploadPhoto from "./upload/upload_photo";
 import ProfileContainer from "./profile/profile_container";
 import SplashPlayer from "./splash/splash_player";
 import PhotosContainer from "./photo/photo_container";

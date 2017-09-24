@@ -25,7 +25,7 @@ const personalGreeting = (currentUser, logout) => (
     <h1>
       What's up!!! {currentUser.username}!
       <br />
-      <Link to={currentUser ? "/home" : "/"}>Zoomm</Link>
+      <Link to={currentUser ? "/feed" : "/"}>Zoomm</Link>
       <br />
       <UploadButtonContainer />
       <button onClick={logout}>Log Out</button>
