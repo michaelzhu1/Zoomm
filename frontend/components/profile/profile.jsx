@@ -20,6 +20,7 @@ class Profile extends React.Component {
           fetchPhotos={this.props.fetchPhotos}
           photos={this.props.photos}
           removePhoto={this.props.removePhoto}
+          currentUser={this.props.currentUser}
         />
       </div>
     );

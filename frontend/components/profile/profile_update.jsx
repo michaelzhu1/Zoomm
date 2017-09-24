@@ -62,65 +62,68 @@ class ProfileUpdate extends React.Component {
         <button className="edit-profile-button" onClick={this.openModal}>
           Edit Profile
         </button>
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
-          style={customStyles}
-          contentLabel="Example Modal"
-        >
-          <h2
-            className="edit-form-greeting"
-            ref={subtitle => (this.subtitle = subtitle)}
-          >
-            Hello {this.props.currentUser.username}!
-          </h2>
-          <div>
-            <i
-              className="fa fa-user-circle-o fa-4x icon-profile"
-              aria-hidden="true"
-            />
-          </div>
+        <div className="">
 
-          <form className="edit-profile-modal" onSubmit={this.handleSubmit}>
-            <label>Username: {this.props.currentUser.username}</label>
+          <Modal
+            isOpen={this.state.modalIsOpen}
+            onAfterOpen={this.afterOpenModal}
+            onRequestClose={this.closeModal}
+            style={customStyles}
+            contentLabel="Example Modal"
+            >
+            <h2
+              className="edit-form-greeting"
+              ref={subtitle => (this.subtitle = subtitle)}
+              >
+              Hello {this.props.currentUser.username}!
+            </h2>
+            <div>
+              <i
+                className="fa fa-user-circle-o fa-4x icon-profile"
+                aria-hidden="true"
+                />
+            </div>
 
-            <br/>
-            <br/>
-            <label>
-              Bio:
-              <textarea
-                className="bio-textarea glowing-border"
-                onChange={this.update("bio")}
-                value={this.state.user.bio}
-              />
-            </label>
-            <label>Profile image url:</label>
-            <input
-              type="text"
-              onChange={this.update("profile_img_url")}
-              value={this.state.user.profile_img_url}
-              className="glowing-border profile-form-input"
-            />
+            <form className="edit-profile-form" onSubmit={this.handleSubmit}>
+              <label>Username: {this.props.currentUser.username}</label>
 
-            <label>Cover image url:</label>
-            <input
-              type="text"
-              onChange={this.update("cover_img_url")}
-              value={this.state.user.cover_img_url}
-              className="glowing-border profile-form-input"
-            />
-            <br/>
-            <br/>
+              <br/>
+              <br/>
+              <label>
+                Bio:
+                <textarea
+                  className="bio-textarea glowing-border"
+                  onChange={this.update("bio")}
+                  value={this.state.user.bio}
+                  />
+              </label>
+              <label>Profile image url:</label>
+              <input
+                type="text"
+                onChange={this.update("profile_img_url")}
+                value={this.state.user.profile_img_url}
+                className="glowing-border profile-form-input"
+                />
 
-            <input
-              className="update-profile-button"
-              type="submit"
-              value={"Update Profile"}
-            />
-          <button onClick={this.closeModal}>Cancel</button>
-          </form>
-        </Modal>
+              <label>Cover image url:</label>
+              <input
+                type="text"
+                onChange={this.update("cover_img_url")}
+                value={this.state.user.cover_img_url}
+                className="glowing-border profile-form-input"
+                />
+              <br/>
+              <br/>
+
+              <input
+                className="update-profile-button"
+                type="submit"
+                value={"Update Profile"}
+                />
+              <button onClick={this.closeModal}>Cancel</button>
+            </form>
+          </Modal>
+        </div>
       </div>
     );
   }

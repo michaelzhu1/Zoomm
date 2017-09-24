@@ -10,9 +10,11 @@ const sessionLinks = () => (
       </Link>
       <div>
         <Link className="homepage-nav-link" to="/login">
+          <i className="fa fa-sign-in" aria-hidden="true"></i>&nbsp;
           Login
         </Link>
         <Link className="homepage-nav-link" to="/signup">
+          <i className="fa fa-user-plus" aria-hidden="true"></i>
           Sign up!
         </Link>
       </div>
@@ -28,7 +30,9 @@ const personalGreeting = (currentUser, logout) => (
       <Link to={currentUser ? "/feed" : "/"}>Zoomm</Link>
       <br />
       <UploadButtonContainer />
-      <button onClick={logout}>Log Out</button>
+      <button onClick={logout}>
+        <i className="fa fa-sign-out" aria-hidden="true"></i>&nbsp;
+        Log Out</button>
     </h1>
   </nav>
 );

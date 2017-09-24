@@ -1,6 +1,8 @@
 import React from "react";
 import { Image, Transformation } from "cloudinary-react";
-import Modal from 'react-modal';
+import Modal from "react-modal";
+import merge from "lodash/merge";
+import { withRouter } from "react-router-dom";
 
 const customStyles = {
   content: {
@@ -16,7 +18,7 @@ const customStyles = {
 class UserIndexPhotos extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { photo: {},  modalIsOpen: false};
+    this.state = { photo: {}, modalIsOpen: false };
     this.openPhoto = this.openPhoto.bind(this);
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
@@ -39,7 +41,6 @@ class UserIndexPhotos extends React.Component {
 
   componentDidMount() {
     this.props.fetchPhotos();
-    console.log(this.props.photos);
   }
 
   deletePhoto() {
@@ -48,31 +49,33 @@ class UserIndexPhotos extends React.Component {
   }
 
   openPhoto(photo) {
-    return(e) => {
-      this.setState({photo: photo});
+    return e => {
+      this.setState({ photo: photo });
       this.openModal();
     };
   }
 
   displayPhotos() {
-    console.log(this.props.photos);
     return (
       <ul>
-        {
-          this.props.photos.map(photo => {
-            console.log("photo",photo);
-            return (
-              <li key={photo.id}>
-                <img src={photo.photo_url} onClick={this.openPhoto(photo)} />
-              </li>
-            );
-          })
-        }
+        {this.props.photos.map(photo => {
+          return (
+            <li key={photo.id} className="profile-index-photo">
+              <img src={photo.photo_url} onClick={this.openPhoto(photo)} />
+            </li>
+          );
+        })}
       </ul>
     );
   }
 
-
+  update(field) {
+    return e => {
+      let updatedPhoto = merge({}, this.state.photo);
+      updatedPhoto[field] = e.currentTarget.value;
+      this.setState({ photo: updatedPhoto });
+    };
+  }
 
   render() {
     return (
@@ -85,31 +88,31 @@ class UserIndexPhotos extends React.Component {
           style={customStyles}
           contentLabel="PhotoUpload"
         >
-        <h2
-          className="edit-form-greeting"
-          ref={subtitle => (this.subtitle = subtitle)}
-        >
-          Photo Modal
-          <img src={this.state.photo.photo_url} />
-          <button onClick={this.deletePhoto}>Delete Photo</button>
-        </h2>
+          <h2
+            className="edit-form-greeting"
+            ref={subtitle => (this.subtitle = subtitle)}
+          >
+            <div className="photo-info">
+              <img src={this.state.photo.photo_url} />
+              {this.props.currentUser.username}
+              <input
+                type="text"
+                value={this.state.photo.photo_title}
+                onChange={this.update("photo_title")}
+                className="photo-info-title"
+              />
+              <textarea
+                value={this.state.photo.photo_description || ""}
+                onChange={this.update("photo_description")}
+                className="photo-info-description"
+              />
+              <button onClick={this.deletePhoto}>Delete Photo</button>
+            </div>
+          </h2>
         </Modal>
       </div>
     );
   }
 }
 
-export default UserIndexPhotos;
-
-
-// <ul>
-//   {this.props.photos.map(photo => {
-//     return (
-//       <li key={photo.id}>
-//         <Image publicId={photo.photo_url} cloudName="foolishhunger">
-//           <Transformation width="200" crop="scale" />
-//         </Image>
-//       </li>
-//     );
-//   })}
-// </ul>
+export default withRouter(UserIndexPhotos);

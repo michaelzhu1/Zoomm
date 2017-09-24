@@ -8,15 +8,23 @@
   justify-content: flex-end;
 }
 
-div .ReactModal__Content.ReactModal__Content--after-open {
-  width: 40%;
-  height: 70%;
+// .profile-edit-modal {
+//   width: 90%;
+//   height: 90%;
+//   display: flex;
+//   justify-content: space-around;
+//   flex-direction: column;
+// }
+
+.ReactModal__Content.ReactModal__Content--after-open {
+  width: 90%;
+  height: 90%;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
 }
 
-.edit-profile-modal input[type="text"] {
+.edit-profile-form input[type="text"] {
   color: black;
 }
 
@@ -54,7 +62,7 @@ label {
   font-weight: bold;
 }
 
-.edit-profile-modal {
+.edit-profile-form {
   float: left;
 }
 
@@ -85,4 +93,22 @@ label {
   font-size: 16px;
   font-family: $sans-serif;
   width: 50%;
+}
+
+.profile-index-photo {
+  cursor: zoom-in;
+  float: left;
+}
+
+.photo-info {
+  border: red;
+  display: inline-block;
+  height: 100%;
+}
+.photo-info-title {
+  background-color: red;
+}
+
+.photo-info-description {
+  background-color: red;
 }

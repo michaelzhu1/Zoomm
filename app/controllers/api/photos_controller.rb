@@ -4,7 +4,6 @@ class Api::PhotosController < ApplicationController
 
   def index
     @photos = current_user.photos
-    # debugger
     render "api/photos/index"
   end
 
