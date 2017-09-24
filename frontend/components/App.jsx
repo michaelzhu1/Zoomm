@@ -20,3 +20,5 @@ const App = () => (
 );
 
 export default App;
+
+// <Route path="/feed" component={FeedContainer} />

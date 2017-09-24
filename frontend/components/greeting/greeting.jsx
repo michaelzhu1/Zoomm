@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import UploadButtonContainer from "../photo/photo_container";
 
 const sessionLinks = () => (
   <nav className="splash-nav">
@@ -24,12 +25,9 @@ const personalGreeting = (currentUser, logout) => (
     <h1>
       What's up!!! {currentUser.username}!
       <br />
-      <Link to="/">Zoomm</Link>
+      <Link to={currentUser ? "/home" : "/"}>Zoomm</Link>
       <br />
-      <Link className="homepage-nav-link" to={`/user/${currentUser.id}/upload`}>
-        <i className="fa fa-cloud-upload" aria-hidden="true" />
-        Upload!
-      </Link>
+      <UploadButtonContainer />
       <button onClick={logout}>Log Out</button>
     </h1>
   </nav>
@@ -39,3 +37,8 @@ const Greeting = ({ currentUser, logout }) =>
   currentUser ? personalGreeting(currentUser, logout) : sessionLinks();
 
 export default Greeting;
+
+// <Link className="homepage-nav-link" to={`/user/${currentUser.id}/upload`}>
+//   <i className="fa fa-cloud-upload" aria-hidden="true" />
+//   Upload!
+// </Link>

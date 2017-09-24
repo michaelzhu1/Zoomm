@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
-import Photos from "./photo";
+// import Photos from "./photo";
 import { fetchPhotos, postPhoto } from "../../actions/photo_action";
+import UploadButton from "./upload_button";
 
 const mapStateToProps = state => ({
   photo: state.photo,
@@ -12,4 +13,4 @@ const mapDispatchToProps = dispatch => ({
   postPhoto: photo => dispatch(postPhoto(photo))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Photos);
+export default connect(mapStateToProps, mapDispatchToProps)(UploadButton);

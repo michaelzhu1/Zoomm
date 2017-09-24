@@ -82,13 +82,10 @@ class Profile extends React.Component {
           </div>
 
           <form className="edit-profile-modal" onSubmit={this.handleSubmit}>
-            <label>Username:</label>
-            <input
-              type="text"
-              value={this.props.currentUser.username}
-              readOnly
-            />
+            <label>Username: {this.props.currentUser.username}</label>
 
+            <br/>
+            <br/>
             <label>
               Bio:
               <textarea
@@ -112,6 +109,8 @@ class Profile extends React.Component {
               value={this.state.user.cover_img_url}
               className="glowing-border profile-form-input"
             />
+            <br/>
+            <br/>
 
             <input
               className="update-profile-button"
@@ -128,3 +127,9 @@ class Profile extends React.Component {
 export default Profile;
 
 // <button onClick={this.closeModal}>close</button>
+
+// <input
+//   type="text"
+//   value={this.props.currentUser.username}
+//   readOnly
+// />

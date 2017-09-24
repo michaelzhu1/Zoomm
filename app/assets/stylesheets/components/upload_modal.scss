@@ -1,0 +1,62 @@
+.photo-title {
+  color: $darkest-gray;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: $sans-serif;
+}
+
+.upload-thumbnail {
+  max-width: 250px;
+  max-height: 250px;
+  // border: 3px solid green;
+  margin: auto;
+  padding: 5px;
+  // width: 50%;
+}
+
+.upload-submit-button {
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  padding: 12px 20px;
+  margin: 0 auto;
+  border-radius: 4px;
+  background-color: #4caf50;
+  color: white;
+  display: flex;
+  justify-content: center;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: $sans-serif;
+}
+
+.upload-button-in-modal {
+  display: block;
+  padding: 10px;
+}
+
+.upload-cancel-button button  {
+  background-color: #f44336;
+}
+
+
+
+// .upload-submit-button
+// cursor: pointer;
+// font-weight: bold;
+// text-align: center;
+// padding: 10px 15px;
+// margin: 0 auto;
+// border-radius: 4px;
+// width: 50%;
+// background-color: #4caf50;
+// color: white;
+// display: flex;
+// justify-content: center;
