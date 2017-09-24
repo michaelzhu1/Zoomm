@@ -1,5 +1,6 @@
 import React from "react";
 import ProfileUpdate from "./profile_update";
+import UserIndexPhotos from "./profile_user_index_photos";
 
 class Profile extends React.Component {
   constructor(props) {
@@ -8,8 +9,12 @@ class Profile extends React.Component {
 
   render() {
     return (
-      <ProfileUpdate user={this.props.user} currentUser={this.props.currentUser} fetchUser={this.props.fetchUser}
-        updateUser={this.props.updateUser}/>
+      <div>
+        <ProfileUpdate user={this.props.user} currentUser={this.props.currentUser} fetchUser={this.props.fetchUser}
+          updateUser={this.props.updateUser}/>
+        <UserIndexPhotos fetchPhotos={this.props.fetchPhotos}
+          photos={this.props.photos}/>
+      </div>
     );
   }
 
@@ -17,5 +22,6 @@ class Profile extends React.Component {
 
 export default Profile;
 
+
 // add photoindex component
-// follower and following info 
+// follower and following info

@@ -2,15 +2,18 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import Profile from "./profile";
 import { fetchUser, updateUser } from "../../actions/profile_action";
+import {fetchPhotos} from "../../actions/photo_action";
 
 const mapStateToProps = (state, ownProps) => ({
   user: state.user,
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  photos: Object.keys(state.photo).map(id => state.photo[id])
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchUser: id => dispatch(fetchUser(id)),
-  updateUser: user => dispatch(updateUser(user))
+  updateUser: user => dispatch(updateUser(user)),
+  fetchPhotos: () => dispatch(fetchPhotos())
 });
 
 export default withRouter(

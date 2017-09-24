@@ -118,6 +118,7 @@ class ProfileUpdate extends React.Component {
               type="submit"
               value={"Update Profile"}
             />
+          <button onClick={this.closeModal}>Cancel</button>
           </form>
         </Modal>
       </div>

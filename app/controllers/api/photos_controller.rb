@@ -3,7 +3,8 @@ class Api::PhotosController < ApplicationController
   before_action :require_logged_in
 
   def index
-    @photos = Photo.all
+    @photos = current_user.photos
+    # debugger
     render "api/photos/index"
   end
 
