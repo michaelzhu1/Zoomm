@@ -1,7 +1,6 @@
 import React from "react";
 import ProfileUpdate from "./profile_update";
 import UserIndexPhotos from "./profile_user_index_photos";
-// import ProfileHeaderContainer from "./profile_header_container";
 
 class Profile extends React.Component {
   constructor(props) {

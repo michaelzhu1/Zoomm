@@ -81,26 +81,27 @@ class SessionForm extends React.Component {
           {this.navLink()}
           {this.errors()}
           <br />
-          <label><i className="fa fa-user" aria-hidden="true"></i> Username:
-          <input
-            type="text"
-            value={this.state.username}
-            onChange={this.update("username")}
-            placeholder="Username"
-            className="glowing-border session-form-input"
-          />
-        </label>
+          <label>
+            <i className="fa fa-user" aria-hidden="true" /> Username:
+            <input
+              type="text"
+              value={this.state.username}
+              onChange={this.update("username")}
+              placeholder="Username"
+              className="glowing-border session-form-input"
+            />
+          </label>
           <br />
-          <label><i className="fa fa-lock" aria-hidden="true"></i> Password:
-
-          <input
-            type="password"
-            value={this.state.password}
-            onChange={this.update("password")}
-            placeholder="Password"
-            className="glowing-border session-form-input"
-          />
-        </label>
+          <label>
+            <i className="fa fa-lock" aria-hidden="true" /> Password:
+            <input
+              type="password"
+              value={this.state.password}
+              onChange={this.update("password")}
+              placeholder="Password"
+              className="glowing-border session-form-input"
+            />
+          </label>
           <input
             className="session-form-submit"
             type="submit"

@@ -19,13 +19,15 @@ const customStyles = {
 class ProfileUpdate extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { modalIsOpen: false, modalIsOpen2: false, user: this.props.currentUser, profile_img_url: "" };
+    this.state = {
+      modalIsOpen: false,
+      modalIsOpen2: false,
+      user: this.props.currentUser,
+      profile_img_url: ""
+    };
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.openModal2 = this.openModal2.bind(this);
-    this.afterOpenModal2 = this.afterOpenModal2.bind(this);
-    this.closeModal2 = this.closeModal2.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateProfilePhoto = this.updateProfilePhoto.bind(this);
   }
@@ -43,21 +45,6 @@ class ProfileUpdate extends React.Component {
     this.setState({ modalIsOpen: false });
   }
 
-
-//nested modal for profile pic
-  openModal2() {
-    this.setState({ modalIsOpen2: true });
-  }
-
-  afterOpenModal2() {
-    // references are now sync'd and can be accessed.
-    this.subtitle.style.color = "#6288a5";
-  }
-
-  closeModal2() {
-    this.setState({ modalIsOpen2: false });
-  }
-
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.userId);
     console.log(this.props);
@@ -73,32 +60,33 @@ class ProfileUpdate extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props
-      .updateUser(this.state.user)
-      .then(() => this.closeModal());
+    this.props.updateUser(this.state.user).then(() => this.closeModal());
   }
 
-   profilePhoto() {
-     return(
-       <div className="profile-photo">
-           <img onClick={this.updateProfilePhoto} src={this.state.user.profile_img_url} />
-       </div>
-     );
-   }
+  profilePhoto() {
+    return (
+      <div className="profile-photo">
+        <img
+          onClick={this.updateProfilePhoto}
+          src={this.state.user.profile_img_url}
+        />
+      </div>
+    );
+  }
 
-   updateProfilePhoto() {
-     cloudinary.openUploadWidget(
-       window.CLOUDINARY_OPTIONS,
-       function(error, images) {
-         if(error === null) {
-           let newUser = this.props.currentUser ;
-           newUser.profile_img_url = images[0].url;
-           this.props.updateUser(this.state.user);
-           this.setState({ user: newUser });
-         }
-       }.bind(this));
-   }
-
+  updateProfilePhoto() {
+    cloudinary.openUploadWidget(
+      window.CLOUDINARY_OPTIONS,
+      function(error, images) {
+        if (error === null) {
+          let newUser = this.props.currentUser;
+          newUser.profile_img_url = images[0].url;
+          this.props.updateUser(this.state.user);
+          this.setState({ user: newUser });
+        }
+      }.bind(this)
+    );
+  }
 
   render() {
     return (
@@ -108,40 +96,39 @@ class ProfileUpdate extends React.Component {
           Edit Profile
         </button>
         <div>
-
           <Modal
             isOpen={this.state.modalIsOpen}
             onAfterOpen={this.afterOpenModal}
             onRequestClose={this.closeModal}
             style={customStyles}
             contentLabel="Example Modal"
-            >
+          >
             <h2
               className="edit-form-greeting"
               ref={subtitle => (this.subtitle = subtitle)}
-              >
+            >
               Hello {this.props.currentUser.username}!
             </h2>
             <div>
               <i
                 className="fa fa-user-circle-o fa-4x icon-profile"
                 aria-hidden="true"
-                />
+              />
               {this.profilePhoto()}
             </div>
 
             <form className="edit-profile-form" onSubmit={this.handleSubmit}>
               <label>Username: {this.props.currentUser.username}</label>
 
-              <br/>
-              <br/>
+              <br />
+              <br />
               <label>
                 Bio:
                 <textarea
                   className="bio-textarea glowing-border"
                   onChange={this.update("bio")}
                   value={this.state.user.bio}
-                  />
+                />
               </label>
               <label>Profile image url:</label>
               <input
@@ -149,7 +136,7 @@ class ProfileUpdate extends React.Component {
                 onChange={this.update("profile_img_url")}
                 value={this.state.user.profile_img_url}
                 className="glowing-border profile-form-input"
-                />
+              />
 
               <label>Cover image url:</label>
               <input
@@ -157,30 +144,18 @@ class ProfileUpdate extends React.Component {
                 onChange={this.update("cover_img_url")}
                 value={this.state.user.cover_img_url}
                 className="glowing-border profile-form-input"
-                />
-              <br/>
-              <br/>
+              />
+              <br />
+              <br />
 
               <input
                 className="update-profile-button"
                 type="submit"
                 value={"Update Profile"}
-                />
+              />
               <button onClick={this.closeModal}>Cancel</button>
             </form>
           </Modal>
-
-          <Modal
-  						contentLabel="Modal2"
-  						isOpen={this.state.modalOpen2}
-              onAfterOpen={this.afterOpenModal2}
-  						onRequestClose={this.closeModal2}
-              style={customStyles}
-              >
-              HELLOOOOOOOffff
-              {this.updateProfilePhoto}
-
-              </Modal>
         </div>
       </div>
     );
@@ -188,11 +163,3 @@ class ProfileUpdate extends React.Component {
 }
 
 export default withRouter(ProfileUpdate);
-
-// <button onClick={this.closeModal}>close</button>
-
-// <input
-//   type="text"
-//   value={this.props.currentUser.username}
-//   readOnly
-// />

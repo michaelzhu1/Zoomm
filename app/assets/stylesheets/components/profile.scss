@@ -8,13 +8,6 @@ div .profile-form {
   justify-content: flex-end;
 }
 
-// .profile-edit-modal {
-//   width: 90%;
-//   height: 90%;
-//   display: flex;
-//   justify-content: space-around;
-//   flex-direction: column;
-// }
 
 .ReactModal__Content.ReactModal__Content--after-open {
   width: 90%;
@@ -137,15 +130,20 @@ li img {
   height: 100%;
 }
 
-.profile-photo {
-
+div .profile-photo {
+  display: flex;
+  justify-content: center;
 }
+
 
 .profile-photo img {
   max-width: 100px;
   max-height: 100px;
+  border-radius: 20px;
 }
 
 .profile-photo:hover img {
   cursor: pointer;
+  opacity:0.75;
+  border-radius: 50px;
 }
