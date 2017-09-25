@@ -65,8 +65,14 @@ class ProfileUpdate extends React.Component {
 
   profilePhoto() {
     return (
-      <div className="profile-photo">
+      <div>
         <img
+          className="cover-photo"
+          onClick={this.updateCoverPhoto}
+          src={this.state.user.cover_img_url}
+        />
+        <img
+          className="profile-photo"
           onClick={this.updateProfilePhoto}
           src={this.state.user.profile_img_url}
         />
@@ -81,6 +87,20 @@ class ProfileUpdate extends React.Component {
         if (error === null) {
           let newUser = this.props.currentUser;
           newUser.profile_img_url = images[0].url;
+          this.props.updateUser(this.state.user);
+          this.setState({ user: newUser });
+        }
+      }.bind(this)
+    );
+  }
+
+  updateCoverPhoto() {
+    cloudinary.openUploadWidget(
+      window.CLOUDINARY_OPTIONS,
+      function(error, images) {
+        if (error === null) {
+          let newUser = this.props.currentUser;
+          newUser.cover_img_url = images[0].url;
           this.props.updateUser(this.state.user);
           this.setState({ user: newUser });
         }
@@ -121,14 +141,19 @@ class ProfileUpdate extends React.Component {
                 <textarea
                   className="bio-textarea glowing-border"
                   onChange={this.update("bio")}
-                  value={this.state.user.bio}
+                  value={this.state.user.bio || ""}
                 />
               </label>
               <label>Profile image url:</label>
               <input
                 type="text"
                 onChange={this.update("profile_img_url")}
-                value={this.state.user.profile_img_url}
+                value={
+                  this.state.user.profile_img_url ===
+                  "http://res.cloudinary.com/foolishhunger/image/upload/v1506356812/contacts-512_m08nd3.png"
+                    ? ""
+                    : this.state.user.profile_img_url
+                }
                 className="glowing-border profile-form-input"
               />
 
@@ -136,7 +161,7 @@ class ProfileUpdate extends React.Component {
               <input
                 type="text"
                 onChange={this.update("cover_img_url")}
-                value={this.state.user.cover_img_url}
+                value={this.state.user.cover_img_url || ""}
                 className="glowing-border profile-form-input"
               />
               <br />

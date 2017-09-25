@@ -1,13 +1,26 @@
 div .profile-form {
   display: flex;
   justify-content: center;
+  background-color: red;
 }
 
 .edit-profile-button {
-  display: flex;
+  display: inline-block;
   justify-content: flex-end;
+  height: 30px;
+  outline: none;
+  font-weight: bold;
+  padding: 0 10px;
+  min-width: 100px;
+  line-height: 28px;
+  border-radius: 3px;
+  background-color: #0099e5;
+  border: 1px solid #0088cc;
+  text-shadow: 0px 1px 0px #0088cc;
+  box-shadow: 0px 1px 0px #0088cc;
+  font-size: 14px;
+  text-rendering: optimizeLegibility;
 }
-
 
 .ReactModal__Content.ReactModal__Content--after-open {
   width: 90%;
@@ -77,6 +90,7 @@ label {
   margin: 0 auto;
   border-radius: 4px;
   width: 50%;
+  height: fit-content;
   background-color: #4caf50;
   color: white;
   display: flex;
@@ -85,7 +99,6 @@ label {
   box-sizing: border-box;
   font-size: 16px;
   font-family: $sans-serif;
-  width: 50%;
 }
 
 .profile-index-photo {
@@ -135,15 +148,30 @@ div .profile-photo {
   justify-content: center;
 }
 
-
-.profile-photo img {
+.profile-photo {
   max-width: 100px;
   max-height: 100px;
   border-radius: 20px;
 }
 
-.profile-photo:hover img {
+.profile-photo:hover {
   cursor: pointer;
-  opacity:0.75;
+  opacity: 0.75;
   border-radius: 50px;
+}
+
+.cover-photo:hover {
+  cursor: pointer;
+}
+
+.cover-photo {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
