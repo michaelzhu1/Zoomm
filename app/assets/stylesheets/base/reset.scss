@@ -13,7 +13,9 @@ i,
 section,
 img,
 div,
+h1,
 h2,
+h3,
 p,
 form,
 fieldset,
@@ -36,12 +38,14 @@ small {
   vertical-align: inherit;
   box-sizing: inherit;
   background: transparent;
+  font-family: sans-serif;
 }
 
 ul {
   list-style: none;
 }
-// 
+
+//
 // img {
 //   display: block;
 //   // width: 100%;

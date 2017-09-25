@@ -6,6 +6,8 @@ import { withRouter } from "react-router-dom";
 
 const customStyles = {
   content: {
+    height: "90vh",
+    width: "80vw",
     top: "50%",
     left: "50%",
     right: "auto",
@@ -88,6 +90,8 @@ class UserIndexPhotos extends React.Component {
   //   this.closeModal();
   // }
 
+  displayCoverPhoto() {}
+
   render() {
     return (
       <div>
@@ -100,24 +104,32 @@ class UserIndexPhotos extends React.Component {
           contentLabel="PhotoUpload"
         >
           <div className="photo-info">
-            <img src={this.state.photo.photo_url} />
-            <form onSubmit={this.updatePhoto}>
-              {this.props.currentUser.username}
-              <input
-                type="text"
-                value={this.state.photo.photo_title}
-                onChange={this.update("photo_title")}
-                className="photo-info-title"
-              />
-              <textarea
-                value={this.state.photo.photo_description || ""}
-                onChange={this.update("photo_description")}
-                className="photo-info-description"
-              />
-              <input type="submit" value="Save" />
-            </form>
-            <button onClick={this.closeModal}>Cancel</button>
-            <button onClick={this.deletePhoto}>Delete Photo</button>
+            <div className="photo-show-left">
+              <img src={this.state.photo.photo_url} />
+            </div>
+
+            <div className="photo-show-right">
+              <h3>Edit Photo</h3>
+              <form className="photo-show-form" onSubmit={this.updatePhoto}>
+                {this.props.currentUser.username}
+                <h4>Photo Title</h4>
+                <input
+                  type="text"
+                  value={this.state.photo.photo_title}
+                  onChange={this.update("photo_title")}
+                  className="photo-info-title"
+                />
+                <h4>Photo Description</h4>
+                <textarea
+                  value={this.state.photo.photo_description || ""}
+                  onChange={this.update("photo_description")}
+                  className="photo-info-description"
+                />
+                <input type="submit" value="Save" />
+              </form>
+              <button onClick={this.closeModal}>Cancel</button>
+              <button onClick={this.deletePhoto}>Delete Photo</button>
+            </div>
           </div>
         </Modal>
       </div>

@@ -2,6 +2,8 @@ div .profile-form {
   display: flex;
   justify-content: center;
   background-color: red;
+  flex-direction: column;
+  align-items: center;
 }
 
 .edit-profile-button {
@@ -20,6 +22,10 @@ div .profile-form {
   box-shadow: 0px 1px 0px #0088cc;
   font-size: 14px;
   text-rendering: optimizeLegibility;
+}
+
+.edit-profile-button:hover {
+  background-color: #12a2c8;
 }
 
 .ReactModal__Content.ReactModal__Content--after-open {
@@ -106,20 +112,36 @@ label {
   float: left;
 }
 
-.photo-in-edit-modal {
-}
-
 .photo-info {
   border: red;
-  display: inline-block;
+  // display: inline-block;
   height: 100%;
+  display: flex;
+  justify-content: space-around;
 }
+
+.photo-show-left img {
+  max-width: 60vw;
+  max-height: 90vh;
+}
+
+.photo-show-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.photo-show-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .photo-info-title {
-  background-color: red;
+  background-color: grey;
 }
 
 .photo-info-description {
-  background-color: red;
+  background-color: grey;
 }
 
 ul {
@@ -130,15 +152,21 @@ ul {
   display: flex;
 }
 
-li {
+// li {
+//   width: auto;
+//   margin: 10px 10px;
+//   height: 300px;
+//   text-align: -webkit-center;
+// }
+
+.profile-index-photo {
   width: auto;
   margin: 10px 10px;
-  overflow-x: hidden;
   height: 300px;
   text-align: -webkit-center;
 }
 
-li img {
+.profile-index-photo img {
   width: auto;
   height: 100%;
 }
@@ -157,7 +185,6 @@ div .profile-photo {
 .profile-photo:hover {
   cursor: pointer;
   opacity: 0.75;
-  border-radius: 50px;
 }
 
 .cover-photo:hover {

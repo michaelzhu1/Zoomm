@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import UploadButtonContainer from "../photo/photo_container";
 
 const sessionLinks = () => (
-  <nav className="splash-nav">
-    <h1>
+  <nav>
+    <h1 className="splash-nav">
       <Link className="homepage-nav-logo" to="/">
         Zoomm
       </Link>
-      <div>
+      <div className="navbar-right">
         <Link className="homepage-nav-link" to="/login">
           <i className="fa fa-sign-in" aria-hidden="true" />&nbsp; Login
         </Link>
@@ -23,17 +23,17 @@ const sessionLinks = () => (
 
 const personalGreeting = (currentUser, logout) => (
   <nav className="splash-nav">
-    <h1>
+    <div className="navbar-right">
       What's up!!! {currentUser.username}!
-      <br />
       <Link to={currentUser ? "/feed" : "/"}>Zoomm</Link>
-      <br />
-      <UploadButtonContainer />
+    </div>
+    <div className="navbar-right">
       <Link to={`user/${currentUser.id}`}>Profile</Link>
-      <button onClick={logout}>
+      <UploadButtonContainer />
+      <button onClick={logout} className="log-out-button">
         <i className="fa fa-sign-out" aria-hidden="true" />&nbsp; Log Out
       </button>
-    </h1>
+    </div>
   </nav>
 );
 

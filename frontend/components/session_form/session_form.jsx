@@ -15,6 +15,10 @@ class SessionForm extends React.Component {
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
@@ -37,7 +41,7 @@ class SessionForm extends React.Component {
     if (this.props.formType === "login") {
       return (
         <button className="demo-button" onClick={this.handleDemoLogin}>
-          DEMO LOGIN
+          Demo Login
         </button>
       );
     }
@@ -78,7 +82,7 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form">
-          Welcome to Zoomm!
+          <h3>Welcome to Zoomm!</h3>
           <br />
           {this.navLink()}
           {this.errors()}

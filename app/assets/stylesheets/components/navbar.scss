@@ -2,16 +2,35 @@
 //   position: absolute;
 //   z-index: 1;
 // }
+.homepage-nav-logo {
+  margin-left: 250px;
+}
 
 .splash-nav {
   background-color: $darkest-gray;
   padding: 0;
   margin: 0;
-  width: 100%;
+  width: 100vw;
+  padding: 15px 0px;
+  font-size: 20px;
+  // display: inline-block;
+  display: flex;
+  justify-content: space-between;
+  font-family: $sans-serif;
+  font-weight: bold;
+  color: white;
+  align-items: center;
+}
+.navbar-right {
+  display: flex;
+  justify-content: space-around;
+  width: 25vw;
+  align-items: center;
 }
 
 nav h1 .homepage-nav-link {
   color: $gray;
+  margin-right: 30px;
 }
 nav h1 .homepage-nav-link:hover {
   color: $lightest-gray;

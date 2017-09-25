@@ -1,13 +1,17 @@
 .login-form-container {
+  height: 100vh;
+  width: 100vw;
+  // display: flex;
+  align-items: center;
   font-size: 16px;
   float: left;
   font-family: $serif;
-}
-
-body {
   background-image: url("http://res.cloudinary.com/foolishhunger/image/upload/v1506196087/su9jtvxafq5htqyo5np3.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+body {
 }
 
 .form-label {
@@ -32,43 +36,26 @@ body {
 }
 
 .login-form {
-  width: 60%;
+  width: 350px;
+  height: 400px;
   padding: 12px 20px;
-  margin: 8px 0;
+  // margin: 120px;
+  margin-left: 150px;
+  margin-top: 120px;
   display: inline-block;
   border: 5px solid #ccc;
   border-radius: 10px;
   box-sizing: border-box;
   min-width: 323px;
   min-height: 355px;
+  background-color: white;
+  // opacity: 0.8;
 }
 .login-form button {
   display: flex;
   margin: 0 auto;
 }
 
-// input[type="text"] {
-//   width: 100%;
-//   padding: 12px 20px;
-//   margin: 8px 0;
-//   display: inline-block;
-//   border: 1px solid #ccc;
-//   border-radius: 4px;
-//   box-sizing: border-box;
-//   font-size: 14px;
-//   color: white;
-//   font-family: $sans-serif;
-// }
-// input[type="password"] {
-//   width: 100%;
-//   padding: 12px 20px;
-//   margin: 8px 0;
-//   display: inline-block;
-//   border: 1px solid #ccc;
-//   border-radius: 4px;
-//   box-sizing: border-box;
-//   color: white;
-// }
 .session-form-input {
   width: 100%;
   padding: 12px 20px;
@@ -78,7 +65,6 @@ body {
   border-radius: 4px;
   box-sizing: border-box;
   font-size: 14px;
-  color: white;
   font-family: $sans-serif;
 }
 
@@ -116,11 +102,10 @@ body {
 
 .login-form-container label {
   font-size: 16px;
-  color: white;
   font-weight: bold;
 }
 .session-link {
-  color: $lightest-blue;
+  color: blue;
   text-decoration: underline;
   margin: 0 auto;
 }
@@ -133,23 +118,31 @@ body {
   margin: 0 auto;
 }
 
-h1 {
-  padding: 15px;
-  font-size: 20px;
-  display: inline-block;
-  display: flex;
-  justify-content: space-between;
-  font-family: $sans-serif;
-  font-weight: bold;
-  color: white;
-}
+// h1 {
+//   padding: 15px;
+//   font-size: 20px;
+//   display: inline-block;
+//   display: flex;
+//   justify-content: space-between;
+//   font-family: $sans-serif;
+//   font-weight: bold;
+//   color: white;
+// }
 
 h1 .homepage-nav-link {
   margin-left: 10px;
 }
 
 h1 .homepage-nav-link:hover {
-  // color: $blue;
   color: black;
-  // background-color: $lightest-gray;
+}
+
+.log-out-button {
+  height: 10px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
 }

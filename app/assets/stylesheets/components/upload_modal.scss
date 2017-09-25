@@ -14,10 +14,8 @@
 .upload-thumbnail {
   max-width: 250px;
   max-height: 250px;
-  // border: 3px solid green;
   margin: auto;
   padding: 5px;
-  // width: 50%;
 }
 
 .upload-submit-button {
@@ -42,21 +40,19 @@
   padding: 10px;
 }
 
-.upload-cancel-button button  {
+.upload-cancel-button button {
   background-color: #f44336;
 }
 
-
-
-// .upload-submit-button
-// cursor: pointer;
-// font-weight: bold;
-// text-align: center;
-// padding: 10px 15px;
-// margin: 0 auto;
-// border-radius: 4px;
-// width: 50%;
-// background-color: #4caf50;
-// color: white;
-// display: flex;
-// justify-content: center;
+.nav-upload-button {
+  color: white;
+  background-color: #34bf49;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 40px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 5px;
+}

@@ -4,6 +4,15 @@ import Modal from "react-modal";
 
 const customStyles = {
   content: {
+    overlay: {
+      position: "fixed",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: "rgba(255, 255, 255, 0.95)",
+      zIndex: 10
+    },
     top: "50%",
     left: "50%",
     right: "auto",
@@ -88,9 +97,9 @@ class UploadButton extends React.Component {
   render() {
     return (
       <div>
-        <button className="edit-profile-button" onClick={this.openModal}>
-          <i className="fa fa-cloud-upload" aria-hidden="true" />&nbsp; upload
-          photo
+        <button className="nav-upload-button" onClick={this.openModal}>
+          <i className="fa fa-cloud-upload fa-1x" aria-hidden="true" />&nbsp;
+          Upload
         </button>
         <Modal
           isOpen={this.state.modalIsOpen}

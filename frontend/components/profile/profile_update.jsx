@@ -6,13 +6,25 @@ import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const customStyles = {
+  overlay: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: "rgba(255, 255, 255, 0.95)",
+    zIndex: 10
+  },
   content: {
+    width: "550px",
+    height: "550px",
     top: "50%",
     left: "50%",
     right: "auto",
     bottom: "auto",
     marginRight: "-50%",
-    transform: "translate(-50%, -50%)"
+    transform: "translate(-50%, -50%)",
+    zIndex: 11
   }
 };
 
@@ -64,13 +76,10 @@ class ProfileUpdate extends React.Component {
   }
 
   profilePhoto() {
+    let imgurl = this.state.user.cover_img_url;
+    const backgroundImage = { backgroundImage: `url(` + imgurl + `)` };
     return (
       <div>
-        <img
-          className="cover-photo"
-          onClick={this.updateCoverPhoto}
-          src={this.state.user.cover_img_url}
-        />
         <img
           className="profile-photo"
           onClick={this.updateProfilePhoto}
