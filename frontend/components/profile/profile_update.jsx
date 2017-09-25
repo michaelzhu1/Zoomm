@@ -75,7 +75,7 @@ class ProfileUpdate extends React.Component {
     e.preventDefault();
     this.props
       .updateUser(this.state.user)
-      .then(() => this.props.history.push("/homepage"));
+      .then(() => this.closeModal());
   }
 
    profilePhoto() {
@@ -91,11 +91,10 @@ class ProfileUpdate extends React.Component {
        window.CLOUDINARY_OPTIONS,
        function(error, images) {
          if(error === null) {
-           console.log(images);
            let newUser = this.props.currentUser ;
            newUser.profile_img_url = images[0].url;
+           this.props.updateUser(this.state.user);
            this.setState({ user: newUser });
-           console.log(this.state);
          }
        }.bind(this));
    }

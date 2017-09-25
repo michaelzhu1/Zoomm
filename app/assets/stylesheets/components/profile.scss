@@ -1,6 +1,6 @@
-.profile-form {
+div .profile-form {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .edit-profile-button {
@@ -135,6 +135,15 @@ li {
 li img {
   width: auto;
   height: 100%;
+}
+
+.profile-photo {
+
+}
+
+.profile-photo img {
+  max-width: 100px;
+  max-height: 100px;
 }
 
 .profile-photo:hover img {
