@@ -109,13 +109,7 @@ class ProfileUpdate extends React.Component {
             >
               Hello {this.props.currentUser.username}!
             </h2>
-            <div>
-              <i
-                className="fa fa-user-circle-o fa-4x icon-profile"
-                aria-hidden="true"
-              />
-              {this.profilePhoto()}
-            </div>
+            <div>{this.profilePhoto()}</div>
 
             <form className="edit-profile-form" onSubmit={this.handleSubmit}>
               <label>Username: {this.props.currentUser.username}</label>
@@ -163,3 +157,8 @@ class ProfileUpdate extends React.Component {
 }
 
 export default withRouter(ProfileUpdate);
+
+// <i
+//   className="fa fa-user-circle-o fa-4x icon-profile"
+//   aria-hidden="true"
+// />

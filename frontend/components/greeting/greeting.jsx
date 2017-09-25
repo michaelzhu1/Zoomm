@@ -29,6 +29,7 @@ const personalGreeting = (currentUser, logout) => (
       <Link to={currentUser ? "/feed" : "/"}>Zoomm</Link>
       <br />
       <UploadButtonContainer />
+      <Link to={`user/${currentUser.id}`}>Profile</Link>
       <button onClick={logout}>
         <i className="fa fa-sign-out" aria-hidden="true" />&nbsp; Log Out
       </button>
@@ -40,8 +41,3 @@ const Greeting = ({ currentUser, logout }) =>
   currentUser ? personalGreeting(currentUser, logout) : sessionLinks();
 
 export default Greeting;
-
-// <Link className="homepage-nav-link" to={`/user/${currentUser.id}/upload`}>
-//   <i className="fa fa-cloud-upload" aria-hidden="true" />
-//   Upload!
-// </Link>
