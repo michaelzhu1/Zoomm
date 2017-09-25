@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import Modal from "react-modal";
 import merge from "lodash/merge";
 import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const customStyles = {
   content: {
@@ -18,11 +19,15 @@ const customStyles = {
 class ProfileUpdate extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { modalIsOpen: false, user: this.props.currentUser };
+    this.state = { modalIsOpen: false, modalIsOpen2: false, user: this.props.currentUser, profile_img_url: "" };
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.openModal2 = this.openModal2.bind(this);
+    this.afterOpenModal2 = this.afterOpenModal2.bind(this);
+    this.closeModal2 = this.closeModal2.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateProfilePhoto = this.updateProfilePhoto.bind(this);
   }
 
   openModal() {
@@ -38,8 +43,24 @@ class ProfileUpdate extends React.Component {
     this.setState({ modalIsOpen: false });
   }
 
+
+//nested modal for profile pic
+  openModal2() {
+    this.setState({ modalIsOpen2: true });
+  }
+
+  afterOpenModal2() {
+    // references are now sync'd and can be accessed.
+    this.subtitle.style.color = "#6288a5";
+  }
+
+  closeModal2() {
+    this.setState({ modalIsOpen2: false });
+  }
+
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.userId);
+    console.log(this.props);
   }
 
   update(field) {
@@ -56,13 +77,38 @@ class ProfileUpdate extends React.Component {
       .updateUser(this.state.user)
       .then(() => this.props.history.push("/homepage"));
   }
+
+   profilePhoto() {
+     return(
+       <div className="profile-photo">
+           <img onClick={this.updateProfilePhoto} src={this.state.user.profile_img_url} />
+       </div>
+     );
+   }
+
+   updateProfilePhoto() {
+     cloudinary.openUploadWidget(
+       window.CLOUDINARY_OPTIONS,
+       function(error, images) {
+         if(error === null) {
+           console.log(images);
+           let newUser = this.props.currentUser ;
+           newUser.profile_img_url = images[0].url;
+           this.setState({ user: newUser });
+           console.log(this.state);
+         }
+       }.bind(this));
+   }
+
+
   render() {
     return (
       <div className="profile-form">
+        {this.profilePhoto()}
         <button className="edit-profile-button" onClick={this.openModal}>
           Edit Profile
         </button>
-        <div className="">
+        <div>
 
           <Modal
             isOpen={this.state.modalIsOpen}
@@ -82,6 +128,7 @@ class ProfileUpdate extends React.Component {
                 className="fa fa-user-circle-o fa-4x icon-profile"
                 aria-hidden="true"
                 />
+              {this.profilePhoto()}
             </div>
 
             <form className="edit-profile-form" onSubmit={this.handleSubmit}>
@@ -123,6 +170,18 @@ class ProfileUpdate extends React.Component {
               <button onClick={this.closeModal}>Cancel</button>
             </form>
           </Modal>
+
+          <Modal
+  						contentLabel="Modal2"
+  						isOpen={this.state.modalOpen2}
+              onAfterOpen={this.afterOpenModal2}
+  						onRequestClose={this.closeModal2}
+              style={customStyles}
+              >
+              HELLOOOOOOOffff
+              {this.updateProfilePhoto}
+
+              </Modal>
         </div>
       </div>
     );
