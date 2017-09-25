@@ -4,6 +4,7 @@ div .profile-form {
   background-color: red;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .edit-profile-button {
@@ -53,9 +54,10 @@ div .profile-form {
   font-family: $sans-serif;
 }
 
-label {
+.upload-form-label {
   font-size: 14px;
   font-family: $sans-serif;
+  margin-top: 20px;
 }
 .bio-textarea {
   width: 100%;
@@ -171,7 +173,11 @@ ul {
   height: 100%;
 }
 
-div .profile-photo {
+// div .profile-photo {
+//   display: flex;
+// }
+
+.profile-photo-div {
   display: flex;
   justify-content: center;
 }

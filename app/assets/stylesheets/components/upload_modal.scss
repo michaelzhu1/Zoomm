@@ -1,3 +1,12 @@
+.upload-photo-form {
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 20px;
+}
+
 .photo-title {
   color: $darkest-gray;
   width: 100%;
@@ -12,8 +21,15 @@
 }
 
 .upload-thumbnail {
-  max-width: 250px;
-  max-height: 250px;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.upload-thumbnail img {
+  max-width: 100%;
+  max-height: 90%;
   margin: auto;
   padding: 5px;
 }
@@ -22,10 +38,10 @@
   cursor: pointer;
   font-weight: bold;
   text-align: center;
-  padding: 12px 20px;
+  padding: 12px 20px 22px;
   margin: 0 auto;
   border-radius: 4px;
-  background-color: #4caf50;
+  background-color: #64ad66;
   color: white;
   display: flex;
   justify-content: center;
@@ -38,15 +54,22 @@
 .upload-button-in-modal {
   display: block;
   padding: 10px;
+  height: 60px;
+  width: 10vw;
+  align-self: center;
+  font-size: 16px;
 }
 
-.upload-cancel-button button {
-  background-color: #f44336;
+.upload-cancel-button {
+  background-color: #f9675c;
+  width: 50px;
+  align-self: flex-end;
+  padding-bottom: 14px;
 }
 
 .nav-upload-button {
   color: white;
-  background-color: #34bf49;
+  background-color: #64ad66;
   padding-left: 15px;
   padding-right: 15px;
   box-sizing: border-box;
@@ -55,4 +78,18 @@
   font-size: 14px;
   font-weight: normal;
   line-height: 5px;
+}
+
+.photo-description {
+  height: 100px;
+  width: 100%;
+  color: $darkest-gray;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: $sans-serif;
 }

@@ -79,7 +79,7 @@ class ProfileUpdate extends React.Component {
     let imgurl = this.state.user.cover_img_url;
     const backgroundImage = { backgroundImage: `url(` + imgurl + `)` };
     return (
-      <div>
+      <div className="profile-photo-div">
         <img
           className="profile-photo"
           onClick={this.updateProfilePhoto}
@@ -181,7 +181,12 @@ class ProfileUpdate extends React.Component {
                 type="submit"
                 value={"Update Profile"}
               />
-              <button onClick={this.closeModal}>Cancel</button>
+              <button
+                className="upload-cancel-button"
+                onClick={this.closeModal}
+              >
+                Cancel
+              </button>
             </form>
           </Modal>
         </div>

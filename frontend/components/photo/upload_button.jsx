@@ -108,18 +108,15 @@ class UploadButton extends React.Component {
           style={customStyles}
           contentLabel="PhotoUpload"
         >
-          <h2
-            className="edit-form-greeting"
-            ref={subtitle => (this.subtitle = subtitle)}
-          >
-            Hello User!
-          </h2>
-          <form onSubmit={this.handleSubmit}>
+          <form className="upload-photo-form" onSubmit={this.handleSubmit}>
+            <div className="upload-thumbnail">
+              <img src={this.state.photo_url} />
+            </div>
             <button className="upload-button-in-modal" onClick={this.upload}>
               <i className="fa fa-camera" aria-hidden="true" />&nbsp; Choose
               Photo
             </button>
-            <label>
+            <label className="upload-form-label">
               Photo Title:
               <input
                 type="text"
@@ -128,22 +125,19 @@ class UploadButton extends React.Component {
                 className="photo-title glowing-border"
               />
             </label>
-            <label>
+            <label className="upload-form-label">
               Photo Description:
               <textarea
                 value={this.state.photo_description}
                 onChange={this.update("photo_description")}
-                className="photo-title glowing-border"
+                className="photo-description glowing-border"
                 placeholder="(Optional)"
               />
             </label>
-            <div className="upload-thumbnail">
-              <img src={this.state.photo_url} />
-            </div>
             <input
               className="upload-submit-button"
               type="submit"
-              value="Submit your new baby!!!"
+              value="Submit"
             />
             <button className="upload-cancel-button" onClick={this.closeModal}>
               Cancel
@@ -156,3 +150,10 @@ class UploadButton extends React.Component {
 }
 
 export default UploadButton;
+
+// <h2
+//   className="edit-form-greeting"
+//   ref={subtitle => (this.subtitle = subtitle)}
+// >
+//   Hello User!
+// </h2>
