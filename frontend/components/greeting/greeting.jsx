@@ -28,7 +28,7 @@ const personalGreeting = (currentUser, logout) => (
       <Link to={currentUser ? "/feed" : "/"}>Zoomm</Link>
     </div>
     <div className="navbar-right">
-      <Link to={`user/${currentUser.id}`}>Profile</Link>
+      <Link to={`/user/${currentUser.id}`}>Profile</Link>
       <UploadButtonContainer />
       <button onClick={logout} className="log-out-button">
         <i className="fa fa-sign-out" aria-hidden="true" />&nbsp; Log Out
