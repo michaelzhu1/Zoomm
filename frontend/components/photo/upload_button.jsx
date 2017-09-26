@@ -111,7 +111,7 @@ class UploadButton extends React.Component {
           contentLabel="PhotoUpload"
         >
           <form className="upload-photo-form" onSubmit={this.handleSubmit}>
-            <div className="upload-thumbnail" placeholder="Photo">
+            <div className="upload-thumbnail">
               <img src={this.state.photo_url} />
             </div>
             <button className="upload-button-in-modal" onClick={this.upload}>

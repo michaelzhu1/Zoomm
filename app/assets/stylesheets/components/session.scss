@@ -91,7 +91,7 @@ body {
 
 .glowing-border {
   border: 2px solid #dadada;
-  border-radius: 7px;
+  border-radius: 5px;
 }
 
 .glowing-border:focus {
@@ -138,7 +138,8 @@ h1 .homepage-nav-link:hover {
 }
 
 .log-out-button {
-  height: 10px;
+  height: 15px;
+  margin-right: 20;
 }
 
 h3 {

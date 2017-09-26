@@ -111,26 +111,31 @@ class UserIndexPhotos extends React.Component {
             </div>
 
             <div className="photo-show-right">
-              <h3>Edit Photo</h3>
+              <h3>Edit Photo Info</h3>
               <form className="photo-show-form" onSubmit={this.updatePhoto}>
                 {this.props.currentUser.username}
-                <h4>Photo Title</h4>
+                <h4>Title</h4>
                 <input
                   type="text"
                   value={this.state.photo.photo_title}
                   onChange={this.update("photo_title")}
-                  className="photo-info-title"
+                  className="photo-info-title glowing-border"
                 />
-                <h4>Photo Description</h4>
+                <h4>Description</h4>
                 <textarea
                   value={this.state.photo.photo_description || ""}
                   onChange={this.update("photo_description")}
-                  className="photo-info-description"
+                  className="photo-info-description glowing-border"
                 />
-                <input type="submit" value="Save" />
+                <input className="save-photo-info" type="submit" value="Save" />
               </form>
               <button onClick={this.closeModal}>Cancel</button>
-              <button onClick={this.deletePhoto}>Delete Photo</button>
+              <button
+                className="delete-photo-button"
+                onClick={this.deletePhoto}
+              >
+                Delete Photo
+              </button>
             </div>
           </div>
         </Modal>
