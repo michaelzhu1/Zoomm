@@ -49,6 +49,7 @@ class ProfileUpdate extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateProfilePhoto = this.updateProfilePhoto.bind(this);
+    // this.followOrEditButton = this.followOrEditButton.bind(this);
   }
 
   openModal() {
@@ -66,7 +67,7 @@ class ProfileUpdate extends React.Component {
 
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.userId);
-    console.log(this.props);
+    // console.log(this.props);
   }
 
   update(field) {
@@ -132,15 +133,43 @@ class ProfileUpdate extends React.Component {
     );
   }
 
+  followOrEditButton() {
+    if (this.props.currentUser) {
+      if (this.props.currentUser.id == this.props.match.params.userId) {
+        return (
+          <button className="edit-profile-button" onClick={this.openModal}>
+            Edit Profile
+          </button>
+        );
+      } else if (this.props.follows.includes(this.props.user.id)) {
+        return (
+          <button
+            className="edit-profile-button"
+            onClick={() => this.props.unfollow(this.props.user.id)}
+          >
+            Following
+          </button>
+        );
+      } else {
+        return (
+          <button
+            className="edit-profile-button"
+            onClick={() => this.props.follow(this.props.user.id)}
+          >
+            Follow
+          </button>
+        );
+      }
+    }
+  }
+
   render() {
     return (
       <div className="profile-form">
         {this.coverPhoto()}
         {this.profilePhoto()}
         <div>
-          <button className="edit-profile-button" onClick={this.openModal}>
-            Edit Profile
-          </button>
+          {this.followOrEditButton()}
           <Modal
             isOpen={this.state.modalIsOpen}
             onAfterOpen={this.afterOpenModal}

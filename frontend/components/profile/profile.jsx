@@ -7,14 +7,22 @@ class Profile extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    console.log(this.props);
+  }
+
   render() {
     return (
       <div>
         <ProfileUpdate
           user={this.props.user}
           currentUser={this.props.currentUser}
+          follows={this.props.follows}
           fetchUser={this.props.fetchUser}
           updateUser={this.props.updateUser}
+          fetchFollows={this.props.fetchFollows}
+          follow={this.props.follow}
+          unfollow={this.props.unfollow}
         />
         <UserIndexPhotos
           fetchPhotos={this.props.fetchPhotos}

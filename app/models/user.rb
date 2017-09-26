@@ -31,15 +31,16 @@ class User < ApplicationRecord
     foreign_key: :following_id,
     class_name: :Follow
 
-  has_many :followers,
-    through: :follows,
-    source: :follower
 
   has_many :followings,
     primary_key: :id,
     foreign_key: :follower_id,
     class_name: :Follow
 
+  has_many :followers,
+    through: :follows,
+    source: :follower
+    
   has_many :followees,
     through: :followings,
     source: :followee
