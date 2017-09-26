@@ -28,6 +28,15 @@ const customStyles = {
   }
 };
 
+const styles = {
+  backgroundSize: "cover",
+  backgroundColor: "gray",
+  width: "100%",
+  height: "420px"
+};
+
+
+
 class ProfileUpdate extends React.Component {
   constructor(props) {
     super(props);
@@ -89,6 +98,16 @@ class ProfileUpdate extends React.Component {
     );
   }
 
+  coverPhoto() {
+    if (this.props.user.cover_img_url) {
+      styles.background = `url(${this.props.user.cover_img_url}) fixed top center no-repeat`;
+    }
+    return (
+      <div style={styles}>
+      </div>
+    );
+  }
+
   updateProfilePhoto() {
     cloudinary.openUploadWidget(
       window.CLOUDINARY_OPTIONS,
@@ -117,14 +136,17 @@ class ProfileUpdate extends React.Component {
     );
   }
 
+
+
   render() {
     return (
       <div className="profile-form">
+        {this.coverPhoto()}
         {this.profilePhoto()}
-        <button className="edit-profile-button" onClick={this.openModal}>
-          Edit Profile
-        </button>
         <div>
+          <button className="edit-profile-button" onClick={this.openModal}>
+            Edit Profile
+          </button>
           <Modal
             isOpen={this.state.modalIsOpen}
             onAfterOpen={this.afterOpenModal}
