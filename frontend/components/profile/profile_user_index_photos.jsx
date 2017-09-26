@@ -111,7 +111,7 @@ class UserIndexPhotos extends React.Component {
             </div>
 
             <div className="photo-show-right">
-              <h3>Edit Photo Info</h3>
+              <h2>Edit Photo Info</h2>
               <form className="photo-show-form" onSubmit={this.updatePhoto}>
                 {this.props.currentUser.username}
                 <h4>Title</h4>

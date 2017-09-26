@@ -161,11 +161,13 @@ div .profile-form {
 .photo-info-title {
   height: 25px;
   border: 2px solid $lightest-gray;
+  padding: 5px;
 }
 
 .photo-info-description {
   height: 120px;
   border: 2px solid $lightest-gray;
+  padding: 5px;
 }
 
 ul {
@@ -239,4 +241,10 @@ ul {
   font-weight: bold;
   font-family: sans-serif;
   margin-top: 80px;
+}
+
+.photo-show-right h2 {
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
 }
