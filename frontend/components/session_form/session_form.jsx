@@ -62,7 +62,7 @@ class SessionForm extends React.Component {
       return (
         <div>
           <Link className="session-link" to="/signup">
-            Need an account?
+            Need an account? Sign up now!
           </Link>
         </div>
       );
@@ -70,7 +70,7 @@ class SessionForm extends React.Component {
       return (
         <div>
           <Link className="session-link" to="/login">
-            Already have an account?
+            Already have an account? Sign in here!
           </Link>
         </div>
       );
@@ -82,7 +82,7 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form">
-          <h3>Welcome to Zoomm!</h3>
+          <h3 className="welcome">Welcome to Zoomm!</h3>
           <br />
           {this.navLink()}
           {this.errors()}
@@ -115,6 +115,8 @@ class SessionForm extends React.Component {
           />
           {this.demoLogin()}
         </form>
+        <h1>
+        </h1>
       </div>
     );
   }

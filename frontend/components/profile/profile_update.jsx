@@ -32,10 +32,8 @@ const styles = {
   backgroundSize: "cover",
   backgroundColor: "gray",
   width: "100%",
-  height: "420px"
+  height: "400px"
 };
-
-
 
 class ProfileUpdate extends React.Component {
   constructor(props) {
@@ -85,8 +83,8 @@ class ProfileUpdate extends React.Component {
   }
 
   profilePhoto() {
-    let imgurl = this.state.user.cover_img_url;
-    const backgroundImage = { backgroundImage: `url(` + imgurl + `)` };
+    // let imgurl = this.state.user.cover_img_url;
+    // const backgroundImage = { backgroundImage: `url(` + imgurl + `)` };
     return (
       <div className="profile-photo-div">
         <img
@@ -100,12 +98,10 @@ class ProfileUpdate extends React.Component {
 
   coverPhoto() {
     if (this.props.user.cover_img_url) {
-      styles.background = `url(${this.props.user.cover_img_url}) fixed top center no-repeat`;
+      styles.background = `url(${this.props.user
+        .cover_img_url}) fixed top center no-repeat`;
     }
-    return (
-      <div style={styles}>
-      </div>
-    );
+    return <div style={styles} />;
   }
 
   updateProfilePhoto() {
@@ -136,8 +132,6 @@ class ProfileUpdate extends React.Component {
     );
   }
 
-
-
   render() {
     return (
       <div className="profile-form">
@@ -160,7 +154,7 @@ class ProfileUpdate extends React.Component {
             >
               Hello {this.props.currentUser.username}!
             </h2>
-            <div>{this.profilePhoto()}</div>
+            <div className="edit-profile-photo">{this.profilePhoto()}</div>
 
             <form className="edit-profile-form" onSubmit={this.handleSubmit}>
               <label>Username: {this.props.currentUser.username}</label>

@@ -1,11 +1,11 @@
 .login-form-container {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   // display: flex;
   align-items: center;
   font-size: 16px;
   float: left;
-  font-family: $serif;
+  font-family: $sans-serif;
   background-image: url("http://res.cloudinary.com/foolishhunger/image/upload/v1506196087/su9jtvxafq5htqyo5np3.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -108,6 +108,7 @@ body {
   color: blue;
   text-decoration: underline;
   margin: 0 auto;
+  font-family: sans-serif;
 }
 
 .error-messages {
@@ -142,8 +143,8 @@ h1 .homepage-nav-link:hover {
   margin-right: 20;
 }
 
-h3 {
-  font-size: 18px;
+.welcome {
+  font-size: 22px;
   font-weight: bold;
   text-align: center;
 }

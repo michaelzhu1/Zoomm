@@ -124,7 +124,6 @@ div .profile-form {
 
 .photo-info {
   border: red;
-  // display: inline-block;
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -155,19 +154,16 @@ div .profile-form {
 .photo-show-form {
   display: flex;
   flex-direction: column;
-  // justify-content: space-around;
   height: 50vh;
   margin-top: 20px;
 }
 
 .photo-info-title {
-  // background-color: grey;
   height: 25px;
   border: 2px solid $lightest-gray;
 }
 
 .photo-info-description {
-  // background-color: grey;
   height: 120px;
   border: 2px solid $lightest-gray;
 }
@@ -179,13 +175,6 @@ ul {
   flex-wrap: wrap;
   display: flex;
 }
-
-// li {
-//   width: auto;
-//   margin: 10px 10px;
-//   height: 300px;
-//   text-align: -webkit-center;
-// }
 
 .profile-index-photo {
   width: auto;
@@ -199,15 +188,10 @@ ul {
   height: 100%;
 }
 
-// div .profile-photo {
-//   display: flex;
-// }
-
 .profile-photo-div {
   display: flex;
   justify-content: center;
 }
-
 .profile-photo {
   max-width: 150px;
   max-height: 150px;
@@ -217,40 +201,18 @@ ul {
   border-color: white;
   border-width: 3px;
 }
+.edit-profile-photo img {
+  align-self: flex-end;
+}
 
 .profile-photo:hover {
   cursor: pointer;
   opacity: 0.95;
-  // position: absolute;
-  // z-index: -1;
 }
 
 .cover-photo:hover {
   cursor: pointer;
 }
-//
-// .cover-photo {
-//   // display: block;
-//   // position: absolute;
-//   // top: 0;
-//   // right: 0;
-//   // bottom: 0;
-//   // left: 0;
-//   // background-repeat: no-repeat;
-//   // background-size: cover;
-//   // // background-position: center;
-//   // overflow: scroll;
-//   // z-index: -100;
-//   // position: absolute;
-//   // height: 300px;
-//   width: 100%;
-// }
-//
-// .cover-photo img {
-//   width: 100%;
-//   height: 400px;
-// }
-
 .delete-photo-button {
   background-color: #b9c1c7;
   width: 70px;
@@ -276,6 +238,5 @@ ul {
   color: white;
   font-weight: bold;
   font-family: sans-serif;
-  // margin-bottom: 15px;
   margin-top: 80px;
 }
