@@ -175,7 +175,7 @@ class ProfileUpdate extends React.Component {
                 onChange={this.update("profile_img_url")}
                 value={
                   this.state.user.profile_img_url ===
-                  "http://res.cloudinary.com/foolishhunger/image/upload/v1506356812/contacts-512_m08nd3.png"
+                  "http://www.zeppfeed.com/media/uploads/users/default.png"
                     ? ""
                     : this.state.user.profile_img_url
                 }

@@ -7,8 +7,7 @@ class SessionForm extends React.Component {
     this.state = {
       username: "",
       password: "",
-      profile_img_url:
-        "http://res.cloudinary.com/foolishhunger/image/upload/v1506356812/contacts-512_m08nd3.png"
+      profile_img_url: "http://www.zeppfeed.com/media/uploads/users/default.png"
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
@@ -115,8 +114,7 @@ class SessionForm extends React.Component {
           />
           {this.demoLogin()}
         </form>
-        <h1>
-        </h1>
+        <h1 />
       </div>
     );
   }
