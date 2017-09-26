@@ -46,6 +46,7 @@ class UserIndexPhotos extends React.Component {
 
   componentDidMount() {
     this.props.fetchPhotos();
+    console.log(this.props);
   }
 
   deletePhoto() {
@@ -87,12 +88,51 @@ class UserIndexPhotos extends React.Component {
     };
   }
 
-  // closePhotoModal() {
-  //   this.setState({ photo: {} });
-  //   this.closeModal();
-  // }
+  viewOrEditPhoto() {
+    if (this.props.currentUser.id == this.props.match.params.userId) {
+      return (
+        <div className="photo-show-right">
+          <h2>Edit Photo Info</h2>
+          <form className="photo-show-form" onSubmit={this.updatePhoto}>
+            {this.props.currentUser.username}
+            <h4>Title</h4>
+            <input
+              type="text"
+              value={this.state.photo.photo_title}
+              onChange={this.update("photo_title")}
+              className="photo-info-title glowing-border"
+            />
+            <h4>Description</h4>
+            <textarea
+              value={this.state.photo.photo_description || ""}
+              onChange={this.update("photo_description")}
+              className="photo-info-description glowing-border"
+            />
+            <input className="save-photo-info" type="submit" value="Save" />
+          </form>
+          <button onClick={this.closeModal}>Cancel</button>
+          <button className="delete-photo-button" onClick={this.deletePhoto}>
+            Delete Photo
+          </button>
+        </div>
+      );
+    } else {
+      return (
+        <div className="photo-show-right">
+          <h2>Edit Photo Info</h2>
+          <form className="photo-show-form" onSubmit={this.updatePhoto}>
+            {this.props.currentUser.username}
+            <h4>Title</h4>
+            {this.state.photo.photo_title}
 
-  displayCoverPhoto() {}
+            <h4>Description</h4>
+            {this.state.photo.photo_description || ""}
+          </form>
+          <button onClick={this.closeModal}>Cancel</button>
+        </div>
+      );
+    }
+  }
 
   render() {
     return (
@@ -110,33 +150,7 @@ class UserIndexPhotos extends React.Component {
               <img src={this.state.photo.photo_url} />
             </div>
 
-            <div className="photo-show-right">
-              <h2>Edit Photo Info</h2>
-              <form className="photo-show-form" onSubmit={this.updatePhoto}>
-                {this.props.currentUser.username}
-                <h4>Title</h4>
-                <input
-                  type="text"
-                  value={this.state.photo.photo_title}
-                  onChange={this.update("photo_title")}
-                  className="photo-info-title glowing-border"
-                />
-                <h4>Description</h4>
-                <textarea
-                  value={this.state.photo.photo_description || ""}
-                  onChange={this.update("photo_description")}
-                  className="photo-info-description glowing-border"
-                />
-                <input className="save-photo-info" type="submit" value="Save" />
-              </form>
-              <button onClick={this.closeModal}>Cancel</button>
-              <button
-                className="delete-photo-button"
-                onClick={this.deletePhoto}
-              >
-                Delete Photo
-              </button>
-            </div>
+            {this.viewOrEditPhoto()}
           </div>
         </Modal>
       </div>

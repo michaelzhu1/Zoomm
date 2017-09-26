@@ -15,6 +15,10 @@ div .profile-form {
   }
 }
 
+.cover-photo:hover {
+  cursor: pointer;
+}
+
 .edit-profile-button {
   display: inline-block;
   justify-content: flex-end;

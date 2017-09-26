@@ -84,8 +84,6 @@ class ProfileUpdate extends React.Component {
   }
 
   profilePhoto() {
-    // let imgurl = this.state.user.cover_img_url;
-    // const backgroundImage = { backgroundImage: `url(` + imgurl + `)` };
     return (
       <div className="profile-photo-div">
         <img
@@ -102,7 +100,13 @@ class ProfileUpdate extends React.Component {
       styles.background = `url(${this.props.user
         .cover_img_url}) fixed top center no-repeat`;
     }
-    return <div style={styles} />;
+    return (
+      <div
+        className="cover-photo"
+        style={styles}
+        onClick={this.updateCoverPhoto}
+      />
+    );
   }
 
   updateProfilePhoto() {
