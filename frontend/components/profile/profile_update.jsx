@@ -49,6 +49,7 @@ class ProfileUpdate extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateProfilePhoto = this.updateProfilePhoto.bind(this);
+    this.updateCoverPhoto = this.updateCoverPhoto.bind(this);
     // this.followOrEditButton = this.followOrEditButton.bind(this);
   }
 
@@ -115,9 +116,9 @@ class ProfileUpdate extends React.Component {
       window.CLOUDINARY_OPTIONS,
       function(error, images) {
         if (error === null) {
-          let newUser = this.props.currentUser;
+          let newUser = merge({}, this.props.currentUser);
           newUser.profile_img_url = images[0].url;
-          this.props.updateUser(this.state.currentUser);
+          this.props.updateUser(newUser);
           this.setState({ currentUser: newUser });
         }
       }.bind(this)
@@ -129,9 +130,9 @@ class ProfileUpdate extends React.Component {
       window.CLOUDINARY_OPTIONS,
       function(error, images) {
         if (error === null) {
-          let newUser = this.props.currentUser;
+          let newUser = merge({}, this.props.currentUser);
           newUser.cover_img_url = images[0].url;
-          this.props.updateUser(this.state.currentUser);
+          this.props.updateUser(newUser);
           this.setState({ currentUser: newUser });
         }
       }.bind(this)

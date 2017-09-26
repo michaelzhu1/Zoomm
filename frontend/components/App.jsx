@@ -18,6 +18,3 @@ const App = () => (
 );
 
 export default App;
-// <ProtectedRoute path="/user/:userId/upload" component={PhotosContainer} />
-
-// <Route path="/feed" component={FeedContainer} />
