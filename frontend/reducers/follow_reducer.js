@@ -5,6 +5,7 @@ import {
 } from "../actions/follow_action";
 const FollowReducer = (state = [], action) => {
   Object.freeze(state);
+  // debugger
   switch (action.type) {
     case RECEIVE_FOLLOWS:
       return action.follows;

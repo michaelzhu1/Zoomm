@@ -12,14 +12,15 @@ class Api::FollowsController < ApplicationController
   end
 
   def index
-    @followee_ids = current_user.followees.idea
-    render json: @followee_ids
+    # debugger
+    @followees = current_user.follows
+    render json: @followees
   end
 
   def destroy
     @follow = Follow.find_by(following_id: follow_params[:following_id], follower_id: current_user.id)
     @follow.destroy
-    render json: @follow 
+    render json: @follow
   end
 
   def follow_params

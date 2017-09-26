@@ -5,7 +5,8 @@ import { fetchUser, updateUser } from "../../actions/profile_action";
 import {
   fetchPhotos,
   removePhoto,
-  updatePhoto
+  updatePhoto,
+  fetchUserPhotos
 } from "../../actions/photo_action";
 import { fetchFollows, follow, unfollow } from "../../actions/follow_action";
 
@@ -24,7 +25,8 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   updatePhoto: photo => dispatch(updatePhoto(photo)),
   fetchFollows: () => dispatch(fetchFollows()),
   follow: id => dispatch(follow(id)),
-  unfollow: id => dispatch(unfollow(id))
+  unfollow: id => dispatch(unfollow(id)),
+  fetchUserPhotos: id => dispatch(fetchUserPhotos(id))
 });
 
 export default withRouter(

@@ -29,3 +29,12 @@ export const updatePhoto = photo =>
     url: `/api/photos/${photo.id}`,
     data: {photo}
   });
+
+
+export const fetchUserPhotos = (id) => (
+  $.ajax({
+    method: "GET",
+    url: '/api/photos',
+    data: {id}
+  })
+);

@@ -7,8 +7,13 @@ class Profile extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    console.log(this.props);
+  componentWillReceiveProps(newProps) {
+    // debugger
+    if (this.props.user.id !== parseInt(newProps.match.params.userId)) {
+      this.props.fetchUser(this.props.match.params.userId);
+      this.props.fetchFollows();
+      this.props.fetchUserPhotos(this.props.match.params.userId);
+    }
   }
 
   render() {
@@ -25,11 +30,13 @@ class Profile extends React.Component {
           unfollow={this.props.unfollow}
         />
         <UserIndexPhotos
-          fetchPhotos={this.props.fetchPhotos}
-          photos={this.props.photos}
-          removePhoto={this.props.removePhoto}
+          user={this.props.user}
           currentUser={this.props.currentUser}
+          photos={this.props.photos}
+          fetchPhotos={this.props.fetchPhotos}
+          removePhoto={this.props.removePhoto}
           updatePhoto={this.props.updatePhoto}
+          fetchUserPhotos={this.props.fetchUserPhotos}
         />
       </div>
     );

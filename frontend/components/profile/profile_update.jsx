@@ -41,7 +41,7 @@ class ProfileUpdate extends React.Component {
     this.state = {
       modalIsOpen: false,
       modalIsOpen2: false,
-      user: this.props.currentUser,
+      currentUser: this.props.currentUser,
       profile_img_url: ""
     };
     this.openModal = this.openModal.bind(this);
@@ -66,21 +66,22 @@ class ProfileUpdate extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUser(this.props.match.params.userId);
-    // console.log(this.props);
+    // this.props.fetchUser(this.props.match.params.userId);
+    console.log(this.props);
+    // this.props.fetchFollows();
   }
 
   update(field) {
     return e => {
-      let newUserInfo = merge({}, { id: this.props.user.id }, this.state.user);
+      let newUserInfo = merge({}, { id: this.props.currentUser.id }, this.state.currentUser);
       newUserInfo[[field]] = e.currentTarget.value;
-      this.setState({ user: newUserInfo });
+      this.setState({ currentUser: newUserInfo });
     };
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateUser(this.state.user).then(() => this.closeModal());
+    this.props.updateUser(this.state.currentUser).then(() => this.closeModal());
   }
 
   profilePhoto() {
@@ -89,7 +90,7 @@ class ProfileUpdate extends React.Component {
         <img
           className="profile-photo"
           onClick={this.updateProfilePhoto}
-          src={this.state.user.profile_img_url}
+          src={this.props.user.profile_img_url}
         />
       </div>
     );
@@ -116,8 +117,8 @@ class ProfileUpdate extends React.Component {
         if (error === null) {
           let newUser = this.props.currentUser;
           newUser.profile_img_url = images[0].url;
-          this.props.updateUser(this.state.user);
-          this.setState({ user: newUser });
+          this.props.updateUser(this.state.currentUser);
+          this.setState({ currentUser: newUser });
         }
       }.bind(this)
     );
@@ -130,8 +131,8 @@ class ProfileUpdate extends React.Component {
         if (error === null) {
           let newUser = this.props.currentUser;
           newUser.cover_img_url = images[0].url;
-          this.props.updateUser(this.state.user);
-          this.setState({ user: newUser });
+          this.props.updateUser(this.state.currentUser);
+          this.setState({ currentUser: newUser });
         }
       }.bind(this)
     );
@@ -145,11 +146,11 @@ class ProfileUpdate extends React.Component {
             Edit Profile
           </button>
         );
-      } else if (this.props.follows.includes(this.props.user.id)) {
+      } else if (this.props.follows.includes(this.props.currentUser.id)) {
         return (
           <button
             className="edit-profile-button"
-            onClick={() => this.props.unfollow(this.props.user.id)}
+            onClick={() => this.props.unfollow(this.props.currentUser.id)}
           >
             Following
           </button>
@@ -158,7 +159,7 @@ class ProfileUpdate extends React.Component {
         return (
           <button
             className="edit-profile-button"
-            onClick={() => this.props.follow(this.props.user.id)}
+            onClick={() => this.props.follow(this.props.currentUser.id)}
           >
             Follow
           </button>
@@ -199,7 +200,7 @@ class ProfileUpdate extends React.Component {
                 <textarea
                   className="bio-textarea glowing-border"
                   onChange={this.update("bio")}
-                  value={this.state.user.bio || ""}
+                  value={this.state.currentUser.bio || ""}
                 />
               </label>
               <label>Profile image url:</label>
@@ -207,10 +208,10 @@ class ProfileUpdate extends React.Component {
                 type="text"
                 onChange={this.update("profile_img_url")}
                 value={
-                  this.state.user.profile_img_url ===
+                  this.state.currentUser.profile_img_url ===
                   "http://www.zeppfeed.com/media/uploads/users/default.png"
                     ? ""
-                    : this.state.user.profile_img_url
+                    : this.state.currentUser.profile_img_url
                 }
                 className="glowing-border profile-form-input"
               />
@@ -219,7 +220,7 @@ class ProfileUpdate extends React.Component {
               <input
                 type="text"
                 onChange={this.update("cover_img_url")}
-                value={this.state.user.cover_img_url || ""}
+                value={this.state.currentUser.cover_img_url || ""}
                 className="glowing-border profile-form-input"
               />
               <br />

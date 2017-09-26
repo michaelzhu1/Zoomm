@@ -3,9 +3,14 @@ class Api::PhotosController < ApplicationController
   before_action :require_logged_in
 
   def index
-    @photos = current_user.photos
+    if params[:id]
+      @photos = Photo.where("author_id = ?", params[:id])
+    else
+      @photos = Photo.all
+    end
     render "api/photos/index"
   end
+
 
   def create
     @photo = Photo.new(photo_params)

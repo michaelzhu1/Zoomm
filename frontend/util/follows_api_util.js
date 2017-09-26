@@ -21,6 +21,6 @@ export const deleteFollow = followingId => {
 export const getFollows = () => {
   return $.ajax({
     method: "GET",
-    url: "/api/follows"
+    url: "/api/follows",
   });
 };
