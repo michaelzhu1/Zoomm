@@ -78,6 +78,7 @@ div .profile-form {
 
 .edit-profile-form {
   float: left;
+  font-size: 14px;
 }
 
 [class^="icon-"],
@@ -124,12 +125,15 @@ div .profile-form {
 
 .photo-show-left img {
   max-width: 60vw;
-  max-height: 90vh;
+  max-height: 80vh;
 }
 
 .photo-show-right {
   display: flex;
   flex-direction: column;
+  margin-left: 15px;
+  margin-right: 10px;
+  width: 100%;
 }
 
 .photo-show-form {

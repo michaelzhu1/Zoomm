@@ -13,6 +13,8 @@ const customStyles = {
       backgroundColor: "rgba(255, 255, 255, 0.95)",
       zIndex: 10
     },
+    width: "80vw",
+    height: "90vh",
     top: "50%",
     left: "50%",
     right: "auto",
@@ -109,7 +111,7 @@ class UploadButton extends React.Component {
           contentLabel="PhotoUpload"
         >
           <form className="upload-photo-form" onSubmit={this.handleSubmit}>
-            <div className="upload-thumbnail">
+            <div className="upload-thumbnail" placeholder="Photo">
               <img src={this.state.photo_url} />
             </div>
             <button className="upload-button-in-modal" onClick={this.upload}>

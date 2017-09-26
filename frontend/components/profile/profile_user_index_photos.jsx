@@ -6,8 +6,10 @@ import { withRouter } from "react-router-dom";
 
 const customStyles = {
   content: {
-    height: "90vh",
-    width: "80vw",
+    padding: "30px",
+    boxSizing: "border-box",
+    MaxHeight: "90vh",
+    MaxWidth: "80vw",
     top: "50%",
     left: "50%",
     right: "auto",
