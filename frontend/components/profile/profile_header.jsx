@@ -199,7 +199,13 @@ class ProfileHeader extends React.Component {
         {this.coverPhoto()}
         {this.profilePhoto()}
         <div>
-          {this.followOrEditButton()}
+          <div className="edit-profile-div">
+            {this.followOrEditButton()}
+          </div>
+          <div className="user-info">
+            <h3 className="username-in-profile">{this.props.user.username}</h3>
+            <h4 className="bio-in-profile">{this.props.user.bio}</h4>
+          </div>
           <Modal
             isOpen={this.state.modalIsOpen}
             onAfterOpen={this.afterOpenModal}

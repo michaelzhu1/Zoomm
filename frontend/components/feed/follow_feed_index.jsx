@@ -6,11 +6,15 @@ class FeedIndex extends React.component{
   }
 
   componentDidMount() {
-    
+
   }
 
   render() {
+    return(
+      <div>
 
+      </div>
+    );
   }
 }
 

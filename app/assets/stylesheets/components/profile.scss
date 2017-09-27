@@ -20,8 +20,9 @@ div .profile-form {
 }
 
 .edit-profile-button {
-  display: inline-block;
-  justify-content: flex-end;
+  // display: inline-block;
+  // justify-content: flex-end;
+  margin-top: 10px;
   height: 30px;
   outline: none;
   font-weight: bold;
@@ -33,7 +34,34 @@ div .profile-form {
   text-shadow: 0px 1px 0px #0088cc;
   box-shadow: 0px 1px 0px #0088cc;
   font-size: 14px;
-  margin-top: 56px;
+  // margin-top: 56px;
+}
+
+.edit-profile-div {
+  width: 90vw;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.username-in-profile {
+  font-size: 20px;
+  // display: flex;
+  // justify-content: center;
+  padding: 5px;
+  margin-top: 20px;
+  position: absolute;
+}
+
+.bio-in-profile {
+  margin-top: 50px;
+  font-size: 20px;
+  font-weight: normal;
+  border-bottom: $light-gray 2px solid;
+}
+
+.user-info {
+  display: flex;
+  justify-content: center;
 }
 
 .edit-profile-button:hover {
@@ -175,7 +203,7 @@ div .profile-form {
 }
 
 ul {
-  margin-top: 25px;
+  // margin-top: 25px;
   width: 100%;
   justify-content: center;
   flex-wrap: wrap;
