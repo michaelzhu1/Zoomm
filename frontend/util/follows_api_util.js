@@ -1,26 +1,22 @@
-export const postFollow = followingId => {
+export const postFollow = follow => {
   return $.ajax({
     method: "POST",
     url: `api/follows`,
-    data: {
-      follow: { following_id: followingId }
-    }
+    data: follow
   });
 };
 
-export const deleteFollow = followingId => {
+export const deleteFollow = follow => {
   return $.ajax({
     method: "DELETE",
-    url: `api/follows/${followingId}`,
-    data: {
-      follow: { following_id: followingId }
-    }
+    url: `api/follows/${follow.user_id}`,
+    data: follow
   });
 };
 
-export const getFollows = () => {
-  return $.ajax({
-    method: "GET",
-    url: "/api/follows",
-  });
-};
+// export const getFollows = () => {
+//   return $.ajax({
+//     method: "GET",
+//     url: "/api/follows",
+//   });
+// };

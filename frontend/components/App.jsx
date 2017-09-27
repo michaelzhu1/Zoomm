@@ -5,6 +5,7 @@ import { Route } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import Profile from "./profile/profile";
 import SplashPlayer from "./splash/splash_player";
+import FeedIndexContainer from "./feed/follow_feed_container";
 // import PhotosContainer from "./photo/photo_container";
 
 const App = () => (
@@ -18,3 +19,5 @@ const App = () => (
 );
 
 export default App;
+
+// <ProtectedRoute path="/feed/:userId" component={FeedIndexContainer} />

@@ -58,7 +58,6 @@ class UploadButton extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchPhotos();
   }
 
   uploadImage(image) {

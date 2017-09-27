@@ -9,8 +9,7 @@ const RootReducer = combineReducers({
   session: SessionReducer,
   errors: ErrorsReducer,
   user: ProfileReducer,
-  photo: PhotoReducer,
-  follows: FollowReducer
+  photo: PhotoReducer
 });
 
 export default RootReducer;

@@ -35,3 +35,8 @@ export const updatePhoto = photo => dispatch =>
 
 export const fetchUserPhotos = (id) => dispatch =>
   APIUtil.fetchUserPhotos(id).then(photos => dispatch(receiveAllPhotos(photos)));
+
+// export const fetchUserFeed = () => dispatch =>
+//   APIUtil.fetchUserFeed().then(photos => dispatch(
+//     receiveAllPhotos(photos)
+//   ));

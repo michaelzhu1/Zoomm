@@ -45,19 +45,14 @@ class UserIndexPhotos extends React.Component {
   }
 
   componentDidMount() {
-    // this.props.fetchPhotos();
-    //
-    // console.log('component did mount', this.props.match.params.userId); this.props.fetchUserPhotos(this.props.match.params.userId);
-    // this.props.fetchUserPhotos(this.props.match.params.userId);
-    // console.log(this.props);
+    this.props.fetchUserPhotos(this.props.match.params.userId);
   }
 
   componentWillReceiveProps(newProps) {
     // debugger
     if (this.props.user.id !== parseInt(newProps.match.params.userId)) {
-      // this.props.fetchUser(this.props.match.params.userId);
+      this.props.fetchUser(this.props.match.params.userId);
       // this.props.fetchFollows();
-      this.props.fetchUserPhotos(this.props.match.params.userId);
     }
   }
 
@@ -79,6 +74,7 @@ class UserIndexPhotos extends React.Component {
   }
 
   displayPhotos() {
+    console.log(this.props.photos);
     return (
       <ul>
         {this.props.photos.map(photo => {

@@ -42,7 +42,12 @@ class ProfileHeader extends React.Component {
       modalIsOpen: false,
       modalIsOpen2: false,
       currentUser: this.props.currentUser,
-      profile_img_url: ""
+      id: this.props.user.id,
+      bio: this.props.user.bio,
+      profile_img_url: this.props.user.profile_img_url,
+      cover_img_url: this.props.user.cover_img_url,
+      followers: this.props.followers,
+      followings: this.props.followings
     };
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
@@ -52,7 +57,7 @@ class ProfileHeader extends React.Component {
     this.updateCoverPhoto = this.updateCoverPhoto.bind(this);
     this.coverPhoto = this.coverPhoto.bind(this);
     this.profilePhoto = this.profilePhoto.bind(this);
-        // this.followOrEditButton = this.followOrEditButton.bind(this);
+    // this.followOrEditButton = this.followOrEditButton.bind(this);
   }
 
   openModal() {
@@ -62,11 +67,30 @@ class ProfileHeader extends React.Component {
   componentWillReceiveProps(newProps) {
     // debugger
     if (this.props.user.id !== parseInt(newProps.match.params.userId)) {
-      this.props.fetchUser(this.props.match.params.userId);
-      this.props.fetchFollows();
+      this.props.fetchUser(newProps.match.params.userId);
       // this.props.fetchUserPhotos(this.props.match.params.userId);
     }
   }
+
+  componentWillReceiveProps(nextProps) {
+      if (this.props.user.id !== nextProps.user.id) {
+        this.setState({
+          id: nextProps.user.id,
+          bio: nextProps.user.bio,
+          profile_url: nextProps.user.profile_url,
+          cover_url: nextProps.user.cover_url,
+          followers: nextProps.followers,
+          followings: nextProps.followings
+        });
+      }
+    }
+
+//   componentWillUpdate(nextProps, nextState) {
+//   if (this.props.match.params.userId !== nextProps.match.params.userId) {
+//     // window.scrollTo(0, 0);
+//     this.props.fetchUser(nextProps.match.params.userId);
+//   }
+// }
 
   afterOpenModal() {
     // references are now sync'd and can be accessed.
@@ -78,8 +102,8 @@ class ProfileHeader extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props);
     this.props.fetchUser(this.props.match.params.userId);
+
     // console.log(this.props);
     // this.props.fetchFollows();
   }
@@ -122,8 +146,6 @@ class ProfileHeader extends React.Component {
         </div>
       );
     }
-
-
   }
 
   coverPhoto() {
@@ -140,24 +162,16 @@ class ProfileHeader extends React.Component {
       };
     }
     if (this.props.currentUser.id == this.props.match.params.userId) {
-
       return (
         <div
           className="cover-photo hover"
           style={styles}
           onClick={this.updateCoverPhoto}
-          />
+        />
       );
     } else {
-      return (
-        <div
-          className="cover-photo"
-          style={styles}
-          />
-      );
-
+      return <div className="cover-photo" style={styles} />;
     }
-
   }
 
   updateProfilePhoto() {
@@ -188,31 +202,46 @@ class ProfileHeader extends React.Component {
     );
   }
 
+  followButton() {
+    const userFollowers = this.props.followers.map(follower => {
+      return follower.id;
+    });
+    // debugger
+    if (userFollowers.includes(this.props.currentUser.id)) {
+      return (
+        <button
+          className="edit-profile-button"
+          onClick={() => this.props.unfollow({user_id: this.props.user.id})}
+        >
+          Following
+        </button>
+      );
+    } else {
+      return (
+        <button
+          className="edit-profile-button"
+          onClick={() => this.props.follow({user_id: this.props.user.id})}
+        >
+          Follow
+        </button>
+      );
+    }
+
+  }
+
   followOrEditButton() {
     if (this.props.currentUser) {
-      if (this.props.currentUser.id == this.props.match.params.userId) {
+      if (this.props.currentUser.id === parseInt(this.props.match.params.userId)) {
         return (
           <button className="edit-profile-button" onClick={this.openModal}>
             Edit Profile
           </button>
         );
-      } else if (this.props.follows.includes(this.props.currentUser.id)) {
-        return (
-          <button
-            className="edit-profile-button"
-            onClick={() => this.props.unfollow(this.props.currentUser.id)}
-          >
-            Following
-          </button>
-        );
       } else {
         return (
-          <button
-            className="edit-profile-button"
-            onClick={() => this.props.follow(this.props.currentUser.id)}
-          >
-            Follow
-          </button>
+          <div>
+            {this.followButton()}
+          </div>
         );
       }
     }
@@ -224,9 +253,7 @@ class ProfileHeader extends React.Component {
         {this.coverPhoto()}
         {this.profilePhoto()}
         <div>
-          <div className="edit-profile-div">
-            {this.followOrEditButton()}
-          </div>
+          <div className="edit-profile-div">{this.followOrEditButton()}</div>
           <div className="user-info">
             <h3 className="username-in-profile">{this.props.user.username}</h3>
             <h4 className="bio-in-profile">{this.props.user.bio}</h4>

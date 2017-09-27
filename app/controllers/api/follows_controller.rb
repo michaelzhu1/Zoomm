@@ -2,28 +2,21 @@ class Api::FollowsController < ApplicationController
   before_action :require_logged_in
 
   def create
-    @follow = Follow.new(follow_params)
+    @follow = Follow.new(following_id: params[:user_id])
     @follow.follower_id = current_user.id
     if @follow.save
-      render json: @follow
+      @user = User.find(params[:user_id])
+      render 'api/users/show'
     else
-      render json: @follow.errors.full_messages, status: 422
+      @user = User.find(params[:user_id])
+      render json: @user.errors.full_messages, status: 422
     end
   end
 
-  def index
-    # debugger
-    @followees = current_user.follows
-    render json: @followees
-  end
-
   def destroy
-    @follow = Follow.find_by(following_id: follow_params[:following_id], follower_id: current_user.id)
-    @follow.destroy
-    render json: @follow
-  end
-
-  def follow_params
-    params.require(:follow).permit(:following_id)
+    @follow = Follow.find_by(following_id: params[:user_id], follower_id: current_user.id)
+    @follow.destroy!
+    @user = User.find(params[:user_id])
+    render 'api/users/show'
   end
 end

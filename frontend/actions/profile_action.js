@@ -1,4 +1,5 @@
-import * as APIUtil from "../util/profile_api_util";
+import * as APIUtilUser from "../util/profile_api_util";
+import * as APIUtilFollow from "../util/follows_api_util";
 export const RECEIVE_USER = "RECEIVE_USER";
 export const UPDATE_USER = "UPDATE_USER";
 
@@ -15,9 +16,15 @@ export const modifyUser = user => ({
 
 
 export const fetchUser = (id) => dispatch =>
-  APIUtil.fetchUser(id).then(user =>
+  APIUtilUser.fetchUser(id).then(user =>
   dispatch(receiveUser(user)));
 
 export const updateUser = (user) => dispatch =>
-  APIUtil.updateUser(user).then(newuser=>
+  APIUtilUser.updateUser(user).then(newuser=>
   dispatch(modifyUser(newuser)));
+
+export const postFollow = follow => dispatch =>
+  APIUtilFollow.postFollow(follow).then(user => dispatch(receiveUser(user)));
+
+export const deleteFollow = follow => dispatch =>
+  APIUtilFollow.deleteFollow(follow).then(user => dispatch(receiveUser(user)));

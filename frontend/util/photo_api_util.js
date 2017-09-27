@@ -38,3 +38,10 @@ export const fetchUserPhotos = (id) => (
     data: {id}
   })
 );
+
+export const fetchUserFeed = () => (
+  $.ajax({
+    method: "GET",
+    url: '/api/feed',  
+  })
+);

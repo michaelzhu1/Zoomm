@@ -11,6 +11,16 @@ class Api::PhotosController < ApplicationController
     render "api/photos/index"
   end
 
+  def index_feed
+    @photos = [];
+    # debugger
+    current_user.followees.each do |followee|
+      @photos.push(followee.photos)
+    end
+    @photos = @photos.flatten
+    render "api/photos/index"
+  end
+
 
   def create
     @photo = Photo.new(photo_params)
