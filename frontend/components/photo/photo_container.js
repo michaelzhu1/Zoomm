@@ -1,5 +1,4 @@
 import { connect } from "react-redux";
-// import Photos from "./photo";
 import { fetchPhotos, postPhoto } from "../../actions/photo_action";
 import UploadButton from "./upload_button";
 

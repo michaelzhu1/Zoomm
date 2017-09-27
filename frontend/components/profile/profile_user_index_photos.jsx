@@ -52,6 +52,15 @@ class UserIndexPhotos extends React.Component {
     // console.log(this.props);
   }
 
+  componentWillReceiveProps(newProps) {
+    // debugger
+    if (this.props.user.id !== parseInt(newProps.match.params.userId)) {
+      // this.props.fetchUser(this.props.match.params.userId);
+      // this.props.fetchFollows();
+      this.props.fetchUserPhotos(this.props.match.params.userId);
+    }
+  }
+
   deletePhoto() {
     this.props.removePhoto(this.state.photo.id);
     this.closeModal();

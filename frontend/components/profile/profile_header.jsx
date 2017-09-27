@@ -28,14 +28,14 @@ const customStyles = {
   }
 };
 
-const styles = {
+let styles = {
   backgroundSize: "cover",
   backgroundColor: "gray",
   width: "100%",
   height: "400px"
 };
 
-class ProfileUpdate extends React.Component {
+class ProfileHeader extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -50,11 +50,22 @@ class ProfileUpdate extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateProfilePhoto = this.updateProfilePhoto.bind(this);
     this.updateCoverPhoto = this.updateCoverPhoto.bind(this);
-    // this.followOrEditButton = this.followOrEditButton.bind(this);
+    this.coverPhoto = this.coverPhoto.bind(this);
+    this.profilePhoto = this.profilePhoto.bind(this);
+        // this.followOrEditButton = this.followOrEditButton.bind(this);
   }
 
   openModal() {
     this.setState({ modalIsOpen: true });
+  }
+
+  componentWillReceiveProps(newProps) {
+    // debugger
+    if (this.props.user.id !== parseInt(newProps.match.params.userId)) {
+      this.props.fetchUser(this.props.match.params.userId);
+      this.props.fetchFollows();
+      // this.props.fetchUserPhotos(this.props.match.params.userId);
+    }
   }
 
   afterOpenModal() {
@@ -67,14 +78,19 @@ class ProfileUpdate extends React.Component {
   }
 
   componentDidMount() {
-    // this.props.fetchUser(this.props.match.params.userId);
+    console.log(this.props);
+    this.props.fetchUser(this.props.match.params.userId);
     // console.log(this.props);
     // this.props.fetchFollows();
   }
 
   update(field) {
     return e => {
-      let newUserInfo = merge({}, { id: this.props.currentUser.id }, this.state.currentUser);
+      let newUserInfo = merge(
+        {},
+        { id: this.props.currentUser.id },
+        this.state.currentUser
+      );
       newUserInfo[[field]] = e.currentTarget.value;
       this.setState({ currentUser: newUserInfo });
     };
@@ -98,9 +114,17 @@ class ProfileUpdate extends React.Component {
   }
 
   coverPhoto() {
+    // debugger
     if (this.props.user.cover_img_url) {
       styles.background = `url(${this.props.user
         .cover_img_url}) fixed top center no-repeat`;
+    } else {
+      styles = {
+        backgroundSize: "cover",
+        backgroundColor: "grey",
+        width: "100%",
+        height: "400px"
+      };
     }
     return (
       <div
@@ -246,9 +270,4 @@ class ProfileUpdate extends React.Component {
   }
 }
 
-export default withRouter(ProfileUpdate);
-
-// <i
-//   className="fa fa-user-circle-o fa-4x icon-profile"
-//   aria-hidden="true"
-// />
+export default withRouter(ProfileHeader);
