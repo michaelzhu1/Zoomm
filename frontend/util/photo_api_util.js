@@ -42,6 +42,6 @@ export const fetchUserPhotos = (id) => (
 export const fetchUserFeed = () => (
   $.ajax({
     method: "GET",
-    url: '/api/feed',  
+    url: '/api/feed',
   })
 );

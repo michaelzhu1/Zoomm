@@ -50,7 +50,7 @@ class ProfileHeader extends React.Component {
       followings: this.props.followings
     };
     this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
+    // this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateProfilePhoto = this.updateProfilePhoto.bind(this);
@@ -64,48 +64,44 @@ class ProfileHeader extends React.Component {
     this.setState({ modalIsOpen: true });
   }
 
-  componentWillReceiveProps(newProps) {
-    // debugger
-    if (this.props.user.id !== parseInt(newProps.match.params.userId)) {
-      this.props.fetchUser(newProps.match.params.userId);
-      // this.props.fetchUserPhotos(this.props.match.params.userId);
-    }
+  // componentWillReceiveProps(newProps) {
+  //   // debugger
+  //   if (this.props.user.id !== parseInt(newProps.match.params.userId)) {
+  //     this.props.fetchUser(newProps.match.params.userId);
+  //     // this.props.fetchUserPhotos(this.props.match.params.userId);
+  //   }
+  // }
+
+  // componentWillReceiveProps(nextProps) {
+  //     if (this.props.user.id !== nextProps.user.id) {
+  //       this.setState({
+  //         id: nextProps.user.id,
+  //         bio: nextProps.user.bio,
+  //         profile_url: nextProps.user.profile_url,
+  //         cover_url: nextProps.user.cover_url,
+  //         followers: nextProps.followers,
+  //         followings: nextProps.followings
+  //       });
+  //     }
+  //   }
+
+  //   componentWillUpdate(nextProps, nextState) {
+  //   if (this.props.match.params.userId !== nextProps.match.params.userId) {
+  //     // window.scrollTo(0, 0);
+  //     this.props.fetchUser(nextProps.match.params.userId);
+  //   }
+  // }
+  componentDidMount() {
+    this.props.fetchUser(this.props.match.params.userId);
   }
 
-  componentWillReceiveProps(nextProps) {
-      if (this.props.user.id !== nextProps.user.id) {
-        this.setState({
-          id: nextProps.user.id,
-          bio: nextProps.user.bio,
-          profile_url: nextProps.user.profile_url,
-          cover_url: nextProps.user.cover_url,
-          followers: nextProps.followers,
-          followings: nextProps.followings
-        });
-      }
-    }
-
-//   componentWillUpdate(nextProps, nextState) {
-//   if (this.props.match.params.userId !== nextProps.match.params.userId) {
-//     // window.scrollTo(0, 0);
-//     this.props.fetchUser(nextProps.match.params.userId);
-//   }
-// }
-
-  afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    this.subtitle.style.color = "#6288a5";
-  }
+  // afterOpenModal() {
+  //   // references are now sync'd and can be accessed.
+  //   this.subtitle.style.color = "#6288a5";
+  // }
 
   closeModal() {
     this.setState({ modalIsOpen: false });
-  }
-
-  componentDidMount() {
-    this.props.fetchUser(this.props.match.params.userId);
-
-    // console.log(this.props);
-    // this.props.fetchFollows();
   }
 
   update(field) {
@@ -211,7 +207,7 @@ class ProfileHeader extends React.Component {
       return (
         <button
           className="edit-profile-button"
-          onClick={() => this.props.unfollow({user_id: this.props.user.id})}
+          onClick={() => this.props.unfollow({ user_id: this.props.user.id })}
         >
           Following
         </button>
@@ -220,29 +216,26 @@ class ProfileHeader extends React.Component {
       return (
         <button
           className="edit-profile-button"
-          onClick={() => this.props.follow({user_id: this.props.user.id})}
+          onClick={() => this.props.follow({ user_id: this.props.user.id })}
         >
           Follow
         </button>
       );
     }
-
   }
 
   followOrEditButton() {
     if (this.props.currentUser) {
-      if (this.props.currentUser.id === parseInt(this.props.match.params.userId)) {
+      if (
+        this.props.currentUser.id === parseInt(this.props.match.params.userId)
+      ) {
         return (
           <button className="edit-profile-button" onClick={this.openModal}>
             Edit Profile
           </button>
         );
       } else {
-        return (
-          <div>
-            {this.followButton()}
-          </div>
-        );
+        return <div>{this.followButton()}</div>;
       }
     }
   }

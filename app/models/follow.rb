@@ -20,5 +20,4 @@ class Follow < ApplicationRecord
     foreign_key: :following_id,
     class_name: :User
 
-    
 end

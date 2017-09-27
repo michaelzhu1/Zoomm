@@ -4,16 +4,6 @@ import { withRouter } from "react-router-dom";
 import ProfileHeaderContainer from "./profile_header_container";
 import UserPhotosContainer from "./user_profile_photos_container";
 
-// import { fetchUser, updateUser } from "../../actions/profile_action";
-// import { fetchFollows, follow, unfollow } from "../../actions/follow_action";
-//
-// import {
-//   fetchPhotos,
-//   removePhoto,
-//   updatePhoto,
-//   fetchUserPhotos
-// } from "../../actions/photo_action";
-
 class Profile extends React.Component {
   // constructor(props) {
   //   super(props);
@@ -22,9 +12,8 @@ class Profile extends React.Component {
   // componentWillReceiveProps(newProps) {
   //   // debugger
   //   if (this.props.user.id !== parseInt(newProps.match.params.userId)) {
-  //     this.props.fetchUser(this.props.match.params.userId);
-  //     this.props.fetchFollows();
-  //     this.props.fetchUserPhotos(this.props.match.params.userId);
+  //     this.props.fetchUser(newProps.match.params.userId);
+  //     this.props.fetchUserPhotos(newProps.match.params.userId);
   //   }
   // }
 

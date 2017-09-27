@@ -22,10 +22,9 @@ const customStyles = {
 class UserIndexPhotos extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { photo: {}, modalIsOpen: false };
+    this.state = { photo: {}, modalIsOpen: false};
     this.openPhoto = this.openPhoto.bind(this);
     this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.deletePhoto = this.deletePhoto.bind(this);
     this.displayPhotos = this.displayPhotos.bind(this);
@@ -35,24 +34,20 @@ class UserIndexPhotos extends React.Component {
     this.setState({ modalIsOpen: true });
   }
 
-  afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    // this.subtitle.style.color = "#6288a5";
-  }
-
   closeModal() {
     this.setState({ modalIsOpen: false });
   }
 
   componentDidMount() {
-    this.props.fetchUserPhotos(this.props.match.params.userId);
+    // debugger
+    // this.props.fetchUserPhotos(this.props.match.params.userId);
   }
 
+//definitely need this method!!
   componentWillReceiveProps(newProps) {
-    // debugger
     if (this.props.user.id !== parseInt(newProps.match.params.userId)) {
-      this.props.fetchUser(this.props.match.params.userId);
-      // this.props.fetchFollows();
+      this.props.fetchUser(newProps.match.params.userId);
+      this.props.fetchUserPhotos(newProps.match.params.userId);
     }
   }
 
@@ -74,7 +69,6 @@ class UserIndexPhotos extends React.Component {
   }
 
   displayPhotos() {
-    console.log(this.props.photos);
     return (
       <ul>
         {this.props.photos.map(photo => {

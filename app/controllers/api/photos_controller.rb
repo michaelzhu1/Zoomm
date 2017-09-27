@@ -3,6 +3,7 @@ class Api::PhotosController < ApplicationController
   before_action :require_logged_in
 
   def index
+    # debugger
     if params[:id]
       @photos = Photo.where("author_id = ?", params[:id])
     else
