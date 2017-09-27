@@ -15,9 +15,13 @@ div .profile-form {
   }
 }
 
-.cover-photo:hover {
+.hover:hover {
   cursor: pointer;
 }
+
+// .no-hover:hover {
+//   cursor: none;
+// }
 
 .edit-profile-button {
   // display: inline-block;
@@ -226,6 +230,16 @@ ul {
   display: flex;
   justify-content: center;
 }
+.current-profile-photo {
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 100px;
+  margin: -100px;
+  border-style: solid;
+  border-color: white;
+  border-width: 3px;
+}
+
 .profile-photo {
   max-width: 150px;
   max-height: 150px;
@@ -235,18 +249,19 @@ ul {
   border-color: white;
   border-width: 3px;
 }
+
 .edit-profile-photo img {
   align-self: flex-end;
 }
 
-.profile-photo:hover {
+.current-profile-photo:hover {
   cursor: pointer;
   opacity: 0.95;
 }
 
-.cover-photo:hover {
-  cursor: pointer;
-}
+// .cover-photo:hover {
+//   cursor: pointer;
+// }
 .delete-photo-button {
   background-color: #b9c1c7;
   width: 70px;

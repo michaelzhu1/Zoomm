@@ -12,7 +12,7 @@ const customStyles = {
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: "rgba(255, 255, 255, 0.95)",
+    backgroundColor: "rgba(255, 255, 255, 0.5)",
     zIndex: 10
   },
   content: {
@@ -102,15 +102,28 @@ class ProfileHeader extends React.Component {
   }
 
   profilePhoto() {
-    return (
-      <div className="profile-photo-div">
-        <img
-          className="profile-photo"
-          onClick={this.updateProfilePhoto}
-          src={this.props.user.profile_img_url}
-        />
-      </div>
-    );
+    if (this.props.currentUser.id == this.props.match.params.userId) {
+      return (
+        <div className="profile-photo-div">
+          <img
+            className="current-profile-photo"
+            onClick={this.updateProfilePhoto}
+            src={this.props.user.profile_img_url}
+          />
+        </div>
+      );
+    } else {
+      return (
+        <div className="profile-photo-div">
+          <img
+            className="profile-photo"
+            src={this.props.user.profile_img_url}
+          />
+        </div>
+      );
+    }
+
+
   }
 
   coverPhoto() {
@@ -126,13 +139,25 @@ class ProfileHeader extends React.Component {
         height: "400px"
       };
     }
-    return (
-      <div
-        className="cover-photo"
-        style={styles}
-        onClick={this.updateCoverPhoto}
-      />
-    );
+    if (this.props.currentUser.id == this.props.match.params.userId) {
+
+      return (
+        <div
+          className="cover-photo hover"
+          style={styles}
+          onClick={this.updateCoverPhoto}
+          />
+      );
+    } else {
+      return (
+        <div
+          className="cover-photo"
+          style={styles}
+          />
+      );
+
+    }
+
   }
 
   updateProfilePhoto() {

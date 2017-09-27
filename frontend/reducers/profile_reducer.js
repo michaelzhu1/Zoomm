@@ -1,4 +1,7 @@
 import {RECEIVE_USER, UPDATE_USER} from "../actions/profile_action";
+
+// const defaults = { followers: [], followings: []};
+
 const ProfileReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
