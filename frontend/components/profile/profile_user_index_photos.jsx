@@ -22,7 +22,7 @@ const customStyles = {
 class UserIndexPhotos extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { photo: {}, modalIsOpen: false};
+    this.state = { photo: {}, modalIsOpen: false };
     this.openPhoto = this.openPhoto.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -40,14 +40,14 @@ class UserIndexPhotos extends React.Component {
 
   componentDidMount() {
     // debugger
-    // this.props.fetchUserPhotos(this.props.match.params.userId);
+    this.props.fetchUserPhotos(this.props.match.params.userId);
   }
 
-//definitely need this method!!
+  //definitely need this method!!
   componentWillReceiveProps(newProps) {
     if (this.props.user.id !== parseInt(newProps.match.params.userId)) {
       this.props.fetchUser(newProps.match.params.userId);
-      this.props.fetchUserPhotos(newProps.match.params.userId);
+      // this.props.fetchUserPhotos(newProps.match.params.userId);
     }
   }
 

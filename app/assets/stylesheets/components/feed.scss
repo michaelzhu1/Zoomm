@@ -1,0 +1,8 @@
+.feed-photos {
+  display: flex;
+  justify-content: flex-start;
+  img {
+    max-width: 90vw;
+    max-height: 80vh;
+  }
+}
