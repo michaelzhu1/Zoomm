@@ -1,2 +1,18 @@
-import { connect } from "react-redux";
-import { follow, unfollow, fetchFollows } from "../../actions/follow_action";
+import React from "react";
+
+class FeedIndex extends React.component{
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    
+  }
+
+  render() {
+
+  }
+}
+
+
+export default FeedIndex;

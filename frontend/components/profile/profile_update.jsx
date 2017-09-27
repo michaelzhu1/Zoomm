@@ -68,7 +68,7 @@ class ProfileUpdate extends React.Component {
 
   componentDidMount() {
     // this.props.fetchUser(this.props.match.params.userId);
-    console.log(this.props);
+    // console.log(this.props);
     // this.props.fetchFollows();
   }
 
