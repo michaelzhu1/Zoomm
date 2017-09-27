@@ -25,10 +25,10 @@ const personalGreeting = (currentUser, logout) => (
   <nav className="splash-nav">
     <div className="navbar-right">
       What's up!!! {currentUser.username}!
-      <Link to={currentUser ? "/feed" : "/"}>Zoomm</Link>
+      <Link to={currentUser ? `/feed/${currentUser.id}` : "/"}>Zoomm</Link>
     </div>
     <div className="navbar-right">
-      <Link to={`/user/${currentUser.id}`}>Profile</Link>
+      <Link to={`/user/${currentUser.id}`}>{currentUser.username} Profile</Link>
       <UploadButtonContainer />
       <button onClick={logout} className="log-out-button">
         <i className="fa fa-sign-out" aria-hidden="true" />&nbsp; Log Out

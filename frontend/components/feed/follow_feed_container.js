@@ -1,8 +1,7 @@
 import { connect } from "react-redux";
-import { follow, unfollow, fetchFollows } from "../../actions/follow_action";
 import FeedIndex from "./follow_feed_index";
 import {fetchUserFeed} from "../../actions/photo_action";
-import {fetchUser} from "../../actions/profile_action";
+import {fetchUser, postFollow,deleteFollow} from "../../actions/profile_action";
 
 const mapStateToProps = (state) => ({
   photos: Object.keys(state.photo).map(id => state.photo[id]),
@@ -13,9 +12,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   fetchUserFeed: () => dispatch(fetchUserFeed()),
   fetchUser:() => dispatch(fetchUser),
-  fetchFollows: () => dispatch(fetchFollows()),
-  follow: (user) => dispatch(follow(user)),
-  unfollow: (user)=> dispatch(unfollow(user))
+  follow: (user) => dispatch(postFollow(user)),
+  unfollow: (user)=> dispatch(deleteFollow(user))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FeedIndex);

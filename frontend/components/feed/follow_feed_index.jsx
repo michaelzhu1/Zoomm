@@ -27,10 +27,6 @@ class FeedIndex extends React.Component{
     this.setState({ modalIsOpen: true });
   }
 
-  afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    // this.subtitle.style.color = "#6288a5";
-  }
 
   closeModal() {
     this.setState({ modalIsOpen: false });
@@ -39,7 +35,6 @@ class FeedIndex extends React.Component{
 
   componentDidMount() {
     this.props.fetchUserFeed();
-    this.props.fetchFollows();
   }
 
   openPhoto(photo) {

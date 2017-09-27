@@ -12,6 +12,7 @@ const App = () => (
   <div>
     <Route path="/" component={GreetingContainer} />
     <Route exact path="/" component={SplashPlayer} />
+    <ProtectedRoute path="/feed/:userId" component={FeedIndexContainer} />
     <ProtectedRoute path="/user/:userId" component={Profile} />
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
@@ -19,5 +20,3 @@ const App = () => (
 );
 
 export default App;
-
-// <ProtectedRoute path="/feed/:userId" component={FeedIndexContainer} />

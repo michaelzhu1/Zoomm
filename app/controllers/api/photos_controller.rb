@@ -15,7 +15,7 @@ class Api::PhotosController < ApplicationController
   def index_feed
     @photos = [];
     # debugger
-    current_user.followees.each do |followee|
+    current_user.followings.each do |followee|
       @photos.push(followee.photos)
     end
     @photos = @photos.flatten
