@@ -80,11 +80,28 @@ class FeedIndex extends React.Component {
           style={customStyles}
           contentLabel="PhotoFeed"
         >
-          <div className="feed-photos">
+        <div className="feed-photo">
+
+          <div className="feed-photo-left">
             <img src={this.state.photo.photo_url} />
-            {this.props.user.username}
-            {this.state.photo.age}
           </div>
+          <div className="feed-photo-right">
+            <h2>
+              <img className="user-profile-photo" src={this.props.user.profile_img_url} />
+              {this.props.user.username}
+            </h2>
+            <h3>
+              {this.state.photo.photo_title}
+
+            </h3>
+            <h4>
+
+              {this.state.photo.photo_description}
+            </h4>
+          </div>
+        </div>
+
+          {this.state.photo.age}
         </Modal>
       </div>
     );

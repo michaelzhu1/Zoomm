@@ -50,55 +50,22 @@ class ProfileHeader extends React.Component {
       followings: this.props.followings
     };
     this.openModal = this.openModal.bind(this);
-    // this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateProfilePhoto = this.updateProfilePhoto.bind(this);
     this.updateCoverPhoto = this.updateCoverPhoto.bind(this);
     this.coverPhoto = this.coverPhoto.bind(this);
     this.profilePhoto = this.profilePhoto.bind(this);
-    // this.followOrEditButton = this.followOrEditButton.bind(this);
   }
 
   openModal() {
     this.setState({ modalIsOpen: true });
   }
 
-  // componentWillReceiveProps(newProps) {
-  //   // debugger
-  //   if (this.props.user.id !== parseInt(newProps.match.params.userId)) {
-  //     this.props.fetchUser(newProps.match.params.userId);
-  //     // this.props.fetchUserPhotos(this.props.match.params.userId);
-  //   }
-  // }
-
-  // componentWillReceiveProps(nextProps) {
-  //     if (this.props.user.id !== nextProps.user.id) {
-  //       this.setState({
-  //         id: nextProps.user.id,
-  //         bio: nextProps.user.bio,
-  //         profile_url: nextProps.user.profile_url,
-  //         cover_url: nextProps.user.cover_url,
-  //         followers: nextProps.followers,
-  //         followings: nextProps.followings
-  //       });
-  //     }
-  //   }
-
-  //   componentWillUpdate(nextProps, nextState) {
-  //   if (this.props.match.params.userId !== nextProps.match.params.userId) {
-  //     // window.scrollTo(0, 0);
-  //     this.props.fetchUser(nextProps.match.params.userId);
-  //   }
-  // }
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.userId);
   }
 
-  // afterOpenModal() {
-  //   // references are now sync'd and can be accessed.
-  //   this.subtitle.style.color = "#6288a5";
-  // }
 
   closeModal() {
     this.setState({ modalIsOpen: false });

@@ -1,8 +1,44 @@
-.feed-photos {
+.feed-photo {
   display: flex;
-  justify-content: flex-start;
+
+}
+
+.feed-photo-left {
+  display: flex;
+  justify-content: center;
+  width: 80%;
   img {
-    max-width: 90vw;
+    max-width: 100vw;
     max-height: 80vh;
   }
+}
+
+.feed-photo-right {
+  width: 200px;;
+  display: flex;
+  // justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 50px;
+  h2 {
+    align-items: center;
+    font-size: 50px;
+    padding: 20px;
+    margin-top: 20%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+  h3 {
+    font-size: 25px;
+  }
+}
+
+.user-profile-photo {
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 100px;
+  border-style: solid;
+  border-color: white;
+  border-width: 3px;
 }
