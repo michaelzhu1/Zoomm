@@ -61,3 +61,40 @@
 .website-logo:hover {
   cursor: pointer;
 }
+
+.image {
+  position: relative;
+}
+
+.hidden-photo-info {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  background-color: gray;
+  opacity: 0.8;
+  overflow: hidden;
+  margin-left: 10px;;
+  margin-right: 10px;
+  height: 0;
+  transition: 0.3s;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.message {
+  text-transform: uppercase;
+  font-size: 11px;
+  color: white;
+  position: absolute;
+  letter-spacing: 1px;
+  top: 50%;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.image:hover .hidden-photo-info{
+  height: 30px;
+  text-align: right;
+}
