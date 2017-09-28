@@ -8,6 +8,7 @@ import SplashPlayer from "./splash/splash_player";
 import FeedIndexContainer from "./feed/follow_feed_container";
 import UserPhotosContainer from "./profile/user_profile_photos_container";
 import ProfileHeaderContainer from "./profile/profile_header_container";
+import DiscoverContainer from "./discover/discover_container";
 
 // import PhotosContainer from "./photo/photo_container";
 
@@ -15,6 +16,7 @@ const App = () => (
   <div>
     <Route path="/" component={GreetingContainer} />
     <Route exact path="/" component={SplashPlayer} />
+    <ProtectedRoute path="/discover" component={DiscoverContainer} />
     <ProtectedRoute path="/feed/:userId" component={FeedIndexContainer} />
     <ProtectedRoute path="/user/:userId" component={ProfileHeaderContainer} />
     <ProtectedRoute path="/user/:userId" component={UserPhotosContainer} />

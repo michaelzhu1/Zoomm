@@ -74,9 +74,17 @@ class UserIndexPhotos extends React.Component {
       <ul>
         {this.props.photos.map(photo => {
           return (
+            <div key={photo.id+'div'} className="image">
             <li key={photo.id} className="profile-index-photo">
               <img src={photo.photo_url} onClick={this.openPhoto(photo)} />
             </li>
+            <div className="hidden-photo-info">
+              <div className="message">
+                "{photo.photo_title}"&nbsp;
+                {photo.age} ago
+              </div>
+            </div>
+            </div>
           );
         })}
       </ul>

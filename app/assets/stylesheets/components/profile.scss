@@ -153,10 +153,6 @@ div .profile-form {
   font-family: $sans-serif;
 }
 
-.profile-index-photo {
-  cursor: zoom-in;
-  float: left;
-}
 
 .photo-info {
   border: red;
@@ -217,9 +213,11 @@ ul {
 
 .profile-index-photo {
   width: auto;
-  margin: 10px 10px;
-  height: 300px;
+  margin: 5px 5px;
+  height: 400px;
   text-align: -webkit-center;
+  cursor: zoom-in;
+  float: left;
 }
 
 .profile-index-photo img {
