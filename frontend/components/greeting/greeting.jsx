@@ -24,11 +24,11 @@ const sessionLinks = () => (
 const personalGreeting = (currentUser, logout) => (
   <nav className="splash-nav">
     <div className="navbar-right">
-      What's up!!! {currentUser.username}!
+      Welcome {currentUser.username}!
       <Link to={currentUser ? `/feed/${currentUser.id}` : "/"}>Zoomm</Link>
     </div>
     <div className="navbar-right">
-      <Link to={`/user/${currentUser.id}`}>{currentUser.username} Profile</Link>
+      <Link className="userpage-link" to={`/user/${currentUser.id}`}>{currentUser.username} Profile</Link>
       <UploadButtonContainer />
       <button onClick={logout} className="log-out-button">
         <i className="fa fa-sign-out" aria-hidden="true" />&nbsp; Log Out

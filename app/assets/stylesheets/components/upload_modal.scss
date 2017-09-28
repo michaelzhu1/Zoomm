@@ -62,6 +62,10 @@
 }
 
 .upload-cancel-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-color: #f9675c;
   width: 50px;
   align-self: flex-end;

@@ -31,6 +31,7 @@
   }
   h3 {
     font-size: 25px;
+    font-weight: normal;
   }
 }
 
@@ -41,4 +42,9 @@
   border-style: solid;
   border-color: white;
   border-width: 3px;
+}
+
+.userpage-link:hover {
+  cursor: pointer;
+  color: #0099e5;
 }

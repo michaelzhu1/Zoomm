@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
+import { Link } from "react-router-dom";
 
 const customStyles = {
   overlay: {
@@ -28,7 +29,7 @@ const customStyles = {
 class FeedIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { photo: {}};
+    this.state = { photo: {} };
     this.displayPhotos = this.displayPhotos.bind(this);
     this.openPhoto = this.openPhoto.bind(this);
     this.openModal = this.openModal.bind(this);
@@ -48,7 +49,6 @@ class FeedIndex extends React.Component {
 
   openPhoto(photo) {
     return e => {
-      // debugger
       this.props.fetchUser(photo.author_id);
       this.setState({ photo: photo });
       this.openModal();
@@ -80,28 +80,26 @@ class FeedIndex extends React.Component {
           style={customStyles}
           contentLabel="PhotoFeed"
         >
-        <div className="feed-photo">
-
-          <div className="feed-photo-left">
-            <img src={this.state.photo.photo_url} />
+          <div className="feed-photo">
+            <div className="feed-photo-left">
+              <img src={this.state.photo.photo_url} />
+            </div>
+            <div className="feed-photo-right">
+              <h2>
+                <img
+                  className="user-profile-photo"
+                  src={this.props.user.profile_img_url}
+                />
+              <Link className="userpage-link" to={`/user/${this.props.user.id}`}>
+                  {this.props.user.username}
+                </Link>
+              </h2>
+              <h3>{this.state.photo.photo_title}</h3>
+              <h4>{this.state.photo.photo_description}</h4>
+            </div>
           </div>
-          <div className="feed-photo-right">
-            <h2>
-              <img className="user-profile-photo" src={this.props.user.profile_img_url} />
-              {this.props.user.username}
-            </h2>
-            <h3>
-              {this.state.photo.photo_title}
 
-            </h3>
-            <h4>
-
-              {this.state.photo.photo_description}
-            </h4>
-          </div>
-        </div>
-
-          {this.state.photo.age}
+          submitted {this.state.photo.age} ago
         </Modal>
       </div>
     );

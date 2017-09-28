@@ -90,7 +90,7 @@ class UserIndexPhotos extends React.Component {
     if (this.props.currentUser.id == this.props.match.params.userId) {
       return (
         <div className="photo-show-right">
-          <h2>Edit Photo Info</h2>
+          <h2>Photo Info</h2>
           <form className="photo-show-form" onSubmit={this.updatePhoto}>
             {this.props.currentUser.username}
             <h4>Title</h4>
@@ -117,7 +117,7 @@ class UserIndexPhotos extends React.Component {
     } else {
       return (
         <div className="photo-show-right">
-          <h2>Edit Photo Info</h2>
+          <h2>Photo Info</h2>
           <form className="photo-show-form" onSubmit={this.updatePhoto}>
             {this.props.currentUser.username}
             <h4>Title</h4>
