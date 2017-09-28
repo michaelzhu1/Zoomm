@@ -112,8 +112,8 @@ class UserIndexPhotos extends React.Component {
               className="photo-info-description glowing-border"
             />
             <input className="save-photo-info" type="submit" value="Save" />
+            <button className="cancel-button" onClick={this.closeModal}>Cancel</button>
           </form>
-          <button onClick={this.closeModal}>Cancel</button>
           <button className="delete-photo-button" onClick={this.deletePhoto}>
             Delete Photo
           </button>
@@ -130,8 +130,8 @@ class UserIndexPhotos extends React.Component {
 
             <h4>Description</h4>
             {this.state.photo.photo_description || ""}
+            <button className="cancel-button" onClick={this.closeModal}>Cancel</button>
           </form>
-          <button onClick={this.closeModal}>Cancel</button>
         </div>
       );
     }

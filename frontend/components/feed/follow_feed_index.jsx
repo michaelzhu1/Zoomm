@@ -1,6 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import { Link } from "react-router-dom";
+import { RingLoader } from "react-spinners";
 
 const customStyles = {
   overlay: {
@@ -29,7 +30,7 @@ const customStyles = {
 class FeedIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { photo: {} };
+    this.state = { photo: {}, loading: true };
     this.displayPhotos = this.displayPhotos.bind(this);
     this.openPhoto = this.openPhoto.bind(this);
     this.openModal = this.openModal.bind(this);
@@ -37,6 +38,7 @@ class FeedIndex extends React.Component {
   }
   componentDidMount() {
     this.props.fetchUserFeed();
+    this.setState({ loading: false });
     // this.props.fetchUserPhotos(this.props.match.params.userId);
   }
 
@@ -64,7 +66,7 @@ class FeedIndex extends React.Component {
 
   displayPhotos() {
     return (
-      <ul className="feed-ul" >
+      <ul className="feed-ul">
         {this.props.photos.map(photo => {
           return (
             <li key={photo.id} className="profile-index-photo">
@@ -80,6 +82,7 @@ class FeedIndex extends React.Component {
     return (
       <div>
         {this.displayPhotos()}
+        <RingLoader color={"#123abc"} loading={this.state.loading} />
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -97,7 +100,10 @@ class FeedIndex extends React.Component {
                   className="user-profile-photo"
                   src={this.props.user.profile_img_url}
                 />
-              <Link className="userpage-link" to={`/user/${this.props.user.id}`}>
+                <Link
+                  className="userpage-link"
+                  to={`/user/${this.props.user.id}`}
+                >
                   {this.props.user.username}
                 </Link>
               </h2>
@@ -105,7 +111,6 @@ class FeedIndex extends React.Component {
               <h4>{this.state.photo.photo_description}</h4>
             </div>
           </div>
-
           submitted {this.state.photo.age} ago
         </Modal>
       </div>

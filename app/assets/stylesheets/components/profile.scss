@@ -265,14 +265,14 @@ ul {
 // }
 .delete-photo-button {
   background-color: #b9c1c7;
-  width: 70px;
+  // width: 70px;
   align-self: flex-end;
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
   border-radius: 2px;
-  margin: 10px;
-  margin-top: 50px;
+  // margin: 10px;
+  // margin-top: 50px;
 }
 
 .delete-photo-button:hover {
@@ -289,10 +289,19 @@ ul {
   font-weight: bold;
   font-family: sans-serif;
   margin-top: 80px;
+  margin: 40px;
 }
 
 .photo-show-right h2 {
   font-size: 16px;
   display: flex;
   justify-content: center;
+}
+
+.user-header-info {
+  display: flex;
+  align-items: flex-end;
+  width: 600px;
+  justify-content: space-around;
+  font-size: 16px;
 }

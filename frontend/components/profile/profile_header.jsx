@@ -65,8 +65,8 @@ class ProfileHeader extends React.Component {
 
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.userId);
+    console.log(this.props);
   }
-
 
   closeModal() {
     this.setState({ modalIsOpen: false });
@@ -202,7 +202,14 @@ class ProfileHeader extends React.Component {
           </button>
         );
       } else {
-        return <div>{this.followButton()}</div>;
+        return (
+          <div className="user-header-info">
+              {Object.keys(this.props.photos).length} Photos &nbsp;
+              &nbsp;{this.props.user.followers.length} Followers &nbsp;
+              &nbsp;{this.props.user.followings.length} Following &nbsp;
+            {this.followButton()}
+          </div>
+        );
       }
     }
   }
@@ -275,7 +282,7 @@ class ProfileHeader extends React.Component {
                 value={"Update Profile"}
               />
               <button
-                className="upload-cancel-button"
+                className="cancel-button"
                 onClick={this.closeModal}
               >
                 Cancel

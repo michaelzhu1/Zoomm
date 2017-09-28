@@ -19,8 +19,6 @@ export const deletePhoto = photo => ({
   photo
 });
 
-
-
 export const fetchPhotos = () => dispatch =>
   APIUtil.fetchPhotos().then(photos => dispatch(receiveAllPhotos(photos)));
 
@@ -33,10 +31,10 @@ export const removePhoto = id => dispatch =>
 export const updatePhoto = photo => dispatch =>
   APIUtil.updatePhoto(photo).then(newPhoto => dispatch(receivePhoto(photo)));
 
-export const fetchUserPhotos = (id) => dispatch =>
-  APIUtil.fetchUserPhotos(id).then(photos => dispatch(receiveAllPhotos(photos)));
+export const fetchUserPhotos = id => dispatch =>
+  APIUtil.fetchUserPhotos(id).then(photos =>
+    dispatch(receiveAllPhotos(photos))
+  );
 
 export const fetchUserFeed = () => dispatch =>
-  APIUtil.fetchUserFeed().then(photos => dispatch(
-    receiveAllPhotos(photos)
-  ));
+  APIUtil.fetchUserFeed().then(photos => dispatch(receiveAllPhotos(photos)));

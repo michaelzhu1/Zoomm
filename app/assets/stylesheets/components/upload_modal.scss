@@ -61,28 +61,36 @@
   font-size: 16px;
 }
 
-.upload-cancel-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.cancel-button {
+  float: right;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // flex-direction: column;
   background-color: #f9675c;
-  width: 50px;
+  width: 60px;
   align-self: flex-end;
-  padding-bottom: 8px;
+  line-height: normal;
+  text-align: center;
+  padding: 10px;
 }
 
 .nav-upload-button {
-  color: white;
-  background-color: #64ad66;
+  color: #64ad66;
+  background-color: white;
   padding-left: 15px;
   padding-right: 15px;
   box-sizing: border-box;
   display: inline-block;
   height: 40px;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: normal;
   line-height: 5px;
+}
+
+.nav-upload-button:hover {
+  color: white;
+  background-color: #64ad66;
 }
 
 .photo-description {

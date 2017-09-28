@@ -8,6 +8,7 @@ const sessionLinks = () => (
       <Link className="homepage-nav-logo" to="/">
         Zoomm
       </Link>
+      <Link to="/discover"> Discover</Link>
       <div className="navbar-right">
         <Link className="homepage-nav-link" to="/login">
           <i className="fa fa-sign-in" aria-hidden="true" />&nbsp; Login
@@ -30,6 +31,7 @@ const personalGreeting = (currentUser, logout) => (
       >
         <img src="http://res.cloudinary.com/foolishhunger/image/upload/v1506572884/Screen_Shot_2017-09-27_at_9.27.03_PM_suayjk.png" />
       </Link>
+      <Link to="/discover"> Discover</Link>
       <div>Welcome {currentUser.username}!</div>
     </div>
     <div className="navbar-right">

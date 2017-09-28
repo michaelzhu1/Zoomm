@@ -52,6 +52,12 @@
   border-top: none;
 }
 
+.website-logo {
+  img {
+    height: 54px;
+  }
+}
+
 .website-logo:hover {
   cursor: pointer;
 }
