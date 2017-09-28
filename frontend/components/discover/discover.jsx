@@ -82,27 +82,32 @@ class Discover extends React.Component {
 
   followOrFollowing() {
     // debugger
-    const userFollowers = this.props.user.followers.map(follower => {
-      return follower.id;
-    });
-    if (userFollowers.includes(this.props.currentUser.id)) {
-      return (
-        <button
-          className="edit-profile-button"
-          onClick={() => this.props.unfollow({ user_id: this.props.user.id })}
-        >
-          Following
-        </button>
-      );
-    } else {
-      return (
-        <button
-          className="edit-profile-button"
-          onClick={() => this.props.follow({ user_id: this.props.user.id })}
-        >
-          Follow
-        </button>
-      );
+    if (
+      this.props.currentUser.id !== parseInt(this.props.user.id)
+    ){
+      const userFollowers = this.props.user.followers.map(follower => {
+        return follower.id;
+      });
+      if (userFollowers.includes(this.props.currentUser.id)) {
+        return (
+          <button
+            className="edit-profile-button"
+            onClick={() => this.props.unfollow({ user_id: this.props.user.id })}
+            >
+            Following
+          </button>
+        );
+      } else {
+        return (
+          <button
+            className="edit-profile-button"
+            onClick={() => this.props.follow({ user_id: this.props.user.id })}
+            >
+            Follow
+          </button>
+        );
+      }
+
     }
   }
 
