@@ -23,7 +23,7 @@
 //   // fetchPhotos: () => dispatch(fetchPhotos()),
 //   // removePhoto: id => dispatch(removePhoto(id)),
 //   // updatePhoto: photo => dispatch(updatePhoto(photo)),
-//   fetchFollows: () => dispatch(fetchFollows()),
+//   // fetchFollows: () => dispatch(fetchFollows()),
 //   // follow: id => dispatch(follow(id)),
 //   // unfollow: id => dispatch(unfollow(id)),
 //   fetchUserPhotos: id => dispatch(fetchUserPhotos(id))
