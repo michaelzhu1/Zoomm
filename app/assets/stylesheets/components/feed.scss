@@ -1,6 +1,5 @@
 .feed-photo {
   display: flex;
-
 }
 
 .feed-photo-left {
@@ -14,7 +13,7 @@
 }
 
 .feed-photo-right {
-  width: 200px;;
+  width: 200px;
   display: flex;
   // justify-content: center;
   flex-direction: column;
@@ -51,4 +50,8 @@
 
 .feed-ul {
   border-top: none;
+}
+
+.website-logo:hover {
+  cursor: pointer;
 }

@@ -22,13 +22,20 @@ const sessionLinks = () => (
 );
 
 const personalGreeting = (currentUser, logout) => (
-  <nav className="splash-nav">
+  <nav className="session-nav">
     <div className="navbar-right">
-      Welcome {currentUser.username}!
-      <Link to={currentUser ? `/feed/${currentUser.id}` : "/"}>Zoomm</Link>
+      <Link
+        to={currentUser ? `/feed/${currentUser.id}` : "/"}
+        className="website-logo"
+      >
+        <img src="http://res.cloudinary.com/foolishhunger/image/upload/v1506572884/Screen_Shot_2017-09-27_at_9.27.03_PM_suayjk.png" />
+      </Link>
+      <div>Welcome {currentUser.username}!</div>
     </div>
     <div className="navbar-right">
-      <Link className="userpage-link" to={`/user/${currentUser.id}`}>{currentUser.username} Profile</Link>
+      <Link className="userpage-link" to={`/user/${currentUser.id}`}>
+        {currentUser.username} Profile
+      </Link>
       <UploadButtonContainer />
       <button onClick={logout} className="log-out-button">
         <i className="fa fa-sign-out" aria-hidden="true" />&nbsp; Log Out
