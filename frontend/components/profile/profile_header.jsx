@@ -112,7 +112,6 @@ class ProfileHeader extends React.Component {
   }
 
   coverPhoto() {
-    // debugger
     if (this.props.user.cover_img_url) {
       styles.background = `url(${this.props.user
         .cover_img_url}) fixed top center no-repeat`;
@@ -142,7 +141,7 @@ class ProfileHeader extends React.Component {
       window.CLOUDINARY_OPTIONS,
       function(error, images) {
         if (error === null) {
-          let newUser = merge({}, this.props.currentUser);
+          let newUser = merge({}, this.state.currentUser);
           newUser.profile_img_url = images[0].url;
           this.props.updateUser(newUser);
           this.setState({ currentUser: newUser });
@@ -156,7 +155,7 @@ class ProfileHeader extends React.Component {
       window.CLOUDINARY_OPTIONS,
       function(error, images) {
         if (error === null) {
-          let newUser = merge({}, this.props.currentUser);
+          let newUser = merge({}, this.state.currentUser);
           newUser.cover_img_url = images[0].url;
           this.props.updateUser(newUser);
           this.setState({ currentUser: newUser });
