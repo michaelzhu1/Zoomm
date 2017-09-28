@@ -16,7 +16,8 @@ const customStyles = {
     zIndex: 10
   },
   content: {
-    width: "50vw",
+    padding: "50px",
+    width: "30vw",
     height: "80vh",
     top: "50%",
     left: "50%",
@@ -169,7 +170,6 @@ class ProfileHeader extends React.Component {
     const userFollowers = this.props.followers.map(follower => {
       return follower.id;
     });
-    // debugger
     if (userFollowers.includes(this.props.currentUser.id)) {
       return (
         <button

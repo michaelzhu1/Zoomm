@@ -57,7 +57,7 @@ class FeedIndex extends React.Component {
 
   displayPhotos() {
     return (
-      <ul>
+      <ul className="feed-ul" >
         {this.props.photos.map(photo => {
           return (
             <li key={photo.id} className="profile-index-photo">

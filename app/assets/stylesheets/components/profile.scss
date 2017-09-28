@@ -44,24 +44,28 @@ div .profile-form {
 }
 
 .username-in-profile {
-  font-size: 20px;
+  font-size: 25px;
   // display: flex;
   // justify-content: center;
+  font-weight: bold;
   padding: 5px;
-  margin-top: 20px;
+  margin-top: 10px;
   position: absolute;
+  // text-decoration: underline gray;
 }
 
 .bio-in-profile {
   margin-top: 50px;
   font-size: 20px;
   font-weight: normal;
-  border-bottom: $light-gray 2px solid;
+  // text-decoration: underline gray;
+  // border-bottom: $light-gray 2px solid;
 }
 
 .user-info {
   display: flex;
   justify-content: center;
+  height: 50px;
 }
 
 .edit-profile-button:hover {
@@ -203,7 +207,8 @@ div .profile-form {
 }
 
 ul {
-  // margin-top: 25px;
+  border-top: 2px solid $light-gray;
+  margin-top: 25px;
   width: 100%;
   justify-content: center;
   flex-wrap: wrap;
