@@ -37,7 +37,14 @@ class FeedIndex extends React.Component {
   }
   componentDidMount() {
     this.props.fetchUserFeed();
+    // this.props.fetchUserPhotos(this.props.match.params.userId);
   }
+
+  // componentWillReceiveProps(newProps) {
+  //   if (this.props.user.id !== parseInt(newProps.match.params.userId)) {
+  //     this.props.fetchUserPhotos(newProps.match.params.userId);
+  //   }
+  // }
 
   openModal() {
     this.setState({ modalIsOpen: true });

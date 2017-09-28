@@ -39,14 +39,16 @@ class UserIndexPhotos extends React.Component {
   }
 
   componentDidMount() {
-
+    this.props.fetchUser(this.props.match.params.userId);
     this.props.fetchUserPhotos(this.props.match.params.userId);
   }
 
   //definitely need this method!!
   componentWillReceiveProps(newProps) {
+    // debugger
     if (this.props.user.id !== parseInt(newProps.match.params.userId)) {
       this.props.fetchUser(newProps.match.params.userId);
+      this.props.fetchUserPhotos(newProps.match.params.userId);
     }
   }
 
