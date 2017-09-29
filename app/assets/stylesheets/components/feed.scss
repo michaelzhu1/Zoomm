@@ -98,3 +98,19 @@
   height: 30px;
   text-align: right;
 }
+
+.empty-feed {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.discover-link {
+  color: cornflowerblue;
+}
+
+.discover-link:hover {
+  color: blue;
+}

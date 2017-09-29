@@ -139,7 +139,7 @@ class Discover extends React.Component {
                   >
                     {this.props.user.username}
                   </Link>
-                  {this.followOrFollowing()}
+                  {this.props.currentUser ? this.followOrFollowing() : null}
                 </h2>
                 <h3>{this.state.photo.photo_title}</h3>
                 <h4>{this.state.photo.photo_description}</h4>

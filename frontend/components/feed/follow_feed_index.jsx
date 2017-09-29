@@ -65,25 +65,35 @@ class FeedIndex extends React.Component {
   }
 
   displayPhotos() {
-    return (
-      <ul className="feed-ul">
-        {this.props.photos.map(photo => {
-          return (
-            <div key={photo.id+'div'} className="image">
-              <li key={photo.id} className="profile-index-photo">
-                <img src={photo.photo_url} onClick={this.openPhoto(photo)} />
-              </li>
-              <div className="hidden-photo-info">
-                <div className="message">
-                  "{photo.photo_title}"&nbsp;
-                  {photo.age} ago
+    if (this.props.photos.length === 0) {
+      return (
+        <div className="empty-feed">
+
+            Your feed is empty because you are not following anyone.
+            <Link className="discover-link" to="/discover">Discover amazing photos here!</Link>
+        </div>
+      );
+    } else {
+      return (
+        <ul className="feed-ul">
+          {this.props.photos.map(photo => {
+            return (
+              <div key={photo.id + "div"} className="image">
+                <li key={photo.id} className="profile-index-photo">
+                  <img src={photo.photo_url} onClick={this.openPhoto(photo)} />
+                </li>
+                <div className="hidden-photo-info">
+                  <div className="message">
+                    "{photo.photo_title}"&nbsp;
+                    {photo.age} ago
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
-      </ul>
-    );
+            );
+          })}
+        </ul>
+      );
+    }
   }
 
   render() {

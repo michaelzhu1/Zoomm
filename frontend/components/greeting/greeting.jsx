@@ -46,7 +46,9 @@ const personalGreeting = (currentUser, logout) => (
   </nav>
 );
 
-const Greeting = ({ currentUser, logout }) =>
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks();
+const Greeting = ({ currentUser, logout }) => {
+  // debugger
+  return currentUser ? personalGreeting(currentUser, logout) : sessionLinks();
+};
 
 export default Greeting;
