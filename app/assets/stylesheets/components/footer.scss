@@ -1,0 +1,14 @@
+.footer {
+  font-size: 36px;
+  ul  {
+    height: 50px;
+  }
+  li {
+    align-items: center;
+    display: flex;
+    margin: 10px;
+  }
+  a:hover {
+    color: #4294C1;
+  }
+}

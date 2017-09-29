@@ -8,6 +8,7 @@ import FeedIndexContainer from "./feed/follow_feed_container";
 import ProfileHeaderContainer from "./profile/profile_header_container";
 import UserPhotosContainer from "./profile/user_profile_photos_container";
 import SessionFormContainer from "./session_form/session_form_container";
+import Footer from "./footer";
 
 const App = () => (
   <div>
@@ -19,6 +20,7 @@ const App = () => (
     <ProtectedRoute path="/user/:userId" component={UserPhotosContainer} />
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
+    <Route path='/' component={Footer}/>
   </div>
 );
 
