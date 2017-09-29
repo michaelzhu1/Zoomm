@@ -2,9 +2,9 @@
 [Zoomm live](https://zoomm.herokuapp.com/#/) is a photo sharing full-stack web application based closely on 500px. Zoomm allows users to publicly share their best photos in the elite photographer community. I created Zoomm using Ruby on Rails and React/Redux.
 
 
-![Live Home Page](https://media.giphy.com/media/3ohhwD2W7kB7yfoZbO/giphy.gif)
+![Live Home Page](https://github.com/michaelzhu1/Zoomm/blob/master/docs/README/homepage_gif.gif)
 
-![Live Login](https://media.giphy.com/media/l1J9ykKt9pUul253O/giphy.gif)
+![Live Login](https://github.com/michaelzhu1/Zoomm/blob/master/docs/README/loginpage_gif.gif)
 
 ## Feature 
 * Highly secure authentication for user login and signup
@@ -13,8 +13,13 @@
 * Follow other users and their photos would show up in User Feed page
 * Discover all the amazing photos brought by other great photographers in Zoomm community
 
+
+
+
 ## Technology
 ***
+Zoomm was created utilizing these key technologies:
+
 ### Frontend
 * jQuery
 * Webpack
