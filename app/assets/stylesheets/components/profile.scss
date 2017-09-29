@@ -1,7 +1,6 @@
 div .profile-form {
   display: flex;
   justify-content: center;
-  // background-color: red;
   flex-direction: column;
   align-items: center;
   width: 100%;
@@ -20,8 +19,6 @@ div .profile-form {
 }
 
 .edit-profile-button {
-  // display: inline-block;
-  // justify-content: flex-end;
   margin-top: 10px;
   height: 30px;
   outline: none;
@@ -34,7 +31,6 @@ div .profile-form {
   text-shadow: 0px 1px 0px #0088cc;
   box-shadow: 0px 1px 0px #0088cc;
   font-size: 14px;
-  // margin-top: 56px;
 }
 
 .edit-profile-div {
@@ -45,21 +41,16 @@ div .profile-form {
 
 .username-in-profile {
   font-size: 25px;
-  // display: flex;
-  // justify-content: center;
   font-weight: bold;
   padding: 5px;
   margin-top: 10px;
   position: absolute;
-  // text-decoration: underline gray;
 }
 
 .bio-in-profile {
   margin-top: 50px;
   font-size: 20px;
   font-weight: normal;
-  // text-decoration: underline gray;
-  // border-bottom: $light-gray 2px solid;
 }
 
 .user-info {
@@ -257,19 +248,13 @@ ul {
   opacity: 0.95;
 }
 
-// .cover-photo:hover {
-//   cursor: pointer;
-// }
 .delete-photo-button {
   background-color: #b9c1c7;
-  // width: 70px;
   align-self: flex-end;
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
   border-radius: 2px;
-  // margin: 10px;
-  // margin-top: 50px;
 }
 
 .delete-photo-button:hover {

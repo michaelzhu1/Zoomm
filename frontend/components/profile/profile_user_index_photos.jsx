@@ -40,6 +40,7 @@ class UserIndexPhotos extends React.Component {
 
   componentDidMount() {
     this.props.fetchUserPhotos(this.props.match.params.userId);
+    window.scrollTo(0,0);
   }
 
   //definitely need this method!!

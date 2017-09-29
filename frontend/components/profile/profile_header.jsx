@@ -67,6 +67,7 @@ class ProfileHeader extends React.Component {
     this.setState({ modalIsOpen: false });
   }
 
+
   update(field) {
     return e => {
       let newUserInfo = merge(

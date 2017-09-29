@@ -33,8 +33,25 @@ class SessionForm extends React.Component {
 
   handleDemoLogin(e) {
     e.preventDefault();
-    this.props.loginGuest({ username: "Guest", password: "123456789" });
+    const demoUsername = 'Guest'.split('');
+    const demoPassword= '123456789'.split('');
+    const intervalId = setInterval(() => {
+      if (demoUsername.length > 0) {
+        this.setState({
+          username: this.state.username + demoUsername.shift()
+        });
+      } else if (demoPassword.length > 0) {
+        this.setState({
+          password: this.state.password + demoPassword.shift()
+        });
+      } else {
+        clearInterval(intervalId);
+        this.props.loginGuest(this.state);
+      }
+    }, 100);
   }
+
+
 
   demoLogin() {
     if (this.props.formType === "login") {

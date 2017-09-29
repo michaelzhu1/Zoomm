@@ -1,6 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import { Link } from "react-router-dom";
+import { BeatLoader } from 'react-spinners';
 
 const customStyles = {
   overlay: {
@@ -29,14 +30,14 @@ const customStyles = {
 class FeedIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { photo: {} };
+    this.state = { photo: {},loading: true };
     this.displayPhotos = this.displayPhotos.bind(this);
     this.openPhoto = this.openPhoto.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
   componentDidMount() {
-    this.props.fetchUserFeed();
+    this.props.fetchUserFeed().then( () => (this.setState({ loading: false})));
   }
 
   openModal() {
@@ -68,6 +69,10 @@ class FeedIndex extends React.Component {
     } else {
       return (
         <ul className="feed-ul">
+          <BeatLoader
+            color={'#123abc'}
+            loading={this.state.loading}
+          />
           {this.props.photos.map(photo => {
             return (
               <div key={photo.id + "div"} className="image">
@@ -91,6 +96,7 @@ class FeedIndex extends React.Component {
   render() {
     return (
       <div>
+
         {this.displayPhotos()}
         <Modal
           isOpen={this.state.modalIsOpen}

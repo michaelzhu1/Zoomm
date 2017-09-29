@@ -30,7 +30,7 @@ const personalGreeting = (currentUser, logout) => (
       >
         <img src="http://res.cloudinary.com/foolishhunger/image/upload/v1506572884/Screen_Shot_2017-09-27_at_9.27.03_PM_suayjk.png" />
       </Link>
-      <div>Welcome {currentUser.username}!</div>
+      <div>Welcome {currentUser.username}!</div>&nbsp;
       <Link className="userpage-link" to="/discover"> Discover</Link>
     </div>
     <div className="navbar-right">
