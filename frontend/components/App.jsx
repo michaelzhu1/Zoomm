@@ -14,13 +14,13 @@ const App = () => (
   <div>
     <Route path="/" component={GreetingContainer} />
     <Route exact path="/" component={SplashPlayer} />
+    <Route exact path='/' component={Footer}/>
     <ProtectedRoute path="/discover" component={DiscoverContainer} />
     <ProtectedRoute path="/feed/:userId" component={FeedIndexContainer} />
     <ProtectedRoute path="/user/:userId" component={ProfileHeaderContainer} />
     <ProtectedRoute path="/user/:userId" component={UserPhotosContainer} />
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
-    <Route path='/' component={Footer}/>
   </div>
 );
 

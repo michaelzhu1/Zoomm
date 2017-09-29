@@ -1,12 +1,18 @@
 .footer {
   font-size: 36px;
+  background-color: white;
+
   ul  {
     height: 50px;
+    text-align:  center;
+    position: fixed;
+    bottom: 0;
   }
   li {
     align-items: center;
     display: flex;
     margin: 10px;
+    list-style: none;
   }
   a:hover {
     color: #4294C1;
