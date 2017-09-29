@@ -10,7 +10,6 @@ const customStyles = {
     right: 0,
     bottom: 0,
     backgroundColor: "rgba(255, 255, 255, 0.95)",
-    zIndex: 10
   },
   content: {
     padding: "30px",
@@ -57,24 +56,10 @@ class Discover extends React.Component {
     };
   }
 
-  shuffle(array) {
-    var currentIndex = array.length,
-      temporaryValue,
-      randomIndex;
-    while (0 !== currentIndex) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-    return array;
-  }
-
   discoverPhotos() {
     return (
       <ul className="feed-ul">
-        {this.shuffle(this.props.photos).map(photo => {
+        {this.props.photos.map(photo => {
           return (
             <div key={photo.id + "div"} className="image">
               <li key={photo.id} className="profile-index-photo">
@@ -131,7 +116,7 @@ class Discover extends React.Component {
           style={customStyles}
           contentLabel="DiscoverPhotos"
         >
-          <div>
+
             <div className="feed-photo">
               <div className="feed-photo-left">
                 <img src={this.state.photo.photo_url} />
@@ -154,7 +139,7 @@ class Discover extends React.Component {
                 <h4>{this.state.photo.photo_description}</h4>
               </div>
             </div>
-          </div>
+
         </Modal>
       </div>
     );

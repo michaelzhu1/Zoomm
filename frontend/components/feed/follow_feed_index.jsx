@@ -1,7 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
 import { Link } from "react-router-dom";
-import { RingLoader } from "react-spinners";
 
 const customStyles = {
   overlay: {
@@ -30,7 +29,7 @@ const customStyles = {
 class FeedIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { photo: {}, loading: true };
+    this.state = { photo: {} };
     this.displayPhotos = this.displayPhotos.bind(this);
     this.openPhoto = this.openPhoto.bind(this);
     this.openModal = this.openModal.bind(this);
@@ -38,7 +37,6 @@ class FeedIndex extends React.Component {
   }
   componentDidMount() {
     this.props.fetchUserFeed();
-    this.setState({ loading: false });
   }
 
   openModal() {
@@ -57,20 +55,6 @@ class FeedIndex extends React.Component {
     };
   }
 
-  shuffle(array) {
-    var currentIndex = array.length,
-      temporaryValue,
-      randomIndex;
-    while (0 !== currentIndex) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-    return array;
-  }
-
   displayPhotos() {
     if (this.props.photos.length === 0) {
       return (
@@ -84,7 +68,7 @@ class FeedIndex extends React.Component {
     } else {
       return (
         <ul className="feed-ul">
-          {this.shuffle(this.props.photos).map(photo => {
+          {this.props.photos.map(photo => {
             return (
               <div key={photo.id + "div"} className="image">
                 <li key={photo.id} className="profile-index-photo">
@@ -108,7 +92,6 @@ class FeedIndex extends React.Component {
     return (
       <div>
         {this.displayPhotos()}
-        <RingLoader color={"#123abc"} loading={this.state.loading} />
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
