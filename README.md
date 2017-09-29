@@ -14,7 +14,96 @@
 * Discover all the amazing photos brought by other great photographers in Zoomm community
 
 
+### User Authentication 
+#### Password Encryption 
+The database store the BCrypt `password_digest` instead of User's actual password.
 
+#### User Session Token
+I used `SecureRandom` to ensure each user has an unique `session_token` when they are signed in. Their `session_token` resets when they sign out.
+
+```ruby
+  def password=(password)
+    @password = password
+    self.password_digest = BCrypt::Password.create(password)
+  end
+
+  def is_password?(password)
+    BCrypt::Password.new(self.password_digest).is_password?(password)
+  end
+
+  def reset_session_token
+    self.session_token = SecureRandom.urlsafe_base64
+    self.save!
+    self.session_token
+  end
+```
+
+#### Fetching user's own photo
+I used ActiveRecord to query Photo table based off the user id sent from the frontend. 
+```ruby
+  def index
+    if params[:id]
+      @photos = Photo.where("author_id = ?", params[:id])
+    else
+      @photos = Photo.all
+    end
+    render "api/photos/index"
+  end
+```
+
+#### Fetching photos based off user's followees
+I created a customized route for User's feed page. 
+
+```ruby
+  def index_feed
+    @photos = [];
+    current_user.followings.each do |followee|
+      @photos.push(followee.photos)
+    end
+    @photos = @photos.flatten
+    render "api/photos/index"
+  end
+```
+#### Front-end Auth
+Users can't visit `/#/login` or `/#/signup` routes if they are already logged in on the front-end.
+```javascript
+const Auth = ({ component: Component, path, loggedIn, currentUser }) => (
+  <Route
+    path={path}
+    render={props =>
+      !loggedIn ? (
+        <Component {...props} />
+      ) : (
+        <Redirect to={`/user/${currentUser.id}`} />
+      )}
+  />
+);
+
+const Protected = ({ component: Component, path, loggedIn }) => (
+  <Route
+    path={path}
+    render={props =>
+      loggedIn ? <Component {...props} /> : <Redirect to="/login" />}
+  />
+);
+
+const mapStateToProps = state => ({
+  loggedIn: Boolean(state.session.currentUser),
+  currentUser: state.session.currentUser
+});
+
+export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
+export const ProtectedRoute = withRouter(
+  connect(mapStateToProps, null)(Protected)
+);
+```
+
+### Upload
+I used Cloudinary to host photos storage. Users are able to upload photos. The upload form pops up using Modal, and it gives the preview for that photo, along with title and description input.
+
+![uploadform]()
+
+![uploaddemo]()
 
 ## Technology
 ***
@@ -26,6 +115,8 @@ Zoomm was created utilizing these key technologies:
 * React/Redux
 * React DOM
 * React Router
+* React Modal
+
 ### Backend
 * Ruby on Rails
 * PostgreSQL database
