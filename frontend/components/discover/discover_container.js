@@ -8,7 +8,6 @@ import {
 } from "../../actions/profile_action";
 import { fetchPhotos } from "../../actions/photo_action";
 
-
 const mapStateToProps = state => ({
   user: state.user,
   currentUser: state.session.currentUser,

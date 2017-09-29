@@ -36,18 +36,12 @@ class UploadButton extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.upload = this.upload.bind(this);
     this.openModal = this.openModal.bind(this);
-    // this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
   openModal() {
     this.setState({ modalIsOpen: true });
   }
-
-  // afterOpenModal() {
-  //   // references are now sync'd and can be accessed.
-  //   this.subtitle.style.color = "#6288a5";
-  // }
 
   closeModal() {
     this.setState({
@@ -57,8 +51,7 @@ class UploadButton extends React.Component {
     });
   }
 
-  componentDidMount() {
-  }
+  componentDidMount() {}
 
   uploadImage(image) {
     this.setState({ photo_url: image.url });
@@ -72,7 +65,6 @@ class UploadButton extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // console.log(this.state);
     this.props.postPhoto(this.state);
     if (this.state.photo_title && this.state.photo_url) {
       this.setState({
@@ -151,10 +143,3 @@ class UploadButton extends React.Component {
 }
 
 export default UploadButton;
-
-// <h2
-//   className="edit-form-greeting"
-//   ref={subtitle => (this.subtitle = subtitle)}
-// >
-//   Hello User!
-// </h2>

@@ -39,13 +39,11 @@ class UserIndexPhotos extends React.Component {
   }
 
   componentDidMount() {
-    // this.props.fetchUser(this.props.match.params.userId);
     this.props.fetchUserPhotos(this.props.match.params.userId);
   }
 
   //definitely need this method!!
   componentWillReceiveProps(newProps) {
-    // debugger
     if (this.props.user.id !== parseInt(newProps.match.params.userId)) {
       this.props.fetchUser(newProps.match.params.userId);
       this.props.fetchUserPhotos(newProps.match.params.userId);
@@ -74,16 +72,16 @@ class UserIndexPhotos extends React.Component {
       <ul>
         {this.props.photos.map(photo => {
           return (
-            <div key={photo.id+'div'} className="image">
-            <li key={photo.id} className="profile-index-photo">
-              <img src={photo.photo_url} onClick={this.openPhoto(photo)} />
-            </li>
-            <div className="hidden-photo-info">
-              <div className="message">
-                "{photo.photo_title}"&nbsp;
-                {photo.age} ago
+            <div key={photo.id + "div"} className="image">
+              <li key={photo.id} className="profile-index-photo">
+                <img src={photo.photo_url} onClick={this.openPhoto(photo)} />
+              </li>
+              <div className="hidden-photo-info">
+                <div className="message">
+                  "{photo.photo_title}"&nbsp;
+                  {photo.age} ago
+                </div>
               </div>
-            </div>
             </div>
           );
         })}
@@ -120,7 +118,9 @@ class UserIndexPhotos extends React.Component {
               className="photo-info-description glowing-border"
             />
             <input className="save-photo-info" type="submit" value="Save" />
-            <button className="cancel-button" onClick={this.closeModal}>Cancel</button>
+            <button className="cancel-button" onClick={this.closeModal}>
+              Cancel
+            </button>
           </form>
           <button className="delete-photo-button" onClick={this.deletePhoto}>
             Delete Photo
@@ -138,7 +138,9 @@ class UserIndexPhotos extends React.Component {
 
             <h4>Description</h4>
             {this.state.photo.photo_description || ""}
-            <button className="cancel-button" onClick={this.closeModal}>Cancel</button>
+            <button className="cancel-button" onClick={this.closeModal}>
+              Cancel
+            </button>
           </form>
         </div>
       );

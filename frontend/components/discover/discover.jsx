@@ -58,7 +58,9 @@ class Discover extends React.Component {
   }
 
   shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+    var currentIndex = array.length,
+      temporaryValue,
+      randomIndex;
     while (0 !== currentIndex) {
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
@@ -92,7 +94,6 @@ class Discover extends React.Component {
   }
 
   followOrFollowing() {
-    // debugger
     if (this.props.currentUser.id !== parseInt(this.props.user.id)) {
       const userFollowers = this.props.user.followers.map(follower => {
         return follower.id;

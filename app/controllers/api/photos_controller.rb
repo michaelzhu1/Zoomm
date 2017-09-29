@@ -3,7 +3,6 @@ class Api::PhotosController < ApplicationController
   # before_action :require_logged_in
 
   def index
-    # debugger
     if params[:id]
       @photos = Photo.where("author_id = ?", params[:id])
     else
@@ -14,7 +13,6 @@ class Api::PhotosController < ApplicationController
 
   def index_feed
     @photos = [];
-    # debugger
     current_user.followings.each do |followee|
       @photos.push(followee.photos)
     end

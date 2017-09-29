@@ -47,7 +47,6 @@ const personalGreeting = (currentUser, logout) => (
 );
 
 const Greeting = ({ currentUser, logout }) => {
-  // debugger
   return currentUser ? personalGreeting(currentUser, logout) : sessionLinks();
 };
 

@@ -39,14 +39,7 @@ class FeedIndex extends React.Component {
   componentDidMount() {
     this.props.fetchUserFeed();
     this.setState({ loading: false });
-    // this.props.fetchUserPhotos(this.props.match.params.userId);
   }
-
-  // componentWillReceiveProps(newProps) {
-  //   if (this.props.user.id !== parseInt(newProps.match.params.userId)) {
-  //     this.props.fetchUserPhotos(newProps.match.params.userId);
-  //   }
-  // }
 
   openModal() {
     this.setState({ modalIsOpen: true });
@@ -65,7 +58,9 @@ class FeedIndex extends React.Component {
   }
 
   shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+    var currentIndex = array.length,
+      temporaryValue,
+      randomIndex;
     while (0 !== currentIndex) {
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
