@@ -29,13 +29,12 @@ const customStyles = {
 class Discover extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { photo: {}, modalIsOpen: false};
+    this.state = { photo: {}, modalIsOpen: false };
     this.openPhoto = this.openPhoto.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.discoverPhotos = this.discoverPhotos.bind(this);
     this.followOrFollowing = this.followOrFollowing.bind(this);
-    // this.followButton = this.followButton.bind(this);
   }
 
   componentDidMount() {
@@ -53,15 +52,27 @@ class Discover extends React.Component {
   openPhoto(photo) {
     return e => {
       this.props.fetchUser(photo.author_id);
-      this.setState({ photo: photo});
+      this.setState({ photo: photo });
       this.openModal();
     };
+  }
+
+  shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+    return array;
   }
 
   discoverPhotos() {
     return (
       <ul className="feed-ul">
-        {this.props.photos.map(photo => {
+        {this.shuffle(this.props.photos).map(photo => {
           return (
             <div key={photo.id + "div"} className="image">
               <li key={photo.id} className="profile-index-photo">
@@ -82,9 +93,7 @@ class Discover extends React.Component {
 
   followOrFollowing() {
     // debugger
-    if (
-      this.props.currentUser.id !== parseInt(this.props.user.id)
-    ){
+    if (this.props.currentUser.id !== parseInt(this.props.user.id)) {
       const userFollowers = this.props.user.followers.map(follower => {
         return follower.id;
       });
@@ -93,7 +102,7 @@ class Discover extends React.Component {
           <button
             className="edit-profile-button"
             onClick={() => this.props.unfollow({ user_id: this.props.user.id })}
-            >
+          >
             Following
           </button>
         );
@@ -102,12 +111,11 @@ class Discover extends React.Component {
           <button
             className="edit-profile-button"
             onClick={() => this.props.follow({ user_id: this.props.user.id })}
-            >
+          >
             Follow
           </button>
         );
       }
-
     }
   }
 

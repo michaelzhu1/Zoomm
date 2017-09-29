@@ -15,7 +15,6 @@
 .feed-photo-right {
   width: 200px;
   display: flex;
-  // justify-content: center;
   flex-direction: column;
   align-items: center;
   margin-left: 50px;
@@ -74,7 +73,7 @@
   background-color: gray;
   opacity: 0.8;
   overflow: hidden;
-  margin-left: 5px;;
+  margin-left: 5px;
   margin-right: 5px;
   height: 0;
   transition: 0.3s;
@@ -94,7 +93,7 @@
   text-align: right;
 }
 
-.image:hover .hidden-photo-info{
+.image:hover .hidden-photo-info {
   height: 30px;
   text-align: right;
 }

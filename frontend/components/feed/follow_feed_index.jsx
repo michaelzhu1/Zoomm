@@ -64,19 +64,32 @@ class FeedIndex extends React.Component {
     };
   }
 
+  shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+    return array;
+  }
+
   displayPhotos() {
     if (this.props.photos.length === 0) {
       return (
         <div className="empty-feed">
-
-            Your feed is empty because you are not following anyone.
-            <Link className="discover-link" to="/discover">Discover amazing photos here!</Link>
+          Your feed is empty because you are not following anyone.
+          <Link className="discover-link" to="/discover">
+            Discover amazing photos here!
+          </Link>
         </div>
       );
     } else {
       return (
         <ul className="feed-ul">
-          {this.props.photos.map(photo => {
+          {this.shuffle(this.props.photos).map(photo => {
             return (
               <div key={photo.id + "div"} className="image">
                 <li key={photo.id} className="profile-index-photo">
