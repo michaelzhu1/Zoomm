@@ -6,7 +6,7 @@
 
 ![Live Login](https://github.com/michaelzhu1/Zoomm/blob/master/docs/README/loginpage_gif.gif)
 
-## Feature 
+## Feature
 * Highly secure authentication for user login and signup
 * Upload, edit, delete photos
 * Setting personalized profile photo and cover photo in User Profile page
@@ -14,8 +14,8 @@
 * Discover all the amazing photos brought by other great photographers in Zoomm community
 
 
-### User Authentication 
-#### Password Encryption 
+### User Authentication
+#### Password Encryption
 The database store the BCrypt `password_digest` instead of User's actual password.
 
 #### User Session Token
@@ -39,7 +39,7 @@ I used `SecureRandom` to ensure each user has an unique `session_token` when the
 ```
 
 #### Fetching user's own photo
-I used ActiveRecord to query Photo table based off the user id sent from the frontend. 
+I used ActiveRecord to query Photo table based off the user id sent from the frontend.
 ```ruby
   def index
     if params[:id]
@@ -52,7 +52,7 @@ I used ActiveRecord to query Photo table based off the user id sent from the fro
 ```
 
 #### Fetching photos based off user's followees
-I created a customized route for User's feed page. 
+I created a customized route for User's feed page.
 
 ```ruby
   def index_feed
@@ -101,12 +101,11 @@ export const ProtectedRoute = withRouter(
 ### Upload
 I used Cloudinary to host photos storage. Users are able to upload photos. The upload form pops up using Modal, and it gives the preview for that photo, along with title and description input.
 
-![uploadform]()
+![uploadform](https://github.com/michaelzhu1/Zoomm/blob/master/docs/README/upload_form.png)
 
-![uploaddemo]()
 
 ## Technology
-***
+
 Zoomm was created utilizing these key technologies:
 
 ### Frontend
@@ -124,13 +123,13 @@ Zoomm was created utilizing these key technologies:
 
 
 ## Future Implementation
-***
-#### Likes 
+
+#### Likes
 User has the ability to like photos from Feed and Discover page, but not their own photos.
 #### Comments
 User has the ability to comment on photos from Feed and Discover page. User can also like or comment on the comments.
 #### Tags
-Each photo can have a maximum amount 10 tags, which will eventaully be used to sort into different albums.
+Each photo can have a maximum amount 10 tags, which will eventually be used to sort into different albums.
 
 ***
 See the development ![README](https://github.com/michaelzhu1/Zoomm/wiki) for a list of components, sample state, DB schema, and wireframes.
