@@ -193,7 +193,7 @@ class ProfileHeader extends React.Component {
       ) {
         return (
           <div className="user-header-info">
-            {Object.keys(this.props.photos).length} Photos &nbsp; &nbsp;{this.props.user.followers.length}{" "}
+            {Object.keys(this.props.photos).length} Photos &nbsp; &nbsp;{this.props.user.followers.length}&nbsp;
             Followers &nbsp; &nbsp;{this.props.user.followings.length} Following
             &nbsp;
             <button className="edit-profile-button" onClick={this.openModal}>
