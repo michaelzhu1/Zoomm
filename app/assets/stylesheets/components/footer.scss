@@ -1,7 +1,8 @@
 .footer {
-  font-size: 36px;
-  background-color: white;
-
+  font-size: 40px;
+  div {
+    width: 500px;
+  }
   ul  {
     height: 50px;
     text-align:  center;
@@ -9,12 +10,13 @@
     bottom: 0;
   }
   li {
+    justify-content: center;
     align-items: center;
     display: flex;
     margin: 10px;
     list-style: none;
   }
   a:hover {
-    color: #4294C1;
+    color: $hover-blue;
   }
 }
