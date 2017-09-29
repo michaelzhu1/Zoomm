@@ -1,5 +1,6 @@
 .splash-gif {
   width: 100%;
+  height: 100%;
   position: absolute;
   z-index: -100;
   img {
@@ -10,7 +11,7 @@
 
 .homepage-message {
   font-size: 22px;
-  height: 800px;
+  height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
