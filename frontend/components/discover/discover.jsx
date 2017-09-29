@@ -55,6 +55,19 @@ class Discover extends React.Component {
       this.openModal();
     };
   }
+// shuffles every time i open a modal and scroll to the top of the page
+
+//   shuffle(array) {
+//   var currentIndex = array.length, temporaryValue, randomIndex;
+//   while (0 !== currentIndex) {
+//     randomIndex = Math.floor(Math.random() * currentIndex);
+//     currentIndex -= 1;
+//     temporaryValue = array[currentIndex];
+//     array[currentIndex] = array[randomIndex];
+//     array[randomIndex] = temporaryValue;
+//   }
+//   return array;
+// }
 
   discoverPhotos() {
     return (

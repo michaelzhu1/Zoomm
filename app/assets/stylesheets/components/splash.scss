@@ -1,7 +1,38 @@
 .splash-gif {
   width: 100%;
+  position: absolute;
+  z-index: -100;
   img {
     width: 100%;
     height: 100%;
   }
+}
+
+.homepage-message {
+  font-size: 22px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: $sans-serif;
+  // font-weight: bold;
+  color: white;
+  // align-items: center;
+  h1 {
+    padding-right: 20px;
+    font-size: 30px;
+    text-align: right;
+    width: auto;
+    text-indent: 700px;
+  }
+}
+
+.join-us {
+  border: white 2px solid;
+  border-radius: 5px;
+  color: white;
+}
+
+.join-us:hover {
+  color: cornflowerblue;
 }

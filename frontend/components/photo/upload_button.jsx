@@ -91,7 +91,7 @@ class UploadButton extends React.Component {
     return (
       <div>
         <button className="nav-upload-button" onClick={this.openModal}>
-          <i className="fa fa-cloud-upload fa-1x" aria-hidden="true" />&nbsp;
+          <i className="fa fa-cloud-upload fa-1x" aria-hidden="true" />
           Upload
         </button>
         <Modal
@@ -116,6 +116,7 @@ class UploadButton extends React.Component {
                 value={this.state.photo_title}
                 onChange={this.update("photo_title")}
                 className="photo-title glowing-border"
+                placeholder="Enter a title..."
               />
             </label>
             <label className="upload-form-label">

@@ -8,7 +8,6 @@ const sessionLinks = () => (
       <Link className="homepage-nav-logo" to="/">
         Zoomm
       </Link>
-      <Link className="userpage-link" to="/discover"> Discover</Link>
       <div className="navbar-right">
         <Link className="homepage-nav-link" to="/login">
           <i className="fa fa-sign-in" aria-hidden="true" />&nbsp; Login
@@ -40,7 +39,7 @@ const personalGreeting = (currentUser, logout) => (
       </Link>
       <UploadButtonContainer />
       <button onClick={logout} className="log-out-button">
-        <i className="fa fa-sign-out" aria-hidden="true" />&nbsp; Log Out
+        <i className="fa fa-sign-out" aria-hidden="true" />Log Out
       </button>
     </div>
   </nav>

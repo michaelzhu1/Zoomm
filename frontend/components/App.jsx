@@ -13,7 +13,7 @@ const App = () => (
   <div>
     <Route path="/" component={GreetingContainer} />
     <Route exact path="/" component={SplashPlayer} />
-    <Route path="/discover" component={DiscoverContainer} />
+    <ProtectedRoute path="/discover" component={DiscoverContainer} />
     <ProtectedRoute path="/feed/:userId" component={FeedIndexContainer} />
     <ProtectedRoute path="/user/:userId" component={ProfileHeaderContainer} />
     <ProtectedRoute path="/user/:userId" component={UserPhotosContainer} />
