@@ -41,7 +41,7 @@ const personalGreeting = (currentUser, logout) => (
         > Feed
       </Link>
       <Link className="userpage-link" to={`/user/${currentUser.id}`}>
-        {currentUser.username} Profile
+        {currentUser.username}
       </Link>
       <UploadButtonContainer />
       <button onClick={logout} className="log-out-button">
