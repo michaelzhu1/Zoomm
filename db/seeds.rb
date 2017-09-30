@@ -51,6 +51,13 @@ jessica = User.create(
   cover_img_url: "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_2000/v1506710582/jessica/jessica_cover.jpg",
   profile_img_url: "http://res.cloudinary.com/foolishhunger/image/upload/v1506710005/jessica/jessieca_profile.jpg"
 )
+henry = User.create(
+  username: "Henry",
+  password: "henry123",
+  bio: "Love conquers all. Show some love every day, every minute, every second.",
+  cover_img_url: "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506808179/henry/cover.jpg",
+  profile_img_url: "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_500/v1506808180/henry/profile_pic.jpg"
+)
 
 #############Follows #############
 Follow.create(follower_id: guest.id, following_id: michael.id)
@@ -103,35 +110,35 @@ g5 = Photo.create(
 )
 
 #michael
-n1 = Photo.create(
+m1 = Photo.create(
   author_id: michael.id,
   photo_title: "Work station",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/v1506710995/michael/photo-1438302292089-1bfacb810383.jpg",
   photo_description: ""
 )
 
-n2 = Photo.create(
+m2 = Photo.create(
   author_id: michael.id,
   photo_title: "Working on job application",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/v1506710994/michael/photo-1486312338219-ce68d2c6f44d.jpg",
   photo_description: ""
 )
 
-n3 = Photo.create(
+m3 = Photo.create(
   author_id: michael.id,
   photo_title: "M for Michael?",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/v1506710994/michael/photo-1496243975092-6ec259c776e2.jpg",
   photo_description: ""
 )
 
-n4 = Photo.create(
+m4 = Photo.create(
   author_id: michael.id,
   photo_title: "A glass of energy boost",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/v1506710997/michael/photo-1502599213010-875782f9bf52.jpg",
   photo_description: ""
 )
 
-n5 = Photo.create(
+m5 = Photo.create(
   author_id: michael.id,
   photo_title: "Photography 101",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/v1506710995/michael/photo-1484665739383-a1069a82d4be.jpg",
@@ -139,35 +146,35 @@ n5 = Photo.create(
 )
 
 #liam
-k1 = Photo.create(
+l1 = Photo.create(
   author_id: liam.id,
   photo_title: "Coffee beans",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506708204/liam/photo-1442550528053-c431ecb55509_cdnhuc.jpg",
   photo_description: ""
 )
 
-k2 = Photo.create(
+l2 = Photo.create(
   author_id: liam.id,
   photo_title: "Tasty coffee",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506708206/liam/photo-1462917882517-e150004895fa_o4bxp6.jpg",
   photo_description: ""
 )
 
-k3 = Photo.create(
+l3 = Photo.create(
   author_id: liam.id,
   photo_title: "Color wheel",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506708209/liam/photo-1498804103079-a6351b050096_k5k54j.jpg",
   photo_description: ""
 )
 
-k4 = Photo.create(
+l4 = Photo.create(
   author_id: liam.id,
   photo_title: "Morning brew",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506708209/liam/photo-1501476116911-83efa0ed0983_lvqppp.jpg",
   photo_description: ""
 )
 
-k5 = Photo.create(
+l5 = Photo.create(
   author_id: liam.id,
   photo_title: "The morning grind",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506708209/liam/photo-1502471602546-17554aac1160_a9pkvv.jpg",
@@ -175,35 +182,35 @@ k5 = Photo.create(
 )
 
 #noah
-x1 = Photo.create(
+n1 = Photo.create(
   author_id: noah.id,
   photo_title: "16k of hard work",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506708208/noah/8k_wwstvc.jpg",
   photo_description: ""
 )
 
-x2 = Photo.create(
+n2 = Photo.create(
   author_id: noah.id,
   photo_title: "Morning run ready",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506708209/noah/jump_nvo8ul.jpg",
   photo_description: ""
 )
 
-x3 = Photo.create(
+n3 = Photo.create(
   author_id: noah.id,
   photo_title: "Leaping",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506708213/noah/photo-1465080207318-3de7361f84e7_nlkac2.jpg",
   photo_description: "Take a leap of faith"
 )
 
-x4 = Photo.create(
+n4 = Photo.create(
   author_id: noah.id,
   photo_title: "Biking in the bay",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506708214/noah/photo-1488401318902-f7feae66db20_p2d27i.jpg",
   photo_description: "After a 2 hours journey."
 )
 
-x5 = Photo.create(
+n5 = Photo.create(
   author_id: noah.id,
   photo_title: "Rocky mode",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506708216/noah/top_rdb4aw.jpg",
@@ -211,35 +218,35 @@ x5 = Photo.create(
 )
 
 #emma
-c1 = Photo.create(
+e1 = Photo.create(
   author_id: emma.id,
   photo_title: "Ice cream in Iceland",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506708206/emma/photo-1422246478030-ac94dfdc1dae_e0jjlo.jpg",
   photo_description: ""
 )
 
-c2 = Photo.create(
+e2 = Photo.create(
   author_id: emma.id,
   photo_title: "A proper lunch",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506708206/emma/photo-1446611720526-39d16597055c_xusko6.jpg",
   photo_description: ""
 )
 
-c3 = Photo.create(
+e3 = Photo.create(
   author_id: emma.id,
   photo_title: "Grilled corn",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506708206/emma/photo-1470119693884-47d3a1d1f180_p6qrx3.jpg",
   photo_description: ""
 )
 
-c4 = Photo.create(
+e4 = Photo.create(
   author_id: emma.id,
   photo_title: "the true Burger king",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506708212/emma/photo-1504185945330-7a3ca1380535_yculqf.jpg",
   photo_description: ""
 )
 
-c5 = Photo.create(
+e5 = Photo.create(
   author_id: emma.id,
   photo_title: "A bowl of grape",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506708211/emma/photo-1473229903343-d7903343f6c0_ozgtqv.jpg",
@@ -248,35 +255,35 @@ c5 = Photo.create(
 
 
 #jessica
-o1 = Photo.create(
+j1 = Photo.create(
   author_id: jessica.id,
   photo_title: "River",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506708212/jessica/4575979c_g6pgwb.jpg",
   photo_description: ""
 )
 
-o2 = Photo.create(
+j2 = Photo.create(
   author_id: jessica.id,
   photo_title: "misty",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506708211/jessica/photo-1437422061949-f6efbde0a471_klmfkf.jpg",
   photo_description: ""
 )
 
-o3 = Photo.create(
+j3 = Photo.create(
   author_id: jessica.id,
   photo_title: "waterfall",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/v1506708214/jessica/photo-1442850473887-0fb77cd0b337_krgfny.jpg",
   photo_description: ""
 )
 
-o4 = Photo.create(
+j4 = Photo.create(
   author_id: jessica.id,
   photo_title: "Fallen leaves",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/v1506708215/jessica/photo-1444863097070-0ae713d23558_m7mbfa.jpg",
   photo_description: ""
 )
 
-o5 = Photo.create(
+j5 = Photo.create(
   author_id: jessica.id,
   photo_title: "Tahoe",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506708207/jessica/photo-1500323413110-71ec8ed382f0_ftrajm.jpg",
@@ -319,4 +326,67 @@ g10 = Photo.create(
   photo_title: "Hut",
   photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506715821/guest/5.jpg",
   photo_description: ""
+)
+
+######## henry #################
+
+h1 = Photo.create(
+  author_id: henry.id,
+  photo_title: "Heart sunset",
+  photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/v1506808178/henry/h1.jpg",
+  photo_description: "We love the things we love for what they are."
+)
+h2 = Photo.create(
+  author_id: henry.id,
+  photo_title: "LOVE",
+  photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/v1506808178/henry/h2.jpg",
+  photo_description: "Your heart is free, have the courage to follow it."
+)
+h3 = Photo.create(
+  author_id: henry.id,
+  photo_title: "love in the air",
+  photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/v1506808179/henry/h3.jpg",
+  photo_description: "Love is of all passions the strongest, for it attacks simultaneously the head, the heart, and the senses."
+)
+h4 = Photo.create(
+  author_id: henry.id,
+  photo_title: "Just married",
+  photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/v1506808178/henry/h4.jpg",
+  photo_description: "And in the end, the love you take, is equal to the love you make."
+)
+h5 = Photo.create(
+  author_id: henry.id,
+  photo_title: "Paris",
+  photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/v1506808179/henry/h5.jpg",
+  photo_description: "Love is composed of a single soul inhabiting two bodies."
+)
+h6 = Photo.create(
+  author_id: henry.id,
+  photo_title: "I shell heart you",
+  photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/v1506808179/henry/h6.jpg",
+  photo_description: "You have half our gifts. I the other. Together we make a whole. Together we are much more powerful."
+)
+h7 = Photo.create(
+  author_id: henry.id,
+  photo_title: "One cute couple",
+  photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/v1506808179/henry/h7.jpg",
+  photo_description: "If I know what love is, it is because of you."
+)
+h8 = Photo.create(
+  author_id: henry.id,
+  photo_title: "Walking down the street",
+  photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/v1506808179/henry/h8.jpg",
+  photo_description: "Love never claims, it ever gives."
+)
+h9 = Photo.create(
+  author_id: henry.id,
+  photo_title: "Love is love",
+  photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/v1506808180/henry/h9.jpg",
+  photo_description: ""
+)
+h10 = Photo.create(
+  author_id: henry.id,
+  photo_title: "Let's grow old together",
+  photo_url: "http://res.cloudinary.com/foolishhunger/image/upload/v1506808180/henry/h10.jpg",
+  photo_description: "I need your loving, loving is what I need now."
 )
