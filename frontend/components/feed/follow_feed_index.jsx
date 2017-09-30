@@ -67,13 +67,14 @@ class FeedIndex extends React.Component {
         </div>
       );
     } else {
+      const photoArray = this.props.photos;
       return (
         <ul className="feed-ul">
           <BeatLoader
             color={'#123abc'}
             loading={this.state.loading}
           />
-          {this.props.photos.map(photo => {
+        {photoArray.map(photo => {
             return (
               <div key={photo.id + "div"} className="image">
                 <li key={photo.id} className="profile-index-photo">
