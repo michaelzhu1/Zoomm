@@ -21,7 +21,7 @@ michael = User.create(
   password: "mike123",
   bio: "A software developer at day, photographer at night. Connect with me @ https://www.linkedin.com/in/michael-zhu/ ",
   cover_img_url: "http://res.cloudinary.com/foolishhunger/image/upload/v1506710995/michael/michael_cover.jpg",
-  profile_img_url: "https://res.cloudinary.com/da6jfurzj/image/upload/v1495751327/i7srdum1xs1470qqytmm.jpg"
+  profile_img_url: "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_800/v1506806457/michael/DSC_8049_copy.jpg"
 )
 liam = User.create(
   username: "Liam",

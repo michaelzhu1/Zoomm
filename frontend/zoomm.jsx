@@ -3,9 +3,7 @@ import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from "./components/root";
 import { login } from "./actions/session_action";
-//testing
-// import {fetchUserPhotos} from './util/photo_api_util';
-window.login = login;
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -17,9 +15,5 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
-  //testing
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  // window.fetchUserPhotos = fetchUserPhotos;
   ReactDOM.render(<Root store={store} />, root);
 });

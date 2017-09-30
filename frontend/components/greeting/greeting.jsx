@@ -8,7 +8,7 @@ const sessionLinks = () => (
       <Link className="homepage-nav-logo" to="/">
         Zoomm
       </Link>
-      <div className="navbar-right">
+      <div className="splash-page-navbar-right">
         <Link className="homepage-nav-link" to="/login">
           <i className="fa fa-sign-in" aria-hidden="true" />&nbsp; Login
         </Link>
