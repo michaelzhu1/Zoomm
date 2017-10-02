@@ -13,10 +13,3 @@ export const deleteFollow = follow => {
     data: follow
   });
 };
-
-// export const getFollows = () => {
-//   return $.ajax({
-//     method: "GET",
-//     url: "/api/follows",
-//   });
-// };
