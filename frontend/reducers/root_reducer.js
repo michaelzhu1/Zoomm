@@ -3,7 +3,6 @@ import ErrorsReducer from "./errors_reducer";
 import SessionReducer from "./session_reducer";
 import ProfileReducer from "./profile_reducer";
 import PhotoReducer from "./photo_reducer";
-import FollowReducer from "./follow_reducer";
 
 const RootReducer = combineReducers({
   session: SessionReducer,
