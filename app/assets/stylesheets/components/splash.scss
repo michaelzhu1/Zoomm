@@ -9,29 +9,49 @@
   }
 }
 
+.splash-page {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
 .homepage-message {
-  font-size: 22px;
+  position: absolute;
   height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-family: $sans-serif;
+  font-family:serif;
   color: white;
+  max-width: 640px;
+  text-align: center;
   h1 {
-    padding-right: 20px;
-    font-size: 30px;
-    text-align: right;
+    font-size: 56px;
     width: auto;
-    text-indent: 700px;
   }
+  h3 {
+    font-size: 26px;
+    line-height: 32px;
+    margin-bottom: 50px;
+  }
+
 }
 
 .join-us {
   border: white 2px solid;
   border-radius: 5px;
-  color: white;
+  color: black;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 64px;
+  height: 64px;
+  transition: color .25s ease-in-out;
+  background-color: white;
+  min-width: 200px;
+  max-width: 250px;
+  align-self: center;
 }
 
 .join-us:hover {
-  color: $hover-blue;
+  color: gray;
 }
