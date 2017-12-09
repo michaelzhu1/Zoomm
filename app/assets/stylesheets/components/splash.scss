@@ -17,7 +17,7 @@
 
 .homepage-message {
   position: absolute;
-  height: 700px;
+  margin-top: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,6 +28,8 @@
   h1 {
     font-size: 56px;
     width: auto;
+    line-height: 100px;
+    font-weight: 600;
   }
   h3 {
     font-size: 26px;
@@ -53,5 +55,5 @@
 }
 
 .join-us:hover {
-  color: gray;
+  color: #939393;
 }

@@ -4,20 +4,21 @@ import UploadButtonContainer from "../photo/photo_container";
 
 const sessionLinks = () => (
   <nav>
-    <h1 className="splash-nav">
+    <div className="splash-nav">
       <Link className="homepage-nav-logo" to="/">
-        Zoomm
+        <h3>Zoomm</h3>
       </Link>
-      <div className="splash-page-navbar-right">
-        <Link className="homepage-nav-link" to="/login">
-          <i className="fa fa-sign-in" aria-hidden="true" />&nbsp; Login
-        </Link>
-        <Link className="homepage-nav-link" to="/signup">
-          <i className="fa fa-user-plus" aria-hidden="true" />
-          Sign up!
-        </Link>
+      <div className="nav-bar-span">
+        <div className="splash-page-navbar-right">
+          <Link className="login-splash" to="/login">
+            Log In
+          </Link>
+          <Link className="signup-splash" to="/signup">
+            Sign Up
+          </Link>
+        </div>
       </div>
-    </h1>
+    </div>
   </nav>
 );
 

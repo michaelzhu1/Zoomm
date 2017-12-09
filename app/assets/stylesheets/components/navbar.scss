@@ -1,21 +1,27 @@
 .homepage-nav-logo {
-  margin-left: 250px;
+  margin-left: 50px;
 }
 
 .splash-nav {
   position: absolute;
-  background-color: transparent;
+  background: rgba(0,0,0,.25);
   padding: 0;
   margin: 0;
   width: 100%;
   font-size: 22px;
-  height: 60px;
+  height: 64px;
   display: flex;
   justify-content: space-between;
   font-family: $sans-serif;
-  font-weight: bold;
   color: white;
   align-items: center;
+  min-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  h3 {
+    font-size: 24px;
+    font-weight: 600;
+  }
 }
 
 .session-nav {
@@ -51,16 +57,33 @@
 
 .splash-page-navbar-right {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   width: auto;
   align-items: center;
-  margin-right: 20px;
+  color: white;
+  height: 40px;
+  margin-right: 25px;
 }
 
-nav h1 .homepage-nav-link {
-  color: white;
-  margin-right: 30px;
+.nav-bar-span {
+  width: 100%;
 }
-nav h1 .homepage-nav-link:hover {
-  color: #50c9ff;
+.login-splash {
+  margin-right: 30px;
+  font-size: 16px;
+}
+
+.signup-splash {
+  background: white;
+  border-radius: 3px;
+  color: black;
+  font-size: 16px;
+  text-align: center;
+  height: 80%;
+  width: 100px;
+  line-height: 30px;
+}
+nav .signup-splash:hover {
+  color: #939393;
+  opacity: 1;
 }
