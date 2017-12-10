@@ -31,7 +31,6 @@ const Footer = () => (
           <li className="foot-li">
             <a href="#">Blog</a>
           </li>
-
         </ul>
       </div>
     </div>
