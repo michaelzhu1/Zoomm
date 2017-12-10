@@ -15,7 +15,10 @@ class SplashPlayer extends React.Component {
     "http://res.cloudinary.com/foolishhunger/image/upload/v1512872633/splash6_geu10p.jpg",
     "http://res.cloudinary.com/foolishhunger/image/upload/v1512872632/splash7_xo1ceg.jpg",
     "http://res.cloudinary.com/foolishhunger/image/upload/v1512872634/splash9_ha6jzv.jpg"
-    ];
+  ];
+    mySlides.forEach(function(url){
+      new Image().src = url;
+      });
     if (myIndex >= mySlides.length) {
       myIndex = 0;
     }
