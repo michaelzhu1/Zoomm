@@ -5,14 +5,21 @@ class SplashPlayer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      slide: "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,h_927/v1512868681/splash2_i3eako.jpg"
+      slide: "http://res.cloudinary.com/foolishhunger/image/upload/v1512872631/splash5_cs8tkr.jpg"
     };
     this.carousel(0);
   }
 
   carousel(myIndex) {
     const mySlides = ["http://res.cloudinary.com/foolishhunger/image/upload/v1512805477/splash1_ykuvzb.jpg",
-    "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,h_927/v1512868681/splash2_i3eako.jpg"];
+    "http://res.cloudinary.com/foolishhunger/image/upload/v1512872632/splash10_uznxqi.jpg",
+    "http://res.cloudinary.com/foolishhunger/image/upload/v1512871212/splash3_du83mz.jpg",
+    "http://res.cloudinary.com/foolishhunger/image/upload/v1512871259/splash4_nqt5ss.jpg",
+    "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,h_927/v1512868681/splash2_i3eako.jpg",
+    "http://res.cloudinary.com/foolishhunger/image/upload/v1512872633/splash6_geu10p.jpg",
+    "http://res.cloudinary.com/foolishhunger/image/upload/v1512872632/splash7_xo1ceg.jpg",
+    "http://res.cloudinary.com/foolishhunger/image/upload/v1512872634/splash9_ha6jzv.jpg"
+    ];
     if (myIndex >= mySlides.length) {
       myIndex = 0;
     }
@@ -20,7 +27,7 @@ class SplashPlayer extends React.Component {
     setTimeout(() => {
       this.carousel(myIndex);
       this.setState({slide: mySlides[myIndex-1]});
-    }, 6000);
+    }, 5000);
   }
 
 
