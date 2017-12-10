@@ -4,9 +4,6 @@ import {Link} from "react-router-dom";
 class SplashPlayer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      slide: "http://res.cloudinary.com/foolishhunger/image/upload/v1512872631/splash5_cs8tkr.jpg"
-    };
     this.carousel(0);
   }
 
@@ -26,7 +23,8 @@ class SplashPlayer extends React.Component {
     myIndex++;
     setTimeout(() => {
       this.carousel(myIndex);
-      this.setState({slide: mySlides[myIndex-1]});
+      const bg = document.querySelector(".splash-background");
+      bg.style.backgroundImage = `url(${mySlides[myIndex-1]})`;
     }, 5000);
   }
 
@@ -36,7 +34,7 @@ class SplashPlayer extends React.Component {
     return (
       <div className="splash-page">
         <div className="splash-gif">
-          <img src={this.state.slide} />
+          <div className="splash-background"></div>
         </div>
         <div className="homepage-message">
           <h1>Find your inspiration.</h1>

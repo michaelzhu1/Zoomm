@@ -8,7 +8,18 @@
     width: 100%;
     height: 100%;
   }
-  
+}
+
+.splash-background {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  box-sizing: border-box;
+  position: absolute;
+  transition: background-image 1s ease-in-out;
+  background-image: url("http://res.cloudinary.com/foolishhunger/image/upload/v1512872631/splash5_cs8tkr.jpg");
 }
 
 .splash-page {
