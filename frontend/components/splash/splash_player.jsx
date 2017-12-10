@@ -4,11 +4,9 @@ import {Link} from "react-router-dom";
 class SplashPlayer extends React.Component {
   constructor(props) {
     super(props);
-    this.carousel(0);
   }
 
   carousel(myIndex) {
-    let timeout;
     const mySlides = ["http://res.cloudinary.com/foolishhunger/image/upload/v1512805477/splash1_ykuvzb.jpg",
     "http://res.cloudinary.com/foolishhunger/image/upload/v1512872632/splash10_uznxqi.jpg",
     "http://res.cloudinary.com/foolishhunger/image/upload/v1512871212/splash3_du83mz.jpg",
@@ -22,24 +20,26 @@ class SplashPlayer extends React.Component {
       myIndex = 0;
     }
     myIndex++;
-    timeout = setTimeout(() => {
+    window.timeout = setTimeout(() => {
       const bg = document.querySelector(".splash-background");
-      if (bg === null) {
-        clearTimeout(timeout);
-        return;
-      }
       bg.style.backgroundImage = `url(${mySlides[myIndex-1]})`;
       this.carousel(myIndex);
     }, 5000);
   }
 
+  componentDidMount() {
+    this.carousel(0);
+  }
 
+  componentWillUnmount() {
+    clearTimeout(window.timeout);
+  }
 
   render() {
     return (
       <div className="splash-page">
         <div className="splash-gif">
-          <div className="splash-background"></div>
+          <div className="splash-background" ref="splashBg"></div>
         </div>
         <div className="homepage-message">
           <h1>Find your inspiration.</h1>
@@ -55,4 +55,3 @@ class SplashPlayer extends React.Component {
 }
 
 export default SplashPlayer;
-// <img src="https://i.pinimg.com/originals/1d/f7/81/1df78147c4a8f5f19867a1a0cd0ea3c1.gif" />

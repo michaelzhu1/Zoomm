@@ -7,15 +7,37 @@ class SessionForm extends React.Component {
     this.state = {
       username: "",
       password: "",
-      profile_img_url: "http://www.zeppfeed.com/media/uploads/users/default.png"
+      profile_img_url: "http://www.zeppfeed.com/media/uploads/users/default.png",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
+  carousel(myIndex) {
+    const mySlides = ["http://res.cloudinary.com/foolishhunger/image/upload/v1512805477/splash1_ykuvzb.jpg",
+    "http://res.cloudinary.com/foolishhunger/image/upload/v1512872632/splash10_uznxqi.jpg",
+    "http://res.cloudinary.com/foolishhunger/image/upload/v1512871212/splash3_du83mz.jpg",
+    "http://res.cloudinary.com/foolishhunger/image/upload/v1512871259/splash4_nqt5ss.jpg",
+    "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,h_927/v1512868681/splash2_i3eako.jpg",
+    "http://res.cloudinary.com/foolishhunger/image/upload/v1512872633/splash6_geu10p.jpg",
+    "http://res.cloudinary.com/foolishhunger/image/upload/v1512872632/splash7_xo1ceg.jpg",
+    "http://res.cloudinary.com/foolishhunger/image/upload/v1512872634/splash9_ha6jzv.jpg"
+    ];
+    if (myIndex >= mySlides.length) {
+      myIndex = 0;
+    }
+    myIndex++;
+    window.timeout = setTimeout(() => {
+      const bg = document.querySelector(".login-form-container");
+      bg.style.backgroundImage = `url(${mySlides[myIndex-1]})`;
+      this.carousel(myIndex);
+    }, 5000);
+  }
+
   componentWillUnmount() {
     this.props.clearErrors();
+    clearTimeout(window.timeout);
   }
 
   handleSubmit(e) {
@@ -24,7 +46,10 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.carousel(0);
+  }
+
   update(field) {
     return e => {
       this.setState({ [field]: e.currentTarget.value });
@@ -50,8 +75,6 @@ class SessionForm extends React.Component {
       }
     }, 100);
   }
-
-
 
   demoLogin() {
     if (this.props.formType === "login") {

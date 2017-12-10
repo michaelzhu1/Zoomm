@@ -1,16 +1,22 @@
 .login-form-container {
-  height: 100vh;
+  // height: 100vh;
+  // width: 100%;
+  // align-items: center;
+  // font-size: 16px;
+  // float: left;
+  // font-family: $sans-serif;
+  // background-image: url("        http://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1400/v1506196087/su9jtvxafq5htqyo5np3.jpg");
+  // background-size: cover;
+  // background-repeat: no-repeat;
   width: 100%;
-  align-items: center;
-  font-size: 16px;
-  float: left;
-  font-family: $sans-serif;
-  background-image: url("        http://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1400/v1506196087/su9jtvxafq5htqyo5np3.jpg");
+  height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-body {
+  background-position: 50%;
+  box-sizing: border-box;
+  // position: absolute;
+  transition: background-image 1s ease-in-out;
+  background-image: url("http://res.cloudinary.com/foolishhunger/image/upload/v1512872631/splash5_cs8tkr.jpg");
 }
 
 .form-label {
