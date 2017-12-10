@@ -12,10 +12,7 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
-  }
-
-  carousel(myIndex) {
-    const mySlides = [
+    this.mySlides = [
     "http://res.cloudinary.com/foolishhunger/image/upload/v1512872634/splash9_ha6jzv.jpg",
     "http://res.cloudinary.com/foolishhunger/image/upload/v1512872632/splash7_xo1ceg.jpg",
     "http://res.cloudinary.com/foolishhunger/image/upload/v1512872633/splash6_geu10p.jpg",
@@ -24,17 +21,22 @@ class SessionForm extends React.Component {
     "http://res.cloudinary.com/foolishhunger/image/upload/v1512871212/splash3_du83mz.jpg",
     "http://res.cloudinary.com/foolishhunger/image/upload/v1512872632/splash10_uznxqi.jpg",
     "http://res.cloudinary.com/foolishhunger/image/upload/v1512805477/splash1_ykuvzb.jpg"
-  ];
-    mySlides.forEach(function(url){
+    ];
+  }
+  cacheSlides() {
+    this.mySlides.forEach(function(url){
       new Image().src = url;
     });
-    if (myIndex >= mySlides.length) {
+  }
+
+  carousel(myIndex) {
+    if (myIndex >= this.mySlides.length) {
       myIndex = 0;
     }
     myIndex++;
     window.timeout = setTimeout(() => {
       const bg = document.querySelector(".login-form-container");
-      bg.style.backgroundImage = `url(${mySlides[myIndex-1]})`;
+      bg.style.backgroundImage = `url(${this.mySlides[myIndex-1]})`;
       this.carousel(myIndex);
     }, 5000);
   }
@@ -52,6 +54,7 @@ class SessionForm extends React.Component {
 
   componentDidMount() {
     this.carousel(0);
+    this.cacheSlides();
   }
 
   update(field) {
