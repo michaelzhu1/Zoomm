@@ -47,7 +47,7 @@ class SplashPlayer extends React.Component {
     return (
       <div className="splash-page">
         <div className="splash-gif">
-          <div className="splash-background" ref="splashBg"></div>
+          <div className="splash-background"></div>
         </div>
         <div className="homepage-message">
           <h1>Find your inspiration.</h1>

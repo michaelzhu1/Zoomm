@@ -17,6 +17,9 @@
   // position: absolute;
   transition: background-image 1s ease-in-out;
   background-image: url("http://res.cloudinary.com/foolishhunger/image/upload/v1512872631/splash5_cs8tkr.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .form-label {
@@ -42,16 +45,16 @@
 
 .login-form {
   width: 350px;
-  height: 400px;
+  // height: 400px;
   padding: 12px 20px;
-  margin-left: 15%;
-  margin-top: 10%;
+  // margin-left: 15%;
+  // margin-top: 10%;
   display: inline-block;
   border: 5px solid #ccc;
-  border-radius: 10px;
+  border-radius: 3px;
   box-sizing: border-box;
-  min-width: 323px;
-  min-height: 355px;
+  min-width: 325px;
+  min-height: 375px;
   background-color: white;
 }
 .login-form button {
@@ -62,7 +65,7 @@
 .session-form-input {
   width: 100%;
   padding: 12px 20px;
-  margin: 8px 0;
+  margin: 10px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -107,19 +110,31 @@
   font-size: 16px;
   font-weight: bold;
 }
-.session-link {
-  color: blue;
-  text-decoration: underline;
-  margin: 0 auto;
-  font-family: sans-serif;
-}
+
 
 .error-messages {
   color: #ff1919;
+  border-top: none;
+  margin-top: 0px;
+  min-height: 32px;
+  font-size: 14px;
+  li {
+    align-self: center;
+  }
 }
 
 .demo-button {
   margin: 0 auto;
+  width: 100%;
+  display:flex;
+  justify-content: center;
+  color: black;
+  background: transparent;
+  border: gray solid 1px;
+}
+
+.demo-button:hover {
+  background-color: #d3d3d3;
 }
 
 
@@ -141,4 +156,20 @@ h1 .homepage-nav-link:hover {
   font-size: 22px;
   font-weight: bold;
   text-align: center;
+  font-family: arial;
+}
+
+.navlink {
+  min-height: 20px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+.session-link {
+  color: blue;
+  text-decoration: underline;
+  margin: 0 auto;
+  font-family: arial;
 }

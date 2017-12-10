@@ -41,6 +41,14 @@ class SessionForm extends React.Component {
     }, 5000);
   }
 
+  componentWillMount() {
+    this.cacheSlides();
+  }
+
+  componentDidMount() {
+    this.carousel(0);
+  }
+
   componentWillUnmount() {
     this.props.clearErrors();
     clearTimeout(window.timeout);
@@ -50,11 +58,6 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
-  }
-
-  componentDidMount() {
-    this.carousel(0);
-    this.cacheSlides();
   }
 
   update(field) {
@@ -87,7 +90,7 @@ class SessionForm extends React.Component {
     if (this.props.formType === "login") {
       return (
         <button className="demo-button" onClick={this.handleDemoLogin}>
-          Demo Login
+          <h3>Demo Login</h3>
         </button>
       );
     }
@@ -106,17 +109,17 @@ class SessionForm extends React.Component {
   navLink() {
     if (this.props.formType === "login") {
       return (
-        <div>
+        <div className="navlink">
           <Link className="session-link" to="/signup">
-            Need an account? Sign up now!
+            Need an account?
           </Link>
         </div>
       );
     } else {
       return (
-        <div>
+        <div className="navlink">
           <Link className="session-link" to="/login">
-            Already have an account? Sign in here!
+            Have an account?
           </Link>
         </div>
       );
@@ -128,36 +131,33 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form">
-          <h3 className="welcome">Welcome to Zoomm!</h3>
-          <br />
+          <h3 className="welcome">{formName === "Log in" ? "Welcome Back to Zoomm!" : "Sign Up for Free"}</h3>
           {this.navLink()}
           {this.errors()}
-          <br />
           <label>
             <i className="fa fa-user" aria-hidden="true" /> Username:
             <input
               type="text"
               value={this.state.username}
               onChange={this.update("username")}
-              placeholder="Username"
+              placeholder="Enter Username"
               className="glowing-border session-form-input"
             />
           </label>
-          <br />
           <label>
             <i className="fa fa-lock" aria-hidden="true" /> Password:
             <input
               type="password"
               value={this.state.password}
               onChange={this.update("password")}
-              placeholder="Password"
+              placeholder="Enter Password"
               className="glowing-border session-form-input"
             />
           </label>
           <input
             className="session-form-submit"
             type="submit"
-            value={this.props.formType}
+            value={this.props.formType === "login" ? "Log In" : "Sign Up"}
           />
           {this.demoLogin()}
         </form>
