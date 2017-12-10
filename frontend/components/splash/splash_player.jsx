@@ -4,34 +4,39 @@ import {Link} from "react-router-dom";
 class SplashPlayer extends React.Component {
   constructor(props) {
     super(props);
+    this.mySlides = [
+    "http://res.cloudinary.com/foolishhunger/image/upload/v1512872634/splash9_ha6jzv.jpg",
+    "http://res.cloudinary.com/foolishhunger/image/upload/v1512872632/splash7_xo1ceg.jpg",
+    "http://res.cloudinary.com/foolishhunger/image/upload/v1512872633/splash6_geu10p.jpg",
+    "http://res.cloudinary.com/foolishhunger/image/upload/v1512871259/splash4_nqt5ss.jpg",
+    "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,h_927/v1512868681/splash2_i3eako.jpg",
+    "http://res.cloudinary.com/foolishhunger/image/upload/v1512871212/splash3_du83mz.jpg",
+    "http://res.cloudinary.com/foolishhunger/image/upload/v1512872632/splash10_uznxqi.jpg",
+    "http://res.cloudinary.com/foolishhunger/image/upload/v1512805477/splash1_ykuvzb.jpg"
+    ];
+  }
+
+  cacheSlides() {
+    this.mySlides.forEach(function(url){
+      new Image().src = url;
+    });
   }
 
   carousel(myIndex) {
-    const mySlides = ["http://res.cloudinary.com/foolishhunger/image/upload/v1512805477/splash1_ykuvzb.jpg",
-    "http://res.cloudinary.com/foolishhunger/image/upload/v1512872632/splash10_uznxqi.jpg",
-    "http://res.cloudinary.com/foolishhunger/image/upload/v1512871212/splash3_du83mz.jpg",
-    "http://res.cloudinary.com/foolishhunger/image/upload/v1512871259/splash4_nqt5ss.jpg",
-    "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,h_927/v1512868681/splash2_i3eako.jpg",
-    "http://res.cloudinary.com/foolishhunger/image/upload/v1512872633/splash6_geu10p.jpg",
-    "http://res.cloudinary.com/foolishhunger/image/upload/v1512872632/splash7_xo1ceg.jpg",
-    "http://res.cloudinary.com/foolishhunger/image/upload/v1512872634/splash9_ha6jzv.jpg"
-  ];
-    mySlides.forEach(function(url){
-      new Image().src = url;
-      });
-    if (myIndex >= mySlides.length) {
+    if (myIndex >= this.mySlides.length) {
       myIndex = 0;
     }
     myIndex++;
     window.timeout = setTimeout(() => {
       const bg = document.querySelector(".splash-background");
-      bg.style.backgroundImage = `url(${mySlides[myIndex-1]})`;
+      bg.style.backgroundImage = `url(${this.mySlides[myIndex-1]})`;
       this.carousel(myIndex);
     }, 5000);
   }
 
   componentDidMount() {
     this.carousel(0);
+    this.cacheSlides();
   }
 
   componentWillUnmount() {
