@@ -1,20 +1,33 @@
 import React from 'react';
 const Footer = () => (
   <div className="footer">
+    <div className="foot-container">
+      <div className="foot-top-row">
+        <ul className="foot-nav-ul">
+          <li className="foot-li">
+            <a href="#">About</a>
+          </li>
+          <li className="foot-li">
+            <a href="#">Careers</a>
+          </li>
+          <li className="foot-li">
+            <a href="#">Press</a>
+          </li>
+          <li className="foot-li">
+            <a href="#">Developers</a>
+          </li>
+          <li className="foot-li">
+            <a href="#">GitHub</a>
+          </li>
+          <li className="foot-li">
+            <a href="#">LinkedIn</a>
+          </li>
+          <li className="foot-li">
+            <a href="#">Blog</a>
+          </li>
 
-    <div>
-      <ul>
-        <li >
-          <h5>Visit me @</h5>
-        </li>
-        <li >
-          <a href="https://github.com/michaelzhu1"><i className="fa fa-github" aria-hidden="true"></i></a>
-        </li>
-        <li >
-          <a href="https://www.linkedin.com/in/michael-zhu/"><i className="fa fa-linkedin" aria-hidden="true"></i></a>
-        </li>
-
-      </ul>
+        </ul>
+      </div>
     </div>
   </div>
 );
