@@ -5,7 +5,7 @@ const Footer = () => (
       <div className="foot-top-row">
         <ul className="foot-nav-ul">
           <li className="foot-li">
-            <a href="#">About</a>
+            <a href="https://github.com/michaelzhu1/Zoomm">About</a>
           </li>
           <li className="foot-li">
             <a href="#">Careers</a>
@@ -14,13 +14,19 @@ const Footer = () => (
             <a href="#">Press</a>
           </li>
           <li className="foot-li">
-            <a href="#">Developers</a>
+            <a href="#">Privacy</a>
           </li>
           <li className="foot-li">
-            <a href="#">GitHub</a>
+            <a href="#">Terms</a>
           </li>
           <li className="foot-li">
-            <a href="#">LinkedIn</a>
+            <a href="http://www.michael-zhu.com/">Developer</a>
+          </li>
+          <li className="foot-li">
+            <a href="https://github.com/michaelzhu1">GitHub</a>
+          </li>
+          <li className="foot-li">
+            <a href="https://www.linkedin.com/in/michael-zhu/">LinkedIn</a>
           </li>
           <li className="foot-li">
             <a href="#">Blog</a>
