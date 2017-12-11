@@ -2,6 +2,13 @@ import React from "react";
 import Modal from "react-modal";
 import { Link } from "react-router-dom";
 import { BeatLoader } from 'react-spinners';
+import Masonry from 'react-masonry-component';
+import DiscoverIndexItems from './discover_index_items';
+
+const masonryOptions = {
+    transitionDuration: 0,
+    fitWidth: true
+};
 
 const customStyles = {
   overlay: {
@@ -10,19 +17,20 @@ const customStyles = {
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: "rgba(255, 255, 255, 0.95)",
+    backgroundColor: "rgba(255, 255, 255, 0.1)",
   },
   content: {
     padding: "30px",
     boxSizing: "border-box",
-    height: "90vh",
-    width: "90vw",
+    height: "90%",
+    width: "90%",
     top: "50%",
     left: "50%",
     right: "auto",
     bottom: "auto",
     marginRight: "-50%",
-    transform: "translate(-50%, -50%)"
+    transform: "translate(-50%, -50%)",
+
   }
 };
 
@@ -72,27 +80,19 @@ class Discover extends React.Component {
 
   discoverPhotos() {
     return (
-      <ul className="feed-ul">
-        <BeatLoader
-          color={'#123abc'}
-          loading={this.state.loading}
-        />
-        {this.props.photos.map(photo => {
-          return (
-            <div key={photo.id + "div"} className="image">
-              <li key={photo.id} className="profile-index-photo">
-                <img src={photo.photo_url} onClick={this.openPhoto(photo)} />
-              </li>
-              <div className="hidden-photo-info">
-                <div className="message">
-                  "{photo.photo_title}"&nbsp;
-                  {photo.age} ago
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </ul>
+      (this.state.loading) ? <BeatLoader
+        color={'#123abc'}
+        loading={this.state.loading}
+      /> :
+      <Masonry
+            className={'my-gallery-class'}
+            options={masonryOptions}
+            >
+            {this.props.photos.map((photo,idx) => (
+                <DiscoverIndexItems key={idx} photo={photo} openPhoto={this.openPhoto}/>
+                ))
+              }
+          </Masonry>
     );
   }
 
