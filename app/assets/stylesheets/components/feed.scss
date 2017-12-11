@@ -3,7 +3,6 @@
 }
 
 .feed-photo-left {
-  // display: flex;
   justify-content: center;
   max-width: 80%;
   width: calc(100% - 320px);
@@ -11,36 +10,29 @@
   display: inline-block;
   position: relative;
   overflow: hidden;
-
-  // min-width: 600px;
-  // max-width: 800px;
   img {
-    // min-width: 80%;
-    // min-height: 80%;
-    // max-width: 100%;
     display: block;
     margin: auto;
-    // margin-top: 70px;
     width: auto;
     height: auto;
     max-width: 100%;
     max-height: 100%;
     position: relative;
-    // max-height: 80vh;
   }
 }
 
 .feed-photo-right {
-  width: 200px;
-  display: flex;
+  width: 320px;
   flex-direction: column;
   align-items: center;
-  margin-left: 50px;
+  right: 0px;
+  background-color: #f7f8fa;
+  text-align: center;
   h2 {
     align-items: center;
     font-size: 50px;
     padding: 20px;
-    margin-top: 20%;
+    // margin-top: 20%;
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -49,12 +41,14 @@
     font-size: 25px;
     font-weight: normal;
   }
+
 }
 
 .user-profile-photo {
-  max-width: 150px;
-  max-height: 150px;
-  border-radius: 100px;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
   border-style: solid;
   border-color: white;
   border-width: 3px;

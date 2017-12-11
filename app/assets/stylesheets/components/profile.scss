@@ -219,11 +219,13 @@ ul {
   display: flex;
   justify-content: center;
 }
+
+
 .current-profile-photo {
   object-fit: cover;
-  max-width: 150px;
-  max-height: 150px;
-  border-radius: 100px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
   margin: -100px;
   border-style: solid;
   border-color: white;
@@ -232,9 +234,9 @@ ul {
 
 .profile-photo {
   object-fit: cover;
-  max-width: 150px;
-  max-height: 150px;
-  border-radius: 100px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
   margin: -100px;
   border-style: solid;
   border-color: white;
