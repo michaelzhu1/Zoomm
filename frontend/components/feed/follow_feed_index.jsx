@@ -2,6 +2,13 @@ import React from "react";
 import Modal from "react-modal";
 import { Link } from "react-router-dom";
 import { BeatLoader } from 'react-spinners';
+import FeedIndexItems from "./feed_index_items";
+import Masonry from 'react-masonry-component';
+
+const masonryOptions = {
+    transitionDuration: 0,
+    fitWidth: true
+};
 
 const customStyles = {
   overlay: {
@@ -69,27 +76,24 @@ class FeedIndex extends React.Component {
     } else {
       const photoArray = this.props.photos;
       return (
-        <ul className="feed-ul">
+        (this.state.loading) ?
           <BeatLoader
             color={'#123abc'}
             loading={this.state.loading}
-          />
-        {photoArray.map(photo => {
-            return (
-              <div key={photo.id + "div"} className="image">
-                <li key={photo.id} className="profile-index-photo">
-                  <img src={photo.photo_url} onClick={this.openPhoto(photo)} />
-                </li>
-                <div className="hidden-photo-info">
-                  <div className="message">
-                    "{photo.photo_title}"&nbsp;
-                    {photo.age} ago
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </ul>
+          /> :
+
+          <Masonry
+                className={'my-gallery-class'}
+                options={masonryOptions}
+                >
+          {photoArray.map((photo, idx) => {
+              return (
+                <FeedIndexItems key={idx} photo={photo} openPhoto={this.openPhoto}/>
+              );
+            })}
+        </Masonry>
+
+
       );
     }
   }
