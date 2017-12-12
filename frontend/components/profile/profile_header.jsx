@@ -45,8 +45,8 @@ class ProfileHeader extends React.Component {
       currentUser: this.props.currentUser,
       id: this.props.user.id,
       bio: this.props.user.bio,
-      profile_img_url: this.props.user.profile_img_url,
-      cover_img_url: this.props.user.cover_img_url,
+      profile_img_url: '',
+      cover_img_url: '',
       followers: this.props.followers,
       followings: this.props.followings
     };
@@ -85,6 +85,22 @@ class ProfileHeader extends React.Component {
     this.props.updateUser(this.state.currentUser).then(() => this.closeModal());
   }
 
+  componentDidMount() {
+    this.props.fetchUser(this.props.match.params.userId).then(() => this.setState({
+      profile_img_url: this.props.user.profile_img_url,
+      cover_img_url: this.props.user.cover_img_url
+    }));
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.user.id !== parseInt(nextProps.match.params.userId)) {
+      this.props.fetchUser(nextProps.match.params.userId).then(() => this.setState({
+        profile_img_url: nextProps.user.profile_img_url,
+        cover_img_url: nextProps.user.cover_img_url
+      }));
+    }
+  }
+
   profilePhoto() {
     if (this.props.currentUser.id == this.props.match.params.userId) {
       return (
@@ -92,7 +108,7 @@ class ProfileHeader extends React.Component {
           <img
             className="current-profile-photo"
             onClick={this.updateProfilePhoto}
-            src={this.props.user.profile_img_url}
+            src={this.state.profile_img_url}
           />
         </div>
       );
@@ -101,7 +117,7 @@ class ProfileHeader extends React.Component {
         <div className="profile-photo-div">
           <img
             className="profile-photo"
-            src={this.props.user.profile_img_url}
+            src={this.state.profile_img_url}
           />
         </div>
       );
@@ -109,8 +125,8 @@ class ProfileHeader extends React.Component {
   }
 
   coverPhoto() {
-    if (this.props.user.cover_img_url) {
-      styles.background = `url(${this.props.user
+    if (this.state.cover_img_url) {
+      styles.background = `url(${this.state
         .cover_img_url}) fixed top center no-repeat`;
     } else {
       styles = {

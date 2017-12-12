@@ -87,3 +87,12 @@ nav .signup-splash:hover {
   color: #939393;
   opacity: 1;
 }
+
+nav.fixed-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: #FFC414;
+  color: white;
+}
