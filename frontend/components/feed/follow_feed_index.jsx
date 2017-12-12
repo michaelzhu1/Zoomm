@@ -37,7 +37,7 @@ const customStyles = {
 class FeedIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { photo: {},loading: true };
+    this.state = { photo: {},loading: true, user: {} };
     this.displayPhotos = this.displayPhotos.bind(this);
     this.openPhoto = this.openPhoto.bind(this);
     this.openModal = this.openModal.bind(this);
@@ -56,10 +56,10 @@ class FeedIndex extends React.Component {
   }
 
   openPhoto(photo) {
-    return e => {
-      this.props.fetchUser(photo.author_id);
-      this.setState({ photo: photo });
-      this.openModal();
+    return () => {
+      this.props.fetchUser(photo.author_id).then(() => (
+        this.setState({ photo:photo, user: this.props.user, modalIsOpen: true})
+      ));
     };
   }
 
@@ -120,13 +120,13 @@ class FeedIndex extends React.Component {
               <h2>
                 <img
                   className="user-profile-photo"
-                  src={this.props.user.profile_img_url}
+                  src={this.state.user.profile_img_url}
                 />
                 <Link
                   className="userpage-link"
-                  to={`/user/${this.props.user.id}`}
+                  to={`/user/${this.state.user.id}`}
                 >
-                  {this.props.user.username}
+                  {this.state.user.username}
                 </Link>
               </h2>
               <h3>{this.state.photo.photo_title}</h3>
