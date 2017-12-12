@@ -22,39 +22,41 @@ const sessionLinks = () => (
   </nav>
 );
 
-
-
-
 const personalGreeting = (currentUser, logout) => {
-
   function fixNav() {
     const nav = document.querySelector(".session-nav");
     let topOfNav = nav.offsetTop;
     if (window.scrollY > topOfNav) {
-      nav.classList.add('fixed-nav');
-    } else if (window.scrollY <= topOfNav) {
-      nav.classList.remove('fixed-nav');
+      nav.classList.add("fixed-nav");
+    } else {
+      nav.classList.remove("fixed-nav");
     }
   }
-  window.addEventListener('scroll', fixNav);
+
+  window.addEventListener("scroll", fixNav);
+
   return (
     <nav className="session-nav">
       <div className="navbar-right">
         <Link
           to={currentUser ? `/feed/${currentUser.id}` : "/"}
           className="website-logo"
-          >
+        >
           <img src="http://res.cloudinary.com/foolishhunger/image/upload/v1506572884/Screen_Shot_2017-09-27_at_9.27.03_PM_suayjk.png" />
         </Link>
-
       </div>
       <div className="navbar-right">
         Welcome {currentUser.username}!
-        <Link className="userpage-link" to="/discover"> Discover</Link>
+        <Link className="userpage-link" to="/discover">
+          {" "}
+          Discover
+        </Link>
         <Link
           to={currentUser ? `/feed/${currentUser.id}` : "/"}
           className="userpage-link"
-          > Feed
+        >
+          {" "}
+          Feed
         </Link>
         <Link className="userpage-link" to={`/user/${currentUser.id}`}>
           {currentUser.username}
@@ -62,12 +64,11 @@ const personalGreeting = (currentUser, logout) => {
         <UploadButtonContainer />
         <button onClick={logout} className="log-out-button">
           <i className="fa fa-sign-out" aria-hidden="true" />Log Out
-          </button>
-        </div>
-      </nav>
+        </button>
+      </div>
+    </nav>
   );
-}
-;
+};
 
 const Greeting = ({ currentUser, logout }) => {
   return currentUser ? personalGreeting(currentUser, logout) : sessionLinks();
