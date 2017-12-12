@@ -81,17 +81,19 @@ class FeedIndex extends React.Component {
             color={'#123abc'}
             loading={this.state.loading}
           /> :
-
-          <Masonry
-                className={'my-gallery-class'}
-                options={masonryOptions}
-                >
-          {photoArray.map((photo, idx) => {
-              return (
-                <FeedIndexItems key={idx} photo={photo} openPhoto={this.openPhoto}/>
-              );
-            })}
-        </Masonry>
+          <div>
+            <h1 className="page-title">~Check Out Your New Feed~</h1>
+            <Masonry
+              className={'my-gallery-class'}
+              options={masonryOptions}
+              >
+              {photoArray.map((photo, idx) => {
+                return (
+                  <FeedIndexItems key={idx} photo={photo} openPhoto={this.openPhoto}/>
+                );
+              })}
+            </Masonry>
+          </div>
 
 
       );

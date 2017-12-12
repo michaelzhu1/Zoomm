@@ -37,7 +37,7 @@ const customStyles = {
 class Discover extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { photo: {}, modalIsOpen: false,loading: true };
+    this.state = { photo: {}, modalIsOpen: false,loading: true, user: {}};
     this.openPhoto = this.openPhoto.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -54,14 +54,14 @@ class Discover extends React.Component {
   }
 
   closeModal() {
-    this.setState({ modalIsOpen: false });
+    this.setState({ modalIsOpen: false,photo:{}, user: {} });
   }
 
   openPhoto(photo) {
-    return e => {
-      this.props.fetchUser(photo.author_id);
-      this.setState({ photo: photo });
-      this.openModal();
+    return () => {
+      this.props.fetchUser(photo.author_id).then(() => (
+        this.setState({ photo: photo, user: this.props.user, modalIsOpen: true })
+      ));
     };
   }
 // shuffles every time i open a modal and scroll to the top of the page
@@ -84,15 +84,18 @@ class Discover extends React.Component {
         color={'#123abc'}
         loading={this.state.loading}
       /> :
-      <Masonry
-            className={'my-gallery-class'}
-            options={masonryOptions}
-            >
-            {this.props.photos.map((photo,idx) => (
-                <DiscoverIndexItems key={idx} photo={photo} openPhoto={this.openPhoto}/>
-                ))
-              }
-          </Masonry>
+      <div>
+        <h1 className="page-title">~Discover Your New Inspiration~</h1>
+        <Masonry
+          className={'my-gallery-class'}
+          options={masonryOptions}
+          >
+          {this.props.photos.map((photo,idx) => (
+            <DiscoverIndexItems key={idx} photo={photo} openPhoto={this.openPhoto}/>
+          ))
+        }
+      </Masonry>
+      </div>
     );
   }
 
@@ -143,13 +146,13 @@ class Discover extends React.Component {
                 <h2>
                   <img
                     className="user-profile-photo"
-                    src={this.props.user.profile_img_url}
+                    src={this.state.user.profile_img_url}
                   />
                   <Link
                     className="userpage-link"
                     to={`/user/${this.props.user.id}`}
                   >
-                    {this.props.user.username}
+                    {this.state.user.username}
                   </Link>
                   {this.props.currentUser ? this.followOrFollowing() : null}
                 </h2>
