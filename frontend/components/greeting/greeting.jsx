@@ -37,6 +37,7 @@ const personalGreeting = (currentUser, logout) => {
 
   return (
     <nav className="session-nav">
+      
       <div className="navbar-left">
         <Link
           to={currentUser ? `/feed/${currentUser.id}` : "/"}
@@ -44,9 +45,10 @@ const personalGreeting = (currentUser, logout) => {
         >
           <img src="http://res.cloudinary.com/foolishhunger/image/upload/v1506572884/Screen_Shot_2017-09-27_at_9.27.03_PM_suayjk.png" />
         </Link>
-      </div>
-      <div className="navbar-right">
         Welcome {currentUser.username}!
+        <Link className="userpage-link" to={`/user/${currentUser.id}`}>
+          You
+        </Link>
         <Link className="userpage-link" to="/discover">
           {" "}
           Discover
@@ -54,13 +56,12 @@ const personalGreeting = (currentUser, logout) => {
         <Link
           to={currentUser ? `/feed/${currentUser.id}` : "/"}
           className="userpage-link"
-        >
+          >
           {" "}
           Feed
         </Link>
-        <Link className="userpage-link" to={`/user/${currentUser.id}`}>
-          You
-        </Link>
+      </div>
+      <div className="navbar-right">
         <UploadButtonContainer />
         <button onClick={logout} className="log-out-button">
           <i className="fa fa-sign-out" aria-hidden="true" />Log Out
