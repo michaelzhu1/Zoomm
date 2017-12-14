@@ -36,36 +36,37 @@ const personalGreeting = (currentUser, logout) => {
   window.addEventListener("scroll", fixNav);
 
   return (
-    <nav className="session-nav">
-      
-      <div className="navbar-left">
-        <Link
-          to={currentUser ? `/feed/${currentUser.id}` : "/"}
-          className="website-logo"
-        >
-          <img src="http://res.cloudinary.com/foolishhunger/image/upload/v1506572884/Screen_Shot_2017-09-27_at_9.27.03_PM_suayjk.png" />
-        </Link>
-        Welcome {currentUser.username}!
-        <Link className="userpage-link" to={`/user/${currentUser.id}`}>
-          You
-        </Link>
-        <Link className="userpage-link" to="/discover">
-          {" "}
-          Discover
-        </Link>
-        <Link
-          to={currentUser ? `/feed/${currentUser.id}` : "/"}
-          className="userpage-link"
-          >
-          {" "}
-          Feed
-        </Link>
-      </div>
-      <div className="navbar-right">
-        <UploadButtonContainer />
-        <button onClick={logout} className="log-out-button">
-          <i className="fa fa-sign-out" aria-hidden="true" />Log Out
-        </button>
+    <nav className="global-nav-view">
+      <div className="session-nav">
+        <div className="navbar-left">
+          <Link
+            to={currentUser ? `/feed/${currentUser.id}` : "/"}
+            className="website-logo"
+            >
+            <img src="http://res.cloudinary.com/foolishhunger/image/upload/v1506572884/Screen_Shot_2017-09-27_at_9.27.03_PM_suayjk.png" />
+          </Link>
+          Welcome {currentUser.username}!
+          <Link className="userpage-link" to={`/user/${currentUser.id}`}>
+            You
+          </Link>
+          <Link className="userpage-link" to="/discover">
+            {" "}
+            Discover
+          </Link>
+          <Link
+            to={currentUser ? `/feed/${currentUser.id}` : "/"}
+            className="userpage-link"
+            >
+            {" "}
+            Feed
+          </Link>
+        </div>
+        <div className="navbar-right">
+          <UploadButtonContainer />
+          <button onClick={logout} className="log-out-button">
+            <i className="fa fa-sign-out" aria-hidden="true" />Log Out
+            </button>
+          </div>
       </div>
     </nav>
   );
