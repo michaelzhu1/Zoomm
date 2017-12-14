@@ -36,6 +36,15 @@
   z-index: 2000;
 }
 
+.global-nav-view.fixed-nav {
+  background-color: white;
+  color: $charcoal;
+  height: 50px;
+  transition: height 1s;
+  border-bottom: white solid 2px;
+  border-bottom: 2px $light-gray solid;
+}
+
 .session-nav {
   background-color: inherit;
   -webkit-box-align: center;
@@ -55,6 +64,7 @@
 
 .navbar-left {
   flex: 1;
+  height: 100%;
   display: flex;
   margin: 0 auto;
   align-items: center;
@@ -63,6 +73,11 @@
     position: relative;
   }
 }
+
+// .navbar-left:nth-child(2) {
+//   margin-left: 40px;
+// }
+
 
 .navbar-right {
   flex: 1;
@@ -118,13 +133,6 @@
   width: 100%;
 }
 
-.global-nav-view.fixed-nav {
-  background-color: white;
-  color: $charcoal;
-  height: 50px;
-  transition: height 1s;
-  border-bottom: white solid 2px;
-}
 
 .userpage-link {
   font-size: 18px;
@@ -135,5 +143,5 @@
 }
 
 .fixed-nav .userpage-link:hover {
-  color: $charcoal;
+  color: $gray;
 }

@@ -147,11 +147,22 @@ h1 .homepage-nav-link:hover {
 }
 
 .log-out-button {
-  height: 15px;
-  margin-right: 20;
+  text-align: center;
+  font-size: 18px;
   min-width: 72px;
-  background-color:#d3d3d3;
-  color: black;
+  color: white;
+}
+
+.log-out-button:hover {
+  color: $light-gray;
+}
+
+.fixed-nav .log-out-button {
+  color: $charcoal;
+}
+
+.fixed-nav .log-out-button:hover {
+  color: $gray;
 }
 
 .welcome {
