@@ -37,7 +37,7 @@ const personalGreeting = (currentUser, logout) => {
 
   return (
     <nav className="session-nav">
-      <div className="navbar-right">
+      <div className="navbar-left">
         <Link
           to={currentUser ? `/feed/${currentUser.id}` : "/"}
           className="website-logo"
@@ -59,7 +59,7 @@ const personalGreeting = (currentUser, logout) => {
           Feed
         </Link>
         <Link className="userpage-link" to={`/user/${currentUser.id}`}>
-          {currentUser.username}
+          You
         </Link>
         <UploadButtonContainer />
         <button onClick={logout} className="log-out-button">

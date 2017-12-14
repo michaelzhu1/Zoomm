@@ -150,7 +150,7 @@ class Discover extends React.Component {
                   />
                   <Link
                     className="userpage-link"
-                    to={`/user/${this.props.user.id}`}
+                    to={`/user/${this.state.user.id}`}
                   >
                     {this.state.user.username}
                   </Link>

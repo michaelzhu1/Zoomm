@@ -55,9 +55,14 @@
   border-width: 3px;
 }
 
-.userpage-link:hover {
+.userpage-link {
+  font-size: 18px;
+}
+
+.fixed-nav .userpage-link:hover {
   cursor: pointer;
-  color: #0099e5;
+  // color: #0099e5;
+  color: #d3d3d3;
 }
 
 .feed-ul {

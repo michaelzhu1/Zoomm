@@ -106,7 +106,7 @@ class UploadButton extends React.Component {
               <img src={this.state.photo_url} />
             </div>
             <button className="upload-button-in-modal" onClick={this.upload}>
-              <i className="fa fa-camera" aria-hidden="true" />&nbsp; Choose
+              <i className="fa fa-camera" aria-hidden="true" />&nbsp; Select
               Photo
             </button>
             <label className="upload-form-label">
@@ -134,7 +134,7 @@ class UploadButton extends React.Component {
               value="Submit"
             />
             <button className="cancel-button" onClick={this.closeModal}>
-              Cancel
+              <h5>Cancel</h5>
             </button>
           </form>
         </Modal>

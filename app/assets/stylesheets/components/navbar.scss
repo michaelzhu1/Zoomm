@@ -30,7 +30,7 @@
   margin: 0;
   width: 100%;
   font-size: 16px;
-  height: 50px;
+  height: 58px;
   display: flex;
   justify-content: space-between;
   font-family: $sans-serif;
@@ -91,6 +91,9 @@ nav.fixed-nav {
   top: 0;
   left: 0;
   z-index: 9999;
-  background-color: #FFC414;
+  // background-color: #a8a8a8;
+  background-color: #191919;
   color: white;
+  height: 50px;
+  transition: height 1s;
 }

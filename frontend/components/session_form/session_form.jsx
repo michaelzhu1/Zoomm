@@ -10,7 +10,6 @@ class SessionForm extends React.Component {
       profile_img_url: "http://www.zeppfeed.com/media/uploads/users/default.png",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.demoLogin = this.demoLogin.bind(this);
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
     this.mySlides = [
       "http://res.cloudinary.com/foolishhunger/image/upload/v1512872632/splash10_uznxqi.jpg",
@@ -86,16 +85,6 @@ class SessionForm extends React.Component {
     }, 100);
   }
 
-  demoLogin() {
-    if (this.props.formType === "login") {
-      return (
-        <button className="demo-button" onClick={this.handleDemoLogin}>
-          <h3>Demo Login</h3>
-        </button>
-      );
-    }
-  }
-
   errors() {
     return (
       <ul className="error-messages">
@@ -159,7 +148,9 @@ class SessionForm extends React.Component {
             type="submit"
             value={this.props.formType === "login" ? "Log In" : "Sign Up"}
           />
-          {this.demoLogin()}
+          <button className="demo-button" onClick={this.handleDemoLogin}>
+            <h3>Demo Login</h3>
+          </button>
         </form>
         <h1 />
       </div>

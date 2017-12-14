@@ -25,19 +25,17 @@
   justify-content: center;
   height: 100%;
   width: 100%;
-  border: gray;
+  border: gray dotted 1px;
 }
 
 .upload-thumbnail img {
   max-width: 100%;
-  max-height: 90%;
+  max-height: 100%;
   margin: auto;
-  padding: 5px;
 }
 
 .upload-submit-button {
   cursor: pointer;
-  font-weight: bold;
   text-align: center;
   padding: 12px 20px 22px;
   margin: 0 auto;
@@ -53,40 +51,53 @@
 }
 
 .upload-button-in-modal {
+  margin-top: 5px;
   display: block;
   padding: 10px;
   height: 60px;
-  width: 10vw;
   align-self: center;
+  text-align: center;
   font-size: 16px;
+  background-color: #64ad66;
 }
 
 .cancel-button {
-  float: right;
   background-color: #f9675c;
+  right: 0;
   width: 60px;
   align-self: flex-end;
-  line-height: normal;
+  font-size: 14px;
   text-align: center;
-  padding: 10px;
+  height: 80px;
+  padding: 0px;
+  h5 {
+    line-height: 0;
+  }
 }
 
 .nav-upload-button {
-  color: #64ad66;
-  background-color: white;
-  padding-left: 15px;
-  padding-right: 15px;
-  box-sizing: border-box;
-  display: inline-block;
-  height: 40px;
+  color: black;
+  // background-color: white;
+  // padding-left: 15px;
+  // padding-right: 15px;
+  // box-sizing: border-box;
+  // display: inline-block;
+  // height: 40px;
   font-size: 18px;
-  font-weight: normal;
-  line-height: 5px;
+  // font-weight: normal;
+  // line-height: 5px;
+  transition: color 0.01s;
 }
 
-.nav-upload-button:hover {
+.fixed-nav .nav-upload-button {
   color: white;
-  background-color: #64ad66;
+  background-color: black;
+  transition: color 0.01s;
+}
+
+.fixed-nav .nav-upload-button:hover {
+  color: #d3d3d3;
+  // background-color: #64ad66;
 }
 
 .photo-description {

@@ -128,10 +128,11 @@ class ProfileHeader extends React.Component {
     if (this.state.cover_img_url) {
       styles.background = `url(${this.state
         .cover_img_url}) fixed top center no-repeat`;
+
     } else {
       styles = {
         backgroundSize: "cover",
-        backgroundColor: "grey",
+        backgroundColor: "gray",
         width: "100%",
         height: "400px"
       };
