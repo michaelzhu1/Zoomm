@@ -77,15 +77,7 @@
 
 .nav-upload-button {
   color: white;
-  // background-color: white;
-  // padding-left: 15px;
-  // padding-right: 15px;
-  // box-sizing: border-box;
-  // display: inline-block;
-  // height: 40px;
   font-size: 18px;
-  // font-weight: normal;
-  // line-height: 5px;
   transition: color 0.01s;
 }
 
@@ -95,9 +87,11 @@
   transition: color 0.01s;
 }
 
+.nav-upload-button:hover {
+  color: $light-gray;
+}
 .fixed-nav .nav-upload-button:hover {
-  color: #d3d3d3;
-  // background-color: #64ad66;
+  color: $charcoal;
 }
 
 .photo-description {
