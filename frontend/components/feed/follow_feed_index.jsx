@@ -3,13 +3,6 @@ import Modal from "react-modal";
 import { Link } from "react-router-dom";
 import { BeatLoader } from 'react-spinners';
 import FeedIndexItems from "./feed_index_items";
-import Masonry from 'react-masonry-component';
-
-const masonryOptions = {
-    transitionDuration: 0,
-    // columnWidth: 200,
-    fitWidth: true
-};
 
 const customStyles = {
   overlay: {
@@ -81,18 +74,15 @@ class FeedIndex extends React.Component {
             color={'#123abc'}
             loading={this.state.loading}
           /> :
-          <div>
+          <div className="photo-container">
             <h1 className="page-title">~Check Out Your Feed~</h1>
-            <Masonry
-              className={'my-gallery-class'}
-              options={masonryOptions}
-              >
+            <div className="photo-index">
               {this.state.photos.map((photo, idx) => {
                 return (
-                  <FeedIndexItems key={idx} photo={photo} openPhoto={this.openPhoto} fetchUser={this.props.fetchUser}/>
+                  <FeedIndexItems key={idx} photo={photo} openPhoto={this.openPhoto}/>
                 );
               })}
-            </Masonry>
+            </div>
           </div>
       );
     }

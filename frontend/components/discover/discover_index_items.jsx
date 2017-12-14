@@ -3,7 +3,6 @@ import React from 'react';
 class DiscoverIndexItems extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {author:{}};
   }
 
   render() {
@@ -20,7 +19,6 @@ class DiscoverIndexItems extends React.Component {
               {this.props.photo.age} ago
             </div>
           </div>
-
         </div>
       </div>
     );

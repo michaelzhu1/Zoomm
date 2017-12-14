@@ -2,13 +2,7 @@ import React from "react";
 import Modal from "react-modal";
 import { Link } from "react-router-dom";
 import { BeatLoader } from 'react-spinners';
-// import Masonry from 'react-masonry-component';
 import DiscoverIndexItems from './discover_index_items';
-
-// const masonryOptions = {
-//     transitionDuration: 0,
-//     fitWidth: true
-// };
 
 const customStyles = {
   overlay: {

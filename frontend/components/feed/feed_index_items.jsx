@@ -5,10 +5,12 @@ class FeedIndexItems extends React.Component {
     super(props);
   }
 
-
   render() {
     return (
-      <div className="image-element-class">
+      <div className="photo-index-item">
+        <div className="photo-index-item-desc">
+          {this.props.photo.owner}
+        </div>
         <div>
           <img src={this.props.photo.photo_url} onClick={this.props.openPhoto(this.props.photo)} />
           <div className="hidden-photo-info">
@@ -17,7 +19,6 @@ class FeedIndexItems extends React.Component {
               {this.props.photo.age} ago
             </div>
           </div>
-
         </div>
       </div>
     );
