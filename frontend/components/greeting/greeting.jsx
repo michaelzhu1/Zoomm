@@ -24,7 +24,7 @@ const sessionLinks = () => (
 
 const personalGreeting = (currentUser, logout) => {
   function fixNav() {
-    const nav = document.querySelector(".session-nav");
+    const nav = document.querySelector(".global-nav-view");
     let topOfNav = nav.offsetTop;
     if (window.scrollY > topOfNav) {
       nav.classList.add("fixed-nav");
@@ -45,7 +45,7 @@ const personalGreeting = (currentUser, logout) => {
             >
             <img src="http://res.cloudinary.com/foolishhunger/image/upload/v1506572884/Screen_Shot_2017-09-27_at_9.27.03_PM_suayjk.png" />
           </Link>
-          Welcome {currentUser.username}!
+    
           <Link className="userpage-link" to={`/user/${currentUser.id}`}>
             You
           </Link>
