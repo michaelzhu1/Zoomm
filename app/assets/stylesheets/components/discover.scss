@@ -1,18 +1,45 @@
-.my-gallery-class {
+.photo-container {
   display: flex;
-  justify-content: space-between;
-  text-align: center;
-  height: 100%;
-  max-width: 50%;
-  margin: auto;
-  margin-left: 50px;
-  margin-right: 50px;
+  flex-flow: column;
+  align-items: center;
+  margin: 20px;
 }
 
-.image-element-class {
-  display: flex;
-  padding: 5px;
-  width: 300px;
+.photo-index {
+  position: relative;
+  column-count: 1;
+  column-gap: 2em;
+  width: 90%;
+}
+
+@media only screen and (min-width: 800px) {
+  .photo-index {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+}
+
+@media only screen and (min-width: 1250px) {
+  .photo-index {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+  }
+}
+
+@media only screen and (min-width: 1700px) {
+  .photo-index {
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
+  }
+}
+
+.photo-index-item {
+  display: inline-block;
+  margin: 0 0 1em;
+  width: 100%;
   img {
     display: block;
     width: 100%;
@@ -29,4 +56,9 @@
   color: $charcoal;
   background-color: white;
   font-size: 32px;
+}
+
+.photo-index-item-desc {
+  padding: 5px;
+  font-family: 'Open Sans', sans-serif;
 }

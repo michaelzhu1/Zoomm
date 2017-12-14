@@ -7,6 +7,7 @@ import Masonry from 'react-masonry-component';
 
 const masonryOptions = {
     transitionDuration: 0,
+    // columnWidth: 200,
     fitWidth: true
 };
 
@@ -88,7 +89,7 @@ class FeedIndex extends React.Component {
               >
               {this.state.photos.map((photo, idx) => {
                 return (
-                  <FeedIndexItems key={idx} photo={photo} openPhoto={this.openPhoto}/>
+                  <FeedIndexItems key={idx} photo={photo} openPhoto={this.openPhoto} fetchUser={this.props.fetchUser}/>
                 );
               })}
             </Masonry>

@@ -4,9 +4,9 @@ class Api::PhotosController < ApplicationController
 
   def index
     if params[:id]
-      @photos = Photo.where("author_id = ?", params[:id])
+      @photos = Photo.where("author_id = ?", params[:id]).includes(:owner)
     else
-      @photos = Photo.all
+      @photos = Photo.all.includes(:owner)
     end
     render "api/photos/index"
   end

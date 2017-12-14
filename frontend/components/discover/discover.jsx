@@ -2,13 +2,13 @@ import React from "react";
 import Modal from "react-modal";
 import { Link } from "react-router-dom";
 import { BeatLoader } from 'react-spinners';
-import Masonry from 'react-masonry-component';
+// import Masonry from 'react-masonry-component';
 import DiscoverIndexItems from './discover_index_items';
 
-const masonryOptions = {
-    transitionDuration: 0,
-    fitWidth: true
-};
+// const masonryOptions = {
+//     transitionDuration: 0,
+//     fitWidth: true
+// };
 
 const customStyles = {
   overlay: {
@@ -22,7 +22,7 @@ const customStyles = {
   content: {
     padding: "30px",
     boxSizing: "border-box",
-    height: "90%",
+    height: "80%",
     width: "90%",
     top: "50%",
     left: "50%",
@@ -84,17 +84,14 @@ class Discover extends React.Component {
         color={'#123abc'}
         loading={this.state.loading}
       /> :
-      <div>
+      <div className="photo-container">
         <h1 className="page-title">~Discover Your New Inspiration~</h1>
-        <Masonry
-          className={'my-gallery-class'}
-          options={masonryOptions}
-          >
+        <div className="photo-index">
           {this.props.photos.map((photo,idx) => (
-            <DiscoverIndexItems key={idx} photo={photo} openPhoto={this.openPhoto}/>
+            <DiscoverIndexItems key={photo.id} photo={photo} openPhoto={this.openPhoto}/>
           ))
         }
-      </Masonry>
+      </div>
       </div>
     );
   }

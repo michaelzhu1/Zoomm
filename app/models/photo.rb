@@ -13,7 +13,7 @@
 class Photo < ApplicationRecord
   validates :photo_url,:photo_title,:author_id, presence: true
 
-  belongs_to :user,
+  belongs_to :owner,
     primary_key: :id,
     foreign_key: :author_id,
     class_name: :User
