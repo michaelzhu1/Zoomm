@@ -76,7 +76,7 @@
 }
 
 .nav-upload-button {
-  color: black;
+  color: white;
   // background-color: white;
   // padding-left: 15px;
   // padding-right: 15px;
@@ -90,8 +90,8 @@
 }
 
 .fixed-nav .nav-upload-button {
-  color: white;
-  background-color: black;
+  color: $charcoal;
+  background-color: white;
   transition: color 0.01s;
 }
 

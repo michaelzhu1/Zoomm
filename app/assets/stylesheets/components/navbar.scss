@@ -25,7 +25,7 @@
 }
 
 .global-nav-view {
-  background-color: rgba(21,21,23,.95);
+  background-color: $charcoal;
   color: white;
   position: fixed;
   top: 0;
@@ -117,14 +117,14 @@
 .session-nav.fixed-nav {
   z-index: 9999;
   background-color: white;
-  color: rgba(21,21,23,.95);
+  color: $charcoal;
   height: 60px;
   width: 100%;
 }
 
 .global-nav-view.fixed-nav {
   background-color: white;
-  color: rgba(21,21,23,.95);
+  color: $charcoal;
   height: 50px;
   transition: height 1s;
   // border-bottom: white solid 2px;
