@@ -37,14 +37,14 @@ const customStyles = {
 class FeedIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { photo: {},loading: true, user: {} };
+    this.state = { photo: {},loading: true, user: {}, photos: {} };
     this.displayPhotos = this.displayPhotos.bind(this);
     this.openPhoto = this.openPhoto.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
   componentDidMount() {
-    this.props.fetchUserFeed().then( () => (this.setState({ loading: false})));
+    this.props.fetchUserFeed().then( () => (this.setState({ loading: false, photos: this.props.photos})));
   }
 
   openModal() {
@@ -64,7 +64,7 @@ class FeedIndex extends React.Component {
   }
 
   displayPhotos() {
-    if (this.props.photos.length === 0) {
+    if (this.state.photos.length === 0) {
       return (
         <div className="empty-feed">
           Your feed is empty because you are not following anyone.
@@ -74,7 +74,6 @@ class FeedIndex extends React.Component {
         </div>
       );
     } else {
-      const photoArray = this.props.photos;
       return (
         (this.state.loading) ?
           <BeatLoader
@@ -82,20 +81,18 @@ class FeedIndex extends React.Component {
             loading={this.state.loading}
           /> :
           <div>
-            <h1 className="page-title">~Check Out Your New Feed~</h1>
+            <h1 className="page-title">~Check Out Your Feed~</h1>
             <Masonry
               className={'my-gallery-class'}
               options={masonryOptions}
               >
-              {photoArray.map((photo, idx) => {
+              {this.state.photos.map((photo, idx) => {
                 return (
                   <FeedIndexItems key={idx} photo={photo} openPhoto={this.openPhoto}/>
                 );
               })}
             </Masonry>
           </div>
-
-
       );
     }
   }

@@ -3,8 +3,10 @@
   justify-content: space-between;
   text-align: center;
   height: 100%;
-  max-width: 90%;
+  max-width: 50%;
   margin: auto;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .image-element-class {
@@ -21,9 +23,10 @@
 }
 
 .page-title {
+  margin-top: 70px;
   text-align: center;
   font-family: cursive;
-  color: white;
-  background-color: black;
+  color: $charcoal;
+  background-color: white;
   font-size: 32px;
 }
