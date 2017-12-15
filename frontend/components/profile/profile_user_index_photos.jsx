@@ -6,22 +6,6 @@ import { BeatLoader } from "react-spinners";
 import ProfileIndexItems from "./profile_index_items";
 
 const customStyles = {
-  // content: {
-  //   padding: "30px",
-  //   boxSizing: "border-box",
-  //   Height: "70%",
-  //   Width: "80%",
-  //   top: "50%",
-  //   left: "50%",
-  //   right: "auto",
-  //   bottom: "auto",
-  //   marginRight: "-50%",
-  //   transform: "translate(-50%, -50%)"
-  // },
-  // overlay: {
-  //   Height: "70%",
-  //   Width: "80%"
-  // }
   overlay: {
     position: "fixed",
     top: 0,
@@ -47,7 +31,13 @@ const customStyles = {
 class UserIndexPhotos extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { photo: {}, modalIsOpen: false, loading: true, photos: [] };
+    this.state = {
+      photo: {},
+      modalIsOpen: false,
+      loading: true,
+      photos: [],
+      user: {}
+    };
     this.openPhoto = this.openPhoto.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -55,6 +45,7 @@ class UserIndexPhotos extends React.Component {
     this.displayPhotos = this.displayPhotos.bind(this);
     this.updatePhoto = this.updatePhoto.bind(this);
   }
+
   openModal() {
     this.setState({ modalIsOpen: true });
   }
@@ -73,8 +64,9 @@ class UserIndexPhotos extends React.Component {
   //definitely need this method!!
   componentWillReceiveProps(newProps) {
     if (this.props.user.id !== parseInt(newProps.match.params.userId)) {
+      this.props.fetchUser(newProps.match.params.userId);
       this.props.fetchUserPhotos(newProps.match.params.userId);
-    }
+        }
   }
 
   deletePhoto() {
@@ -82,44 +74,30 @@ class UserIndexPhotos extends React.Component {
     this.closeModal();
   }
 
-  updatePhoto() {
-    this.props.updatePhoto(this.state.photo);
-    this.closeModal();
-  }
+  // openPhoto(photo) {
+  //   return e => {
+  //     this.setState({ photo: photo });
+  //     this.openModal();
+  //   };
+  // }
 
   openPhoto(photo) {
-    return e => {
-      this.setState({ photo: photo });
-      this.openModal();
+    return () => {
+      this.setState({
+        photo: photo,
+        user: this.props.user,
+        modalIsOpen: true
+      });
     };
   }
 
   displayPhotos() {
-    // return (
-    //   <ul>
-    //     {this.props.photos.map(photo => {
-    //       return (
-    //         <div key={photo.id + "div"} className="image">
-    //           <li key={photo.id} className="profile-index-photo">
-    //             <img src={photo.photo_url} onClick={this.openPhoto(photo)} />
-    //           </li>
-    //           <div className="hidden-photo-info">
-    //             <div className="message">
-    //               "{photo.photo_title}"&nbsp;
-    //               {photo.age} ago
-    //             </div>
-    //           </div>
-    //         </div>
-    //       );
-    //     })}
-    //   </ul>
-    // );
     return this.state.loading ? (
       <BeatLoader color={"#123abc"} loading={this.state.loading} />
     ) : (
       <div className="photo-container">
         <div className="photo-index">
-          {this.state.photos.map((photo, idx) => {
+          {this.props.photos.map((photo, idx) => {
             return (
               <ProfileIndexItems
                 key={idx}
@@ -141,13 +119,19 @@ class UserIndexPhotos extends React.Component {
     };
   }
 
+  updatePhoto(e) {
+    e.preventDefault();
+    this.props.updatePhoto(this.state.photo);
+    this.closeModal();
+  }
+
   viewOrEditPhoto() {
     if (this.props.currentUser.id == this.props.match.params.userId) {
       return (
         <div className="photo-show-right">
           <h2>Photo Info</h2>
           <form className="photo-show-form" onSubmit={this.updatePhoto}>
-            {this.props.currentUser.username}
+            {this.state.user.username}
             <h4>Title</h4>
             <input
               type="text"
@@ -167,7 +151,8 @@ class UserIndexPhotos extends React.Component {
             </button>
           </form>
           <button className="delete-photo-button" onClick={this.deletePhoto}>
-            <i className="fa fa-trash-o fa-lg" aria-hidden="true" /> &nbsp;Delete
+            <i className="fa fa-trash-o fa-lg" aria-hidden="true" />{" "}
+            &nbsp;Delete
           </button>
         </div>
       );

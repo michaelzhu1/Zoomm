@@ -34,7 +34,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-family:serif;
+  font-family: serif;
   color: white;
   max-width: 640px;
   text-align: center;
@@ -49,7 +49,6 @@
     line-height: 32px;
     margin-bottom: 50px;
   }
-
 }
 
 .join-us {
@@ -60,7 +59,7 @@
   font-weight: 800;
   line-height: 64px;
   height: 64px;
-  transition: color .25s ease-in-out;
+  transition: color 0.25s ease-in-out;
   background-color: white;
   min-width: 200px;
   max-width: 250px;

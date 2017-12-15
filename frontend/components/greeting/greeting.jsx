@@ -42,7 +42,7 @@ const personalGreeting = (currentUser, logout) => {
           <Link
             to={currentUser ? `/feed/${currentUser.id}` : "/"}
             className="website-logo"
-            >
+          >
             <img src="http://res.cloudinary.com/foolishhunger/image/upload/v1506572884/Screen_Shot_2017-09-27_at_9.27.03_PM_suayjk.png" />
           </Link>
 
@@ -56,7 +56,7 @@ const personalGreeting = (currentUser, logout) => {
           <Link
             to={currentUser ? `/feed/${currentUser.id}` : "/"}
             className="nav-link"
-            >
+          >
             {" "}
             Feed
           </Link>
@@ -65,8 +65,8 @@ const personalGreeting = (currentUser, logout) => {
           <UploadButtonContainer />
           <button onClick={logout} className="log-out-button">
             <i className="fa fa-sign-out" aria-hidden="true" />Sign Out
-            </button>
-          </div>
+          </button>
+        </div>
       </div>
     </nav>
   );

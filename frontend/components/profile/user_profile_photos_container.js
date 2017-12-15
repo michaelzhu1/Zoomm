@@ -7,7 +7,7 @@ import {
   updatePhoto,
   fetchUserPhotos
 } from "../../actions/photo_action";
-import {fetchUser} from "../../actions/profile_action";
+import { fetchUser } from "../../actions/profile_action";
 
 const mapStateToProps = state => ({
   user: state.user,
@@ -16,7 +16,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchUser: (userId) => dispatch(fetchUser(userId)),
+  fetchUser: userId => dispatch(fetchUser(userId)),
   fetchPhotos: () => dispatch(fetchPhotos()),
   removePhoto: id => dispatch(removePhoto(id)),
   updatePhoto: photo => dispatch(updatePhoto(photo)),

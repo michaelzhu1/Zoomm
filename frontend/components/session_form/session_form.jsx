@@ -7,23 +7,23 @@ class SessionForm extends React.Component {
     this.state = {
       username: "",
       password: "",
-      profile_img_url: "http://www.zeppfeed.com/media/uploads/users/default.png",
+      profile_img_url: "http://www.zeppfeed.com/media/uploads/users/default.png"
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
     this.mySlides = [
       "http://res.cloudinary.com/foolishhunger/image/upload/v1512872632/splash10_uznxqi.jpg",
-    "http://res.cloudinary.com/foolishhunger/image/upload/v1512872634/splash9_ha6jzv.jpg",
-    "http://res.cloudinary.com/foolishhunger/image/upload/v1512872632/splash7_xo1ceg.jpg",
-    "http://res.cloudinary.com/foolishhunger/image/upload/v1512872633/splash6_geu10p.jpg",
-    "http://res.cloudinary.com/foolishhunger/image/upload/v1512871259/splash4_nqt5ss.jpg",
-    "http://res.cloudinary.com/foolishhunger/image/upload/v1512871212/splash3_du83mz.jpg",
-    "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,h_927/v1512868681/splash2_i3eako.jpg",
-    "http://res.cloudinary.com/foolishhunger/image/upload/v1512805477/splash1_ykuvzb.jpg"
+      "http://res.cloudinary.com/foolishhunger/image/upload/v1512872634/splash9_ha6jzv.jpg",
+      "http://res.cloudinary.com/foolishhunger/image/upload/v1512872632/splash7_xo1ceg.jpg",
+      "http://res.cloudinary.com/foolishhunger/image/upload/v1512872633/splash6_geu10p.jpg",
+      "http://res.cloudinary.com/foolishhunger/image/upload/v1512871259/splash4_nqt5ss.jpg",
+      "http://res.cloudinary.com/foolishhunger/image/upload/v1512871212/splash3_du83mz.jpg",
+      "http://res.cloudinary.com/foolishhunger/image/upload/c_scale,h_927/v1512868681/splash2_i3eako.jpg",
+      "http://res.cloudinary.com/foolishhunger/image/upload/v1512805477/splash1_ykuvzb.jpg"
     ];
   }
   cacheSlides() {
-    this.mySlides.forEach(function(url){
+    this.mySlides.forEach(function(url) {
       new Image().src = url;
     });
   }
@@ -35,7 +35,7 @@ class SessionForm extends React.Component {
     myIndex++;
     window.timeout = setTimeout(() => {
       const bg = document.querySelector(".login-form-container");
-      bg.style.backgroundImage = `url(${this.mySlides[myIndex-1]})`;
+      bg.style.backgroundImage = `url(${this.mySlides[myIndex - 1]})`;
       this.carousel(myIndex);
     }, 5000);
   }
@@ -67,8 +67,8 @@ class SessionForm extends React.Component {
 
   handleDemoLogin(e) {
     e.preventDefault();
-    const demoUsername = 'Guest'.split('');
-    const demoPassword= '123456789'.split('');
+    const demoUsername = "Guest".split("");
+    const demoPassword = "123456789".split("");
     const intervalId = setInterval(() => {
       if (demoUsername.length > 0) {
         this.setState({
@@ -120,7 +120,11 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form">
-          <h3 className="welcome">{formName === "Log in" ? "Welcome Back to Zoomm!" : "Sign Up for Free"}</h3>
+          <h3 className="welcome">
+            {formName === "Log in"
+              ? "Welcome Back to Zoomm!"
+              : "Sign Up for Free"}
+          </h3>
           {this.navLink()}
           {this.errors()}
           <label>
