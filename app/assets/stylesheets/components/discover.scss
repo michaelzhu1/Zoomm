@@ -61,6 +61,10 @@
   }
 }
 
+.photo-index-item:hover {
+  box-shadow: 5px 10px 10px $light-gray;
+}
+
 .page-title {
   margin-top: 70px;
   text-align: center;
@@ -72,7 +76,7 @@
 }
 
 div.photo-index-item-desc {
-  padding: 0 5px 0 5px;;
+  padding: 0 5px 0 5px;
   font-size: 16px;
   display: flex;
   align-items: center;
