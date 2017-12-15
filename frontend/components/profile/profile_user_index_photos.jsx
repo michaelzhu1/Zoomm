@@ -6,11 +6,35 @@ import { BeatLoader } from "react-spinners";
 import ProfileIndexItems from "./profile_index_items";
 
 const customStyles = {
+  // content: {
+  //   padding: "30px",
+  //   boxSizing: "border-box",
+  //   Height: "70%",
+  //   Width: "80%",
+  //   top: "50%",
+  //   left: "50%",
+  //   right: "auto",
+  //   bottom: "auto",
+  //   marginRight: "-50%",
+  //   transform: "translate(-50%, -50%)"
+  // },
+  // overlay: {
+  //   Height: "70%",
+  //   Width: "80%"
+  // }
+  overlay: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: "rgba(255, 255, 255, 0.9)"
+  },
   content: {
     padding: "30px",
     boxSizing: "border-box",
-    MaxHeight: "90vh",
-    MaxWidth: "80vw",
+    height: "80%",
+    width: "90%",
     top: "50%",
     left: "50%",
     right: "auto",
