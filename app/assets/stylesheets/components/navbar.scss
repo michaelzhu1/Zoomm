@@ -135,13 +135,21 @@
 
 
 .userpage-link {
-  font-size: 18px;
+  font-size: 30px;
 }
 
 .userpage-link:hover {
+  color: $gray;
+}
+
+.nav-link {
+  font-size: 18px;
+}
+
+.nav-link:hover {
   color: $light-gray;
 }
 
-.fixed-nav .userpage-link:hover {
+.fixed-nav .nav-link:hover {
   color: $gray;
 }

@@ -55,8 +55,6 @@
   border-width: 3px;
 }
 
-
-
 .feed-ul {
   border-top: none;
 }
@@ -78,34 +76,30 @@
 }
 
 .hidden-photo-info {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  background-color: gray;
   opacity: 0.8;
   overflow: hidden;
-  left: 10px;
   height: 0;
   transition: 0.3s;
   text-align: center;
   display: flex;
   justify-content: center;
+  background-color: black;
+  margin-left: 5px;
+  width: 100%;
 }
 
 .message {
-  text-transform: uppercase;
-  font-size: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
   color: white;
-  position: absolute;
   letter-spacing: 1px;
-  top: 30%;
   white-space: nowrap;
   text-align: center;
 }
 
-.image-element-class:hover .hidden-photo-info {
-  height: 30px;
+.photo-index-item:hover .hidden-photo-info {
+  height: 25px;
   text-align: right;
 }
 

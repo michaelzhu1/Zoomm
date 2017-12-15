@@ -46,7 +46,6 @@
 
 .photo-index-item {
   display: inline-block;
-  margin: 0 0 1em;
   width: 100%;
   img {
     display: block;
@@ -64,14 +63,33 @@
   color: $charcoal;
   background-color: white;
   font-size: 32px;
+  border-bottom: 2px solid $light-gray;
 }
 
-.photo-index-item-desc {
+div.photo-index-item-desc {
   padding: 0 5px 0 5px;;
-  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
+  display: flex;
+  align-items: center;
 }
 
 .photo-own-username:hover {
   color: $gray;
+}
+
+.photo-own-username {
+  font-weight: bold;
+  float: right;
+}
+
+.photo-index-item .user-avatar {
+  float: left;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: white;
+  border-width: 3px;
+  cursor: pointer;
 }
