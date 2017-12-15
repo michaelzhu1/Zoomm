@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 const Footer = () => (
   <div className="footer">
     <div className="foot-container">
@@ -30,6 +30,9 @@ const Footer = () => (
           </li>
           <li className="foot-li">
             <a href="#">Blog</a>
+          </li>
+          <li className="foot-li">
+            <a href="#">Feedback</a>
           </li>
         </ul>
       </div>

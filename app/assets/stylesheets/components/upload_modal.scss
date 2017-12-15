@@ -62,14 +62,13 @@
 }
 
 .cancel-button {
-  background-color: #f9675c;
-  right: 0;
-  width: 60px;
+  background-color: $pink-red;
+  // right: 0;
+  // width: 60px;
   align-self: flex-end;
   font-size: 14px;
   text-align: center;
-  height: 80px;
-  padding: 0px;
+  height: 35px;
   h5 {
     line-height: 0;
   }

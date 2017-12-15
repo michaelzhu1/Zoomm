@@ -143,7 +143,7 @@ class UserIndexPhotos extends React.Component {
             </button>
           </form>
           <button className="delete-photo-button" onClick={this.deletePhoto}>
-            Delete Photo
+            <i className="fa fa-trash-o fa-lg" aria-hidden="true" /> &nbsp;Delete
           </button>
         </div>
       );

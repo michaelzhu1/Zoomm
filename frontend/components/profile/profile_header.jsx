@@ -17,8 +17,8 @@ const customStyles = {
   },
   content: {
     padding: "50px",
-    width: "30vw",
-    height: "80vh",
+    width: "30%",
+    height: "70%",
     top: "50%",
     left: "50%",
     right: "auto",
@@ -45,8 +45,8 @@ class ProfileHeader extends React.Component {
       currentUser: this.props.currentUser,
       id: this.props.user.id,
       bio: this.props.user.bio,
-      profile_img_url: '',
-      cover_img_url: '',
+      profile_img_url: "",
+      cover_img_url: "",
       followers: this.props.followers,
       followings: this.props.followings
     };
@@ -67,7 +67,6 @@ class ProfileHeader extends React.Component {
     this.setState({ modalIsOpen: false });
   }
 
-
   update(field) {
     return e => {
       let newUserInfo = merge(
@@ -86,18 +85,22 @@ class ProfileHeader extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUser(this.props.match.params.userId).then(() => this.setState({
-      profile_img_url: this.props.user.profile_img_url,
-      cover_img_url: this.props.user.cover_img_url
-    }));
+    this.props.fetchUser(this.props.match.params.userId).then(() =>
+      this.setState({
+        profile_img_url: this.props.user.profile_img_url,
+        cover_img_url: this.props.user.cover_img_url
+      })
+    );
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.user.id !== parseInt(nextProps.match.params.userId)) {
-      this.props.fetchUser(nextProps.match.params.userId).then(() => this.setState({
-        profile_img_url: nextProps.user.profile_img_url,
-        cover_img_url: nextProps.user.cover_img_url
-      }));
+      this.props.fetchUser(nextProps.match.params.userId).then(() =>
+        this.setState({
+          profile_img_url: nextProps.user.profile_img_url,
+          cover_img_url: nextProps.user.cover_img_url
+        })
+      );
     }
   }
 
@@ -115,10 +118,7 @@ class ProfileHeader extends React.Component {
     } else {
       return (
         <div className="profile-photo-div">
-          <img
-            className="profile-photo"
-            src={this.state.profile_img_url}
-          />
+          <img className="profile-photo" src={this.state.profile_img_url} />
         </div>
       );
     }
@@ -126,9 +126,9 @@ class ProfileHeader extends React.Component {
 
   coverPhoto() {
     if (this.state.cover_img_url) {
-      styles.background = `url(${this.state
-        .cover_img_url}) fixed top center no-repeat`;
-
+      styles.background = `url(${
+        this.state.cover_img_url
+      }) fixed top center no-repeat`;
     } else {
       styles = {
         backgroundSize: "cover",
@@ -210,9 +210,10 @@ class ProfileHeader extends React.Component {
       ) {
         return (
           <div className="user-header-info">
-            {Object.keys(this.props.photos).length} Photos &nbsp; &nbsp;{this.props.user.followers.length}&nbsp;
-            Followers &nbsp; &nbsp;{this.props.user.followings.length} Following
-            &nbsp;
+            {Object.keys(this.props.photos).length} Photos &nbsp; &nbsp;{
+              this.props.user.followers.length
+            }&nbsp; Followers &nbsp; &nbsp;{this.props.user.followings.length}{" "}
+            Following &nbsp;
             <button className="edit-profile-button" onClick={this.openModal}>
               Edit Profile
             </button>
@@ -221,7 +222,9 @@ class ProfileHeader extends React.Component {
       } else {
         return (
           <div className="user-header-info">
-            {Object.keys(this.props.photos).length} Photos &nbsp; &nbsp;{this.props.user.followers.length}{" "}
+            {Object.keys(this.props.photos).length} Photos &nbsp; &nbsp;{
+              this.props.user.followers.length
+            }{" "}
             Followers &nbsp; &nbsp;{this.props.user.followings.length} Following
             &nbsp;
             {this.followButton()}
@@ -258,10 +261,6 @@ class ProfileHeader extends React.Component {
             <div className="edit-profile-photo">{this.profilePhoto()}</div>
 
             <form className="edit-profile-form" onSubmit={this.handleSubmit}>
-              <label>Username: {this.props.currentUser.username}</label>
-
-              <br />
-              <br />
               <label>
                 Bio:
                 <textarea

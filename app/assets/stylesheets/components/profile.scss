@@ -251,16 +251,18 @@ div .profile-form {
 }
 
 .delete-photo-button {
-  background-color: #b9c1c7;
+  // background-color: #b9c1c7;
   align-self: flex-end;
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
   border-radius: 2px;
+  color: $pink-red;
 }
 
 .delete-photo-button:hover {
-  background-color: #e56969;
+  // background-color: #e56969;
+  opacity: 0.7;
 }
 
 .save-photo-info {
