@@ -16,14 +16,15 @@ const customStyles = {
     zIndex: 10
   },
   content: {
-    padding: "50px",
-    width: "30%",
+    padding: "20px",
+    width: "40%",
+    minHeight: "600px",
     height: "70%",
     top: "50%",
     left: "50%",
     right: "auto",
     bottom: "auto",
-    marginRight: "-50%",
+    // marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     zIndex: 11
   }
@@ -57,6 +58,7 @@ class ProfileHeader extends React.Component {
     this.updateCoverPhoto = this.updateCoverPhoto.bind(this);
     this.coverPhoto = this.coverPhoto.bind(this);
     this.profilePhoto = this.profilePhoto.bind(this);
+    this.modalProfilePhoto = this.modalProfilePhoto.bind(this);
   }
 
   openModal() {
@@ -118,7 +120,26 @@ class ProfileHeader extends React.Component {
     } else {
       return (
         <div className="profile-photo-div">
-          <img className="profile-photo" src={this.state.profile_img_url} />
+          <img className="current-profile-photo" src={this.state.profile_img_url} />
+        </div>
+      );
+    }
+  }
+  modalProfilePhoto() {
+    if (this.props.currentUser.id == this.props.match.params.userId) {
+      return (
+        <div className="profile-photo-div">
+          <img
+            className="current-profile-photo-modal"
+            onClick={this.updateProfilePhoto}
+            src={this.state.profile_img_url}
+          />
+        </div>
+      );
+    } else {
+      return (
+        <div className="profile-photo-div">
+          <img className="current-profile-photo-modal" src={this.state.profile_img_url} />
         </div>
       );
     }
@@ -242,8 +263,8 @@ class ProfileHeader extends React.Component {
         <div>
           <div className="edit-profile-div">{this.followOrEditButton()}</div>
           <div className="user-info">
-            <h3 className="username-in-profile">{this.props.user.username}</h3>
-            <h4 className="bio-in-profile">{this.props.user.bio}</h4>
+            <div className="username-in-profile">{this.props.user.username}</div>
+            <div className="bio-in-profile">{this.props.user.bio}</div>
           </div>
           <Modal
             isOpen={this.state.modalIsOpen}
@@ -252,14 +273,7 @@ class ProfileHeader extends React.Component {
             style={customStyles}
             contentLabel="Example Modal"
           >
-            <h2
-              className="edit-form-greeting"
-              ref={subtitle => (this.subtitle = subtitle)}
-            >
-              Hello {this.props.currentUser.username}!
-            </h2>
-            <div className="edit-profile-photo">{this.profilePhoto()}</div>
-
+              {this.modalProfilePhoto()}
             <form className="edit-profile-form" onSubmit={this.handleSubmit}>
               <label>
                 Bio:

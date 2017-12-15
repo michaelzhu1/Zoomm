@@ -11,11 +11,12 @@ const customStyles = {
       right: 0,
       bottom: 0,
       backgroundColor: "rgba(255, 255, 255, 0.95)",
-      zIndex: 10
+      zIndex: 10,
+      overflow: "hidden"
     },
-    width: "80vw",
-    height: "90vh",
-    top: "50%",
+    width: "60%",
+    height: "80%",
+    top: "52%",
     left: "50%",
     right: "auto",
     bottom: "auto",
@@ -103,7 +104,7 @@ class UploadButton extends React.Component {
         >
           <form className="upload-photo-form" onSubmit={this.handleSubmit}>
             <div className="upload-thumbnail">
-              <img src={this.state.photo_url} />
+              <img src={this.state.photo_url === "" ? "http://res.cloudinary.com/foolishhunger/image/upload/v1513370908/Custom-Icon-Design-Mono-General-4-Upload_bn3wty.ico" : this.state.photo_url} />
             </div>
             <button className="upload-button-in-modal" onClick={this.upload}>
               <i className="fa fa-camera" aria-hidden="true" />&nbsp; Select
@@ -134,7 +135,7 @@ class UploadButton extends React.Component {
               value="Submit"
             />
             <button className="cancel-button" onClick={this.closeModal}>
-              <h5>Cancel</h5>
+              Cancel
             </button>
           </form>
         </Modal>

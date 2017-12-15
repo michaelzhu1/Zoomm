@@ -89,7 +89,7 @@ div .profile-form {
 .upload-form-label {
   font-size: 14px;
   font-family: $sans-serif;
-  margin-top: 20px;
+  // margin-top: 20px;
 }
 .bio-textarea {
   width: 100%;
@@ -164,6 +164,7 @@ div .profile-form {
 }
 
 .photo-show-right {
+  font-size: 16px;
   background-color: $bg-color;
   display: flex;
   flex-direction: column;
@@ -231,20 +232,14 @@ div .profile-form {
   border-color: white;
   border-width: 3px;
 }
-
-.profile-photo {
+.current-profile-photo-modal {
   object-fit: cover;
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
-  margin: -100px;
   border-style: solid;
   border-color: white;
   border-width: 3px;
-}
-
-.edit-profile-photo img {
-  align-self: flex-end;
 }
 
 .current-profile-photo:hover {
@@ -283,7 +278,7 @@ div .profile-form {
 }
 
 .photo-show-right h2 {
-  font-size: 16px;
+  font-size: 20px;
   display: flex;
   justify-content: center;
 }
