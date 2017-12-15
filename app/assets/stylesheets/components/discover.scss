@@ -36,6 +36,14 @@
   }
 }
 
+@media only screen and (min-width: 2150px) {
+  .photo-index {
+    -moz-column-count: 5;
+    -webkit-column-count: 5;
+    column-count: 5;
+  }
+}
+
 .photo-index-item {
   display: inline-block;
   margin: 0 0 1em;
@@ -59,6 +67,11 @@
 }
 
 .photo-index-item-desc {
-  padding: 5px;
+  padding: 0 5px 0 5px;;
   font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+.photo-own-username:hover {
+  color: $gray;
 }

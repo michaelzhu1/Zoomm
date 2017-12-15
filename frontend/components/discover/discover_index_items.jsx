@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class DiscoverIndexItems extends React.Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class DiscoverIndexItems extends React.Component {
     return (
       <div className="photo-index-item">
         <div className="photo-index-item-desc">
-          {this.props.photo.owner}
+          <Link to={`/user/${this.props.photo.author_id}`} className="photo-own-username">{this.props.photo.owner}</Link>
         </div>
         <div>
           <img src={this.props.photo.photo_url} onClick={this.props.openPhoto(this.props.photo)}/>

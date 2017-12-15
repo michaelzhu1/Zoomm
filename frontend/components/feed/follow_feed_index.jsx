@@ -11,14 +11,14 @@ const customStyles = {
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: "rgba(255, 255, 255, 0.95)",
+    backgroundColor: "rgba(255, 255, 255, 0.9)",
     zIndex: 10
   },
   content: {
     padding: "30px",
     boxSizing: "border-box",
-    height: "90vh",
-    width: "90vw",
+    height: "80%",
+    width: "90%",
     top: "50%",
     left: "50%",
     right: "auto",
