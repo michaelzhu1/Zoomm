@@ -8,11 +8,10 @@ body {
   margin: 0 auto;
   font-family: $serif;
   font-size: 12px;
+  background-color: $bg-color;
 }
 
 button {
-  // background-color: $light-blue;
-  // border-color: $dark-blue;
   color: white;
   padding: 7px 9px;
   border-radius: 3px;

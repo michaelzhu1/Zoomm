@@ -61,9 +61,9 @@
   text-align: center;
   font-family: cursive;
   color: $charcoal;
-  background-color: white;
+  background-color: inherit;
   font-size: 32px;
-  border-bottom: 2px solid $light-gray;
+  text-decoration: underline;
 }
 
 div.photo-index-item-desc {
@@ -73,13 +73,13 @@ div.photo-index-item-desc {
   align-items: center;
 }
 
-.photo-own-username:hover {
-  color: $gray;
-}
-
 .photo-own-username {
   font-weight: bold;
   float: right;
+}
+
+.photo-own-username:hover {
+  color: $gray;
 }
 
 .photo-index-item .user-avatar {
@@ -88,8 +88,9 @@ div.photo-index-item-desc {
   height: 50px;
   object-fit: cover;
   border-radius: 50%;
-  border-style: solid;
-  border-color: white;
-  border-width: 3px;
   cursor: pointer;
+}
+
+.photo-index-item .user-avatar:hover {
+  background-color: $light-gray;
 }
