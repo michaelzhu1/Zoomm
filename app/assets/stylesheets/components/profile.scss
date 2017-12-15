@@ -126,14 +126,15 @@ div .profile-form {
 }
 
 .update-profile-button {
+  margin: 0 auto;
+  margin-bottom: 10px;
   cursor: pointer;
   font-weight: bold;
   text-align: center;
   padding: 12px 20px;
-  margin: 0 auto;
   border-radius: 4px;
-  width: 50%;
-  height: fit-content;
+  // width: 50%;
+  // height: fit-content;
   background-color: #4caf50;
   color: white;
   display: flex;
@@ -142,6 +143,7 @@ div .profile-form {
   box-sizing: border-box;
   font-size: 16px;
   font-family: $sans-serif;
+  width: 100%;
 }
 
 .photo-info {
@@ -266,6 +268,7 @@ div .profile-form {
 }
 
 .save-photo-info {
+  width: 100%;
   font-size: 16px;
   background-color: #4caf50;
   height: 40px;
@@ -274,8 +277,9 @@ div .profile-form {
   color: white;
   font-weight: bold;
   font-family: sans-serif;
-  margin-top: 80px;
-  margin: 40px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  // margin: 40px;
 }
 
 .photo-show-right h2 {

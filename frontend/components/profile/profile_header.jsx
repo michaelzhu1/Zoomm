@@ -295,7 +295,7 @@ class ProfileHeader extends React.Component {
               <input
                 className="update-profile-button"
                 type="submit"
-                value={"Update Profile"}
+                value={"Save"}
               />
               <button className="cancel-button" onClick={this.closeModal}>
                 Cancel
