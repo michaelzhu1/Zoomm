@@ -1,8 +1,8 @@
 import React from "react";
 import Modal from "react-modal";
 import { Link } from "react-router-dom";
-import { BeatLoader } from 'react-spinners';
-import DiscoverIndexItems from './discover_index_items';
+import { BeatLoader } from "react-spinners";
+import DiscoverIndexItems from "./discover_index_items";
 
 const customStyles = {
   overlay: {
@@ -11,7 +11,7 @@ const customStyles = {
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: "rgba(255, 255, 255, 0.9)",
+    backgroundColor: "rgba(255, 255, 255, 0.9)"
   },
   content: {
     padding: "30px",
@@ -23,15 +23,21 @@ const customStyles = {
     right: "auto",
     bottom: "auto",
     marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-
+    transform: "translate(-50%, -50%)"
   }
 };
 
 class Discover extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { photo: {}, modalIsOpen: false,loading: true, user: {}};
+    this.state = {
+      photo: {},
+      modalIsOpen: false,
+      loading: true,
+      user: {},
+      photos: [],
+      mount: true
+    };
     this.openPhoto = this.openPhoto.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -40,7 +46,12 @@ class Discover extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchPhotos().then( () => (this.setState({ loading: false})));
+    this.props.fetchPhotos().then(() =>
+      this.setState({
+        loading: false,
+        photos: this.shuffle(this.props.photos)
+      })
+    );
   }
 
   openModal() {
@@ -48,44 +59,50 @@ class Discover extends React.Component {
   }
 
   closeModal() {
-    this.setState({ modalIsOpen: false,photo:{}, user: {} });
+    this.setState({ modalIsOpen: false, photo: {}, user: {} });
   }
 
   openPhoto(photo) {
     return () => {
-      this.props.fetchUser(photo.author_id).then(() => (
-        this.setState({ photo: photo, user: this.props.user, modalIsOpen: true })
-      ));
+      this.props.fetchUser(photo.author_id).then(() =>
+        this.setState({
+          photo: photo,
+          user: this.props.user,
+          modalIsOpen: true
+        })
+      );
     };
   }
-// shuffles every time i open a modal and scroll to the top of the page
 
-//   shuffle(array) {
-//   var currentIndex = array.length, temporaryValue, randomIndex;
-//   while (0 !== currentIndex) {
-//     randomIndex = Math.floor(Math.random() * currentIndex);
-//     currentIndex -= 1;
-//     temporaryValue = array[currentIndex];
-//     array[currentIndex] = array[randomIndex];
-//     array[randomIndex] = temporaryValue;
-//   }
-//   return array;
-// }
+  shuffle(array) {
+    var currentIndex = array.length,
+      temporaryValue,
+      randomIndex;
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+    return array;
+  }
 
   discoverPhotos() {
-    return (
-      (this.state.loading) ? <BeatLoader
-        color={'#123abc'}
-        loading={this.state.loading}
-      /> :
+    return this.state.loading ? (
+      <BeatLoader color={"#123abc"} loading={this.state.loading} />
+    ) : (
       <div className="photo-container">
         <h1 className="page-title">~Discover Your New Inspiration~</h1>
         <div className="photo-index">
-          {this.props.photos.map((photo,idx) => (
-            <DiscoverIndexItems key={photo.id} photo={photo} openPhoto={this.openPhoto}/>
-          ))
-        }
-      </div>
+          {this.state.photos.map((photo, idx) => (
+            <DiscoverIndexItems
+              key={photo.id}
+              photo={photo}
+              openPhoto={this.openPhoto}
+            />
+          ))}
+        </div>
       </div>
     );
   }
@@ -128,29 +145,28 @@ class Discover extends React.Component {
           style={customStyles}
           contentLabel="DiscoverPhotos"
         >
-
-            <div className="feed-photo">
-              <div className="feed-photo-left">
-                <img src={this.state.photo.photo_url} />
-              </div>
-              <div className="feed-photo-right">
-                <h2>
-                  <img
-                    className="user-profile-photo"
-                    src={this.state.user.profile_img_url}
-                  />
-                  <Link
-                    className="userpage-link"
-                    to={`/user/${this.state.user.id}`}
-                  >
-                    {this.state.user.username}
-                  </Link>
-                  {this.props.currentUser ? this.followOrFollowing() : null}
-                </h2>
-                <h3>{this.state.photo.photo_title}</h3>
-                <h4>{this.state.photo.photo_description}</h4>
-              </div>
+          <div className="feed-photo">
+            <div className="feed-photo-left">
+              <img src={this.state.photo.photo_url} />
             </div>
+            <div className="feed-photo-right">
+              <h2>
+                <img
+                  className="user-profile-photo"
+                  src={this.state.user.profile_img_url}
+                />
+                <Link
+                  className="userpage-link"
+                  to={`/user/${this.state.user.id}`}
+                >
+                  {this.state.user.username}
+                </Link>
+                {this.props.currentUser ? this.followOrFollowing() : null}
+              </h2>
+              <h3>{this.state.photo.photo_title}</h3>
+              <h4>{this.state.photo.photo_description}</h4>
+            </div>
+          </div>
         </Modal>
       </div>
     );
