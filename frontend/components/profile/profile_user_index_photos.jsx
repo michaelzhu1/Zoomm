@@ -1,8 +1,9 @@
 import React from "react";
-import { Image, Transformation } from "cloudinary-react";
 import Modal from "react-modal";
 import merge from "lodash/merge";
 import { withRouter } from "react-router-dom";
+import { BeatLoader } from "react-spinners";
+import ProfileIndexItems from "./profile_index_items";
 
 const customStyles = {
   content: {
@@ -22,7 +23,7 @@ const customStyles = {
 class UserIndexPhotos extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { photo: {}, modalIsOpen: false };
+    this.state = { photo: {}, modalIsOpen: false, loading: true, photos: [] };
     this.openPhoto = this.openPhoto.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -39,7 +40,9 @@ class UserIndexPhotos extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUserPhotos(this.props.match.params.userId);
+    this.props.fetchUserPhotos(this.props.match.params.userId).then(() => {
+      this.setState({ loading: false, photos: this.props.photos });
+    });
     window.scrollTo(0, 0);
   }
 
@@ -68,24 +71,41 @@ class UserIndexPhotos extends React.Component {
   }
 
   displayPhotos() {
-    return (
-      <ul>
-        {this.props.photos.map(photo => {
-          return (
-            <div key={photo.id + "div"} className="image">
-              <li key={photo.id} className="profile-index-photo">
-                <img src={photo.photo_url} onClick={this.openPhoto(photo)} />
-              </li>
-              <div className="hidden-photo-info">
-                <div className="message">
-                  "{photo.photo_title}"&nbsp;
-                  {photo.age} ago
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </ul>
+    // return (
+    //   <ul>
+    //     {this.props.photos.map(photo => {
+    //       return (
+    //         <div key={photo.id + "div"} className="image">
+    //           <li key={photo.id} className="profile-index-photo">
+    //             <img src={photo.photo_url} onClick={this.openPhoto(photo)} />
+    //           </li>
+    //           <div className="hidden-photo-info">
+    //             <div className="message">
+    //               "{photo.photo_title}"&nbsp;
+    //               {photo.age} ago
+    //             </div>
+    //           </div>
+    //         </div>
+    //       );
+    //     })}
+    //   </ul>
+    // );
+    return this.state.loading ? (
+      <BeatLoader color={"#123abc"} loading={this.state.loading} />
+    ) : (
+      <div className="photo-container">
+        <div className="photo-index">
+          {this.state.photos.map((photo, idx) => {
+            return (
+              <ProfileIndexItems
+                key={idx}
+                photo={photo}
+                openPhoto={this.openPhoto}
+              />
+            );
+          })}
+        </div>
+      </div>
     );
   }
 

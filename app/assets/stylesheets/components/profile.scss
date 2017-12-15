@@ -144,7 +144,6 @@ div .profile-form {
   font-family: $sans-serif;
 }
 
-
 .photo-info {
   height: 100%;
   display: flex;
@@ -192,14 +191,14 @@ div .profile-form {
   padding: 5px;
 }
 
-ul {
-  border-top: 2px solid $light-gray;
-  margin-top: 25px;
-  width: 100%;
-  justify-content: center;
-  flex-wrap: wrap;
-  display: flex;
-}
+// ul {
+//   border-top: 2px solid $light-gray;
+//   margin-top: 25px;
+//   width: 100%;
+//   justify-content: center;
+//   flex-wrap: wrap;
+//   display: flex;
+// }
 
 .profile-index-photo {
   width: auto;
@@ -219,7 +218,6 @@ ul {
   display: flex;
   justify-content: center;
 }
-
 
 .current-profile-photo {
   object-fit: cover;
