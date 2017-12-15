@@ -8,8 +8,9 @@
 .photo-index {
   position: relative;
   column-count: 1;
-  column-gap: 1em;
+  column-gap: 2em;
   width: 90%;
+  // margin: 0 auto;
 }
 
 @media only screen and (min-width: 800px) {
@@ -63,6 +64,7 @@
 
 .photo-index-item:hover {
   box-shadow: 5px 10px 10px $light-gray;
+  transition: 0.3s;
 }
 
 .page-title {

@@ -64,7 +64,7 @@ class FeedIndex extends React.Component {
   }
 
   displayPhotos() {
-    if (this.state.photos.length === 0) {
+    if (this.props.photos.length === 0) {
       return (
         <div className="empty-feed">
           Your feed is empty because you are not following anyone.
