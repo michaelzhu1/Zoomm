@@ -85,7 +85,7 @@ div.photo-index-item-desc {
   position: relative;
   display: flex;
   align-items: center;
-  left: 15px;
+  // left: 15px;
 }
 
 .photo-own-username:hover {
@@ -99,10 +99,20 @@ div.photo-index-item-desc {
   object-fit: cover;
   border-radius: 50%;
   cursor: pointer;
+  margin-right: 12px;
 }
 
 .photo-index-item .user-avatar:hover {
   transition: 0.2s;
   width: 52px;
   height: 52px;
+}
+
+.photo-attribution {
+  display: flex;
+  flex-direction: column;
+  span {
+    font-size: 12px;
+    color: #b9c1c7;
+  }
 }
