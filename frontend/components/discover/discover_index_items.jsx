@@ -12,13 +12,16 @@ class DiscoverIndexItems extends React.Component {
         <div className="photo-index-item-desc">
           <Link to={`/user/${this.props.photo.author_id}`}>
             <img src={this.props.photo.owner_avatar} className="user-avatar" />
+          </Link>
+          <div className="photo-attribution">
+            <Link
+              to={`/user/${this.props.photo.author_id}`}
+              className="photo-own-username"
+            >
+              {this.props.photo.owner}
             </Link>
-            <div className="photo-attribution">
-              <Link to={`/user/${this.props.photo.author_id}`} className="photo-own-username">
-                {this.props.photo.owner}
-                </Link>
-                <span>{this.props.photo.age} ago</span>
-                </div>
+            <span>{this.props.photo.age} ago</span>
+          </div>
         </div>
         <div>
           <img
