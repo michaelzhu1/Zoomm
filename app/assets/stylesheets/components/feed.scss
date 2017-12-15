@@ -76,32 +76,35 @@
 }
 
 .hidden-photo-info {
-  opacity: 0.8;
   overflow: hidden;
-  height: 0;
-  transition: 0.3s;
-  text-align: center;
+  height: 48px;
+  // transition: 0.3s;
   display: flex;
-  justify-content: center;
-  background-color: black;
-  margin-left: 5px;
-  width: 100%;
+  justify-content: flex-start;
+  padding-left: 16px;
+  padding-right: 16px;
+  max-width: 100%;
 }
 
 .message {
   display: flex;
-  align-items: center;
+  line-height: 48px;
+  align-items: left;
   font-size: 16px;
-  color: white;
+  color: black;
   letter-spacing: 1px;
   white-space: nowrap;
-  text-align: center;
+  text-align: left;
+  font-weight: 600;
+  overflow: hidden;
+  height: 48px;
+  white-space: nowrap;
 }
 
-.photo-index-item:hover .hidden-photo-info {
-  height: 25px;
-  text-align: right;
-}
+// .photo-index-item:hover .hidden-photo-info {
+//   height: 25px;
+//   text-align: right;
+// }
 
 .empty-feed {
   height: 500px;

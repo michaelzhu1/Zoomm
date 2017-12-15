@@ -45,13 +45,18 @@
 }
 
 .photo-index-item {
+  background-color: white;
   display: inline-block;
   width: 100%;
+  margin-top: 25px;
+  border-radius: 5px;
   img {
+    border-top: 1px solid $light-gray;
+    border-bottom: 1px solid $light-gray;
     display: block;
     width: 100%;
     height: auto;
-    padding: 5px;
+    margin-top: 5px;
     cursor: zoom-in;
   }
 }
@@ -71,15 +76,20 @@ div.photo-index-item-desc {
   font-size: 16px;
   display: flex;
   align-items: center;
+  min-height: 60px;
 }
 
 .photo-own-username {
   font-weight: bold;
   float: right;
+  position: relative;
+  display: flex;
+  align-items: center;
+  left: 15px;
 }
 
 .photo-own-username:hover {
-  color: $gray;
+  text-decoration: underline;
 }
 
 .photo-index-item .user-avatar {
@@ -92,5 +102,7 @@ div.photo-index-item-desc {
 }
 
 .photo-index-item .user-avatar:hover {
-  background-color: $light-gray;
+  transition: 0.2s;
+  width: 52px;
+  height: 52px;
 }

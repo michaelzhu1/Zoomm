@@ -10,8 +10,9 @@ class DiscoverIndexItems extends React.Component {
     return (
       <div className="photo-index-item">
         <div className="photo-index-item-desc">
-          <img src={this.props.photo.owner_avatar} className="user-avatar"></img>
-          <Link to={`/user/${this.props.photo.author_id}`} className="photo-own-username">{this.props.photo.owner}
+          <Link to={`/user/${this.props.photo.author_id}`}>
+            <img src={this.props.photo.owner_avatar} className="user-avatar"></img>
+            <h4 className="photo-own-username">{this.props.photo.owner}</h4>
           </Link>
         </div>
         <div>
