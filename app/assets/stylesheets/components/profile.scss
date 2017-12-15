@@ -31,10 +31,12 @@ div .profile-form {
   text-shadow: 0px 1px 0px #0088cc;
   box-shadow: 0px 1px 0px #0088cc;
   font-size: 14px;
+  float: right;
 }
 
 .edit-profile-div {
-  width: 90vw;
+  min-width: 1000px;
+  width: 90%;
   display: flex;
   justify-content: flex-end;
 }
@@ -284,9 +286,15 @@ div .profile-form {
 }
 
 .user-header-info {
-  display: flex;
-  align-items: flex-end;
+  min-width: 400px;
   width: 40%;
-  justify-content: space-around;
   font-size: 16px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.follow-info {
+  float: left;
 }

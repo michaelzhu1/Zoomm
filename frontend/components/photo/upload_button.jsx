@@ -3,8 +3,7 @@ import ReactDOM from "react-dom";
 import Modal from "react-modal";
 
 const customStyles = {
-  content: {
-    overlay: {
+  overlay: {
       position: "fixed",
       top: 0,
       left: 0,
@@ -14,6 +13,7 @@ const customStyles = {
       zIndex: 10,
       overflow: "hidden"
     },
+  content: {
     width: "60%",
     height: "80%",
     top: "52%",
@@ -21,7 +21,9 @@ const customStyles = {
     right: "auto",
     bottom: "auto",
     marginRight: "-50%",
-    transform: "translate(-50%, -50%)"
+    transform: "translate(-50%, -50%)",
+    maxWidth: "800px",
+    maxHeight: "850px"
   }
 };
 
