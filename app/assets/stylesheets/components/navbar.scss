@@ -81,11 +81,12 @@
   font-size: 32px;
   div {
     margin: 0;
-  }
-  span {
-    margin-left: 10px;
-    font-size: 40px;
-    font-family: monospace;
+    min-width: 192px;
+    span {
+      margin-left: 10px;
+      font-size: 40px;
+      font-family: monospace;
+    }
   }
 }
 
