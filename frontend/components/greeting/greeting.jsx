@@ -35,6 +35,7 @@ const personalGreeting = (currentUser, logout) => {
 
   window.addEventListener("scroll", fixNav);
 
+  // <img src="http://res.cloudinary.com/foolishhunger/image/upload/v1506572884/Screen_Shot_2017-09-27_at_9.27.03_PM_suayjk.png" />
   return (
     <nav className="global-nav-view">
       <div className="session-nav">
@@ -43,7 +44,7 @@ const personalGreeting = (currentUser, logout) => {
             to={currentUser ? `/feed/${currentUser.id}` : "/"}
             className="website-logo"
           >
-            <img src="http://res.cloudinary.com/foolishhunger/image/upload/v1506572884/Screen_Shot_2017-09-27_at_9.27.03_PM_suayjk.png" />
+          <div><i className="fa fa-camera-retro" aria-hidden="true"></i><span>ZOOMM</span></div>
           </Link>
 
           <Link className="nav-link" to={`/user/${currentUser.id}`}>

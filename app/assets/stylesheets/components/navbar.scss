@@ -69,14 +69,29 @@
   margin: 0 auto;
   align-items: center;
   * {
-    margin-left: 24px;
+    margin-left: 30px;
     position: relative;
   }
 }
 
-// .navbar-left:nth-child(2) {
-//   margin-left: 40px;
-// }
+.website-logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+  div {
+    margin: 0;
+  }
+  span {
+    margin-left: 10px;
+    font-size: 40px;
+    font-family: monospace;
+  }
+}
+
+.website-logo:hover {
+  cursor: pointer;
+}
 
 .navbar-right {
   flex: 1;
