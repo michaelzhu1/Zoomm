@@ -1,14 +1,18 @@
-export const getPhotoComments = (photoId) => (
+export const getPhotoComments = photoId =>
   $.ajax({
-    url: `api/photos/${photoId}/comments`,
-    method: 'GET'
-  })
-);
+    method: "GET",
+    url: `api/photos/${photoId}/comments`
+  });
 
-export const postComment = (comment, photoId) => (
+export const postComment = (comment, photoId) =>
   $.ajax({
-    url:`api/photos/${photoId}/comments`,
-    method: 'POST',
+    method: "POST",
+    url: `api/photos/${photoId}/comments`,
     data: { comment }
-  })
-);
+  });
+
+export const removeComment = commentId =>
+  $.ajax({
+    method: "DELETE",
+    url: `api/comments/${commentId}`
+  });
