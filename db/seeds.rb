@@ -109,6 +109,84 @@ g5 = Photo.create(
   photo_description: ""
 )
 
+g6 = Photo.create(
+  author_id: guest.id,
+  photo_title: "Herding sheeps",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506715821/guest/1.jpg",
+  photo_description: ""
+)
+
+g7 = Photo.create(
+  author_id: guest.id,
+  photo_title: "Transit",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506715821/guest/2.jpg",
+  photo_description: ""
+)
+
+g8 = Photo.create(
+  author_id: guest.id,
+  photo_title: "Hong Kong street",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506715822/guest/3.jpg",
+  photo_description: ""
+)
+
+g9 = Photo.create(
+  author_id: guest.id,
+  photo_title: "In the air",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506715821/guest/4.jpg",
+  photo_description: ""
+)
+
+g10 = Photo.create(
+  author_id: guest.id,
+  photo_title: "Hut",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506715821/guest/5.jpg",
+  photo_description: ""
+)
+
+g11 = Photo.create(
+  author_id: guest.id,
+  photo_title: "Favorite place to travel",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513474711/batch2-1_cwaack.jpg",
+  photo_description: ""
+)
+
+g12 = Photo.create(
+  author_id: guest.id,
+  photo_title: "Telluride, CO",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513474704/batch2-2_ehwkba.jpg",
+  photo_description: ""
+)
+
+g13 = Photo.create(
+  author_id: guest.id,
+  photo_title: "Sydney opera house",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513474705/batch2-3_ajjm11.jpg",
+  photo_description: ""
+)
+
+g14 = Photo.create(
+  author_id: guest.id,
+  photo_title: "Japan alleyway",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513474705/batch2-4_cn3srz.jpg",
+  photo_description: ""
+)
+
+g15 = Photo.create(
+  author_id: guest.id,
+  photo_title: "Petronas Towers",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513474703/batch2-5_ome6ng.jpg",
+  photo_description: ""
+)
+
+g16 = Photo.create(
+  author_id: guest.id,
+  photo_title: "Big Ben, London",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513474710/batch2-6_tfhf2r.jpg",
+  photo_description: ""
+)
+
+
 #michael
 m1 = Photo.create(
   author_id: michael.id,
@@ -145,6 +223,49 @@ m5 = Photo.create(
   photo_description: ""
 )
 
+m6 = Photo.create(
+  author_id: michael.id,
+  photo_title: "Peaceful morning for work",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513474211/batch2-1_pomye4.png",
+  photo_description: ""
+)
+
+m7 = Photo.create(
+  author_id: michael.id,
+  photo_title: "Taking a break",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513474209/batch2-2_kob9sv.jpg",
+  photo_description: ""
+)
+
+m8 = Photo.create(
+  author_id: michael.id,
+  photo_title: "Perspective",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513474209/batch2-3_rinqax.jpg",
+  photo_description: ""
+)
+
+m9 = Photo.create(
+  author_id: michael.id,
+  photo_title: "Mint mojito",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513474208/batch2-4_byzqle.jpg",
+  photo_description: ""
+)
+
+m10 = Photo.create(
+  author_id: michael.id,
+  photo_title: "Setting agenda",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513474208/batch2-5_dviyx4.jpg",
+  photo_description: ""
+)
+
+m11 = Photo.create(
+  author_id: michael.id,
+  photo_title: "Sweater weather",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513474208/batch2-6_nrmklh.jpg",
+  photo_description: ""
+)
+
+
 #liam
 l1 = Photo.create(
   author_id: liam.id,
@@ -178,6 +299,48 @@ l5 = Photo.create(
   author_id: liam.id,
   photo_title: "The morning grind",
   photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506708209/liam/photo-1502471602546-17554aac1160_a9pkvv.jpg",
+  photo_description: ""
+)
+
+l6 = Photo.create(
+  author_id: liam.id,
+  photo_title: "Espresso",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513474486/batch2-1_sgm6uo.jpg",
+  photo_description: "Two shots of espresso, one shot of happiness"
+)
+
+l7 = Photo.create(
+  author_id: liam.id,
+  photo_title: "Cafe",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513474485/batch2-2_kktf3j.jpg",
+  photo_description: ""
+)
+
+l8 = Photo.create(
+  author_id: liam.id,
+  photo_title: "Coffee coffee and coffee",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513474485/batch2-3_dzisha.jpg",
+  photo_description: ""
+)
+
+l9 = Photo.create(
+  author_id: liam.id,
+  photo_title: "Coffee sign",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513474485/batch2-4_dibw8b.jpg",
+  photo_description: ""
+)
+
+l10 = Photo.create(
+  author_id: liam.id,
+  photo_title: "Coffee barista",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513474484/batch2-5_u0av8u.jpg",
+  photo_description: ""
+)
+
+l11 = Photo.create(
+  author_id: liam.id,
+  photo_title: "Adventure begins",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513474485/batch2-6_amka9k.jpg",
   photo_description: ""
 )
 
@@ -217,6 +380,48 @@ n5 = Photo.create(
   photo_description: "Morning run in New York"
 )
 
+n6 = Photo.create(
+  author_id: noah.id,
+  photo_title: "Morning Yoga",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513473606/batch2-1_qlls3m.jpg",
+  photo_description: "Yoga starts off the day with positive attitude"
+)
+
+n7 = Photo.create(
+  author_id: noah.id,
+  photo_title: "Biking downhill",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513473606/batch2-2_fswuxe.jpg",
+  photo_description: ""
+)
+
+n8 = Photo.create(
+  author_id: noah.id,
+  photo_title: "Read Set Go!",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513473606/batch2-3_tvkxhk.jpg",
+  photo_description: "Aim for that finish line!"
+)
+
+n9 = Photo.create(
+  author_id: noah.id,
+  photo_title: "Catch of breath",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513473605/batch2-4_qyqc9c.jpg",
+  photo_description: "Morning swim in the lake"
+)
+
+n10 = Photo.create(
+  author_id: noah.id,
+  photo_title: "No Pain No Gain",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513473606/batch2-5_vj1ftl.jpg",
+  photo_description: "It's okay to rest, so you can go further than ever"
+)
+
+n11 = Photo.create(
+  author_id: noah.id,
+  photo_title: "Practice",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513473605/batch2-6_bcpgdo.jpg",
+  photo_description: "Practice makes perfect"
+)
+
 #emma
 e1 = Photo.create(
   author_id: emma.id,
@@ -250,6 +455,48 @@ e5 = Photo.create(
   author_id: emma.id,
   photo_title: "A bowl of grape",
   photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506708211/emma/photo-1473229903343-d7903343f6c0_ozgtqv.jpg",
+  photo_description: ""
+)
+
+e6 = Photo.create(
+  author_id: emma.id,
+  photo_title: "Pizza",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513473968/batch2-1_lxpkvu.jpg",
+  photo_description: "Who can resist pizza?"
+)
+
+e7 = Photo.create(
+  author_id: emma.id,
+  photo_title: "Cake",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513473967/batch2-2_gayug9.jpg",
+  photo_description: ""
+)
+
+e8 = Photo.create(
+  author_id: emma.id,
+  photo_title: "Amazing drink",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513473967/batch2-3_clhvet.jpg",
+  photo_description: ""
+)
+
+e9 = Photo.create(
+  author_id: emma.id,
+  photo_title: "Popcorn",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513473968/batch2-4_jak3pv.jpg",
+  photo_description: ""
+)
+
+e10 = Photo.create(
+  author_id: emma.id,
+  photo_title: "Healthy vegetables",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513473967/batch2-5_fxtp73.jpg",
+  photo_description: ""
+)
+
+e11 = Photo.create(
+  author_id: emma.id,
+  photo_title: "Heaven on Earch",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513473967/batch2-6_azdy0z.jpg",
   photo_description: ""
 )
 
@@ -290,43 +537,51 @@ j5 = Photo.create(
   photo_description: ""
 )
 
-
-
-#guest
-g6 = Photo.create(
-  author_id: guest.id,
-  photo_title: "Herding sheeps",
-  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506715821/guest/1.jpg",
+j6 = Photo.create(
+  author_id: jessica.id,
+  photo_title: "Green grass",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513473299/batch2-1_gno2pb.jpg",
   photo_description: ""
 )
 
-g7 = Photo.create(
-  author_id: guest.id,
-  photo_title: "Transit",
-  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506715821/guest/2.jpg",
+j7 = Photo.create(
+  author_id: jessica.id,
+  photo_title: "Water fall with Rainbow",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513473298/batch2-2_y178l0.jpg",
   photo_description: ""
 )
 
-g8 = Photo.create(
-  author_id: guest.id,
-  photo_title: "Hong Kong street",
-  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506715822/guest/3.jpg",
+j8 = Photo.create(
+  author_id: jessica.id,
+  photo_title: "Beautiful waterfall",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513473299/batch2-3_nhgozw.jpg",
   photo_description: ""
 )
 
-g9 = Photo.create(
-  author_id: guest.id,
-  photo_title: "In the air",
-  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506715821/guest/4.jpg",
+j9 = Photo.create(
+  author_id: jessica.id,
+  photo_title: "Waves",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513473299/batch2-4_sglbaw.jpg",
   photo_description: ""
 )
 
-g10 = Photo.create(
-  author_id: guest.id,
-  photo_title: "Hut",
-  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/c_scale,w_1280/v1506715821/guest/5.jpg",
+j10 = Photo.create(
+  author_id: jessica.id,
+  photo_title: "Peace of mind",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513473298/batch2-5_ruqyje.jpg",
   photo_description: ""
 )
+
+j11 = Photo.create(
+  author_id: jessica.id,
+  photo_title: "Edge of Mountain",
+  photo_url: "https://res.cloudinary.com/foolishhunger/image/upload/v1513473299/batch2-6_h7cfwa.jpg",
+  photo_description: ""
+)
+
+
+
+
 
 ######## henry #################
 
