@@ -35,7 +35,6 @@ const personalGreeting = (currentUser, logout) => {
 
   window.addEventListener("scroll", fixNav);
 
-  // <img src="http://res.cloudinary.com/foolishhunger/image/upload/v1506572884/Screen_Shot_2017-09-27_at_9.27.03_PM_suayjk.png" />
   return (
     <nav className="global-nav-view">
       <div className="session-nav">

@@ -294,7 +294,7 @@ class ProfileHeader extends React.Component {
                 onChange={this.update("profile_img_url")}
                 value={
                   this.state.currentUser.profile_img_url ===
-                  "http://www.zeppfeed.com/media/uploads/users/default.png"
+                  "https://www.zeppfeed.com/media/uploads/users/default.png"
                     ? ""
                     : this.state.currentUser.profile_img_url
                 }

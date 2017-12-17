@@ -106,7 +106,7 @@ class UploadButton extends React.Component {
         >
           <form className="upload-photo-form" onSubmit={this.handleSubmit}>
             <div className="upload-thumbnail">
-              <img src={this.state.photo_url === "" ? "http://res.cloudinary.com/foolishhunger/image/upload/v1513370908/Custom-Icon-Design-Mono-General-4-Upload_bn3wty.ico" : this.state.photo_url} />
+              <img src={this.state.photo_url === "" ? "https://res.cloudinary.com/foolishhunger/image/upload/v1513370908/Custom-Icon-Design-Mono-General-4-Upload_bn3wty.ico" : this.state.photo_url} />
             </div>
             <button className="upload-button-in-modal" onClick={this.upload}>
               <i className="fa fa-camera" aria-hidden="true" />&nbsp; Select
