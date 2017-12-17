@@ -15,11 +15,17 @@ class Api::CommentsController < ApplicationController
   end
 
   def show
-
+    @comment = Comment.includes(:author).where(id: params[:id]).first
   end
 
   def update
+    @comment = current_user.comments.find_by(id: prams[:id])
 
+    if @comment && @comment.update_attributes(comment_params)
+      render :show
+    else
+      render json: @comment.errors.full_messages, status: 402
+    end
   end
 
   def destroy
