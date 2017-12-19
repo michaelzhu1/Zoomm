@@ -10,7 +10,8 @@ import {
 const mapStateToProps = state => ({
   photos: Object.keys(state.photo).map(id => state.photo[id]),
   user: state.user,
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  loading: state.ui.loading
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -13,7 +13,8 @@ const mapStateToProps = state => ({
   currentUser: state.session.currentUser,
   photos: Object.keys(state.photo).map(id => state.photo[id]),
   followers: state.user.followers,
-  followings: state.user.followings
+  followings: state.user.followings,
+  loading: state.ui.loading
 });
 
 const mapDispatchToProps = dispatch => ({
