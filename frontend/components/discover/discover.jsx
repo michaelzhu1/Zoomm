@@ -3,6 +3,7 @@ import Modal from "react-modal";
 import { Link } from "react-router-dom";
 import { BeatLoader } from "react-spinners";
 import DiscoverIndexItems from "./discover_index_items";
+import LoadingSpinner from "../loading_spinner";
 
 const customStyles = {
   overlay: {
@@ -89,8 +90,8 @@ class Discover extends React.Component {
   }
 
   discoverPhotos() {
-    return this.state.loading ? (
-      <BeatLoader color={"#123abc"} loading={this.state.loading} />
+    return this.props.loading ? (
+      <LoadingSpinner />
     ) : (
       <div className="photo-container">
         <h1 className="page-title">~Discover Your New Inspiration~</h1>

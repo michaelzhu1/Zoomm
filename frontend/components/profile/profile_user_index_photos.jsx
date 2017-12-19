@@ -5,6 +5,7 @@ import { withRouter } from "react-router-dom";
 import { BeatLoader } from "react-spinners";
 import ProfileIndexItems from "./profile_index_items";
 
+
 const customStyles = {
   overlay: {
     position: "fixed",
@@ -92,8 +93,8 @@ class UserIndexPhotos extends React.Component {
   }
 
   displayPhotos() {
-    return this.state.loading ? (
-      <BeatLoader color={"#123abc"} loading={this.state.loading} />
+    return this.props.loading ? (
+      <BeatLoader color={"#123abc"} loading={this.props.loading} />
     ) : (
       <div className="photo-container">
         <div className="photo-index">

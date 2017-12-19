@@ -3,6 +3,7 @@ import Modal from "react-modal";
 import { Link } from "react-router-dom";
 import { BeatLoader } from "react-spinners";
 import FeedIndexItems from "./feed_index_items";
+import LoadingSpinner from "../loading_spinner";
 
 const customStyles = {
   overlay: {
@@ -31,7 +32,7 @@ const customStyles = {
 class FeedIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { photo: {}, loading: true, user: {}, photos: [] };
+    this.state = { photo: {}, loading: this.props.loading, user: {}, photos: [] };
     this.displayPhotos = this.displayPhotos.bind(this);
     this.openPhoto = this.openPhoto.bind(this);
     this.openModal = this.openModal.bind(this);
@@ -74,8 +75,8 @@ class FeedIndex extends React.Component {
         </div>
       );
     } else {
-      return this.state.loading ? (
-        <BeatLoader color={"#123abc"} loading={this.state.loading} />
+      return this.props.loading ? (
+          <LoadingSpinner />
       ) : (
         <div className="photo-container">
           <h1 className="page-title">~Check Out Your Feed~</h1>
