@@ -17,3 +17,11 @@ export const deleteComment = ({ comment }) => ({
   type: DELETE_COMMENT,
   comment
 });
+
+export const requestPhotoComments = photoId => dispatch => (
+  getPhotoComments(photoId).then(comments => dispatch(receiveComments(comments)))
+);
+
+export const destroyComment = commentId => dispatch => (
+  removeComment(commentId).then(comment => dispatch(deleteComment(comment)))
+);
