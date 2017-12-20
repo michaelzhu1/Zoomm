@@ -94,13 +94,13 @@ class ProfileHeader extends React.Component {
   componentDidMount() {
 
     this.props.fetchUser(this.props.match.params.userId).then(() => {
-      this.setState({
+      return this.setState({
         profile_img_url: this.props.user.profile_img_url,
         cover_img_url: this.props.user.cover_img_url,
-        loading: false
       });
     }
     );
+    return this.delayLoading();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -108,11 +108,19 @@ class ProfileHeader extends React.Component {
       this.props.fetchUser(nextProps.match.params.userId).then(() =>
         this.setState({
           profile_img_url: nextProps.user.profile_img_url,
-          cover_img_url: nextProps.user.cover_img_url,
-          loading: false
+          cover_img_url: nextProps.user.cover_img_url
         })
       );
+      return this.delayLoading();
     }
+  }
+
+  delayLoading() {
+    setTimeout(() => {
+      this.setState({
+        loading: false
+      });
+    }, 500);
   }
 
   profilePhoto() {
@@ -269,7 +277,9 @@ class ProfileHeader extends React.Component {
 
   render() {
     return this.state.loading ? (
-      <LoadingSpinner />
+      <div className="profile-header-spinner">
+        <LoadingSpinner />
+      </div>
     ) : (
       <div className="profile-form">
         {this.coverPhoto()}
