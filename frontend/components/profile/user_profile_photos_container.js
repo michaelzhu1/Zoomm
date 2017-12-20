@@ -12,8 +12,7 @@ import { fetchUser } from "../../actions/profile_action";
 const mapStateToProps = state => ({
   user: state.user,
   currentUser: state.session.currentUser,
-  photos: Object.keys(state.photo).map(id => state.photo[id]),
-  loading: state.ui.loading
+  photos: Object.keys(state.photo).map(id => state.photo[id])
 });
 
 const mapDispatchToProps = dispatch => ({

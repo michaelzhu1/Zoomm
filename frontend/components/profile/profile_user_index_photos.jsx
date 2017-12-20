@@ -2,8 +2,9 @@ import React from "react";
 import Modal from "react-modal";
 import merge from "lodash/merge";
 import { withRouter } from "react-router-dom";
-import { BeatLoader } from "react-spinners";
 import ProfileIndexItems from "./profile_index_items";
+import LoadingSpinner from "../loading_spinner";
+// import { BeatLoader } from "react-spinners";
 
 
 const customStyles = {
@@ -35,9 +36,9 @@ class UserIndexPhotos extends React.Component {
     this.state = {
       photo: {},
       modalIsOpen: false,
-      loading: true,
       photos: [],
-      user: {}
+      user: {},
+      loading: true
     };
     this.openPhoto = this.openPhoto.bind(this);
     this.openModal = this.openModal.bind(this);
@@ -56,6 +57,7 @@ class UserIndexPhotos extends React.Component {
   }
 
   componentDidMount() {
+
     this.props.fetchUserPhotos(this.props.match.params.userId).then(() => {
       this.setState({ loading: false, photos: this.props.photos });
     });
@@ -65,8 +67,12 @@ class UserIndexPhotos extends React.Component {
   //definitely need this method!!
   componentWillReceiveProps(newProps) {
     if (this.props.user.id !== parseInt(newProps.match.params.userId)) {
-      this.props.fetchUser(newProps.match.params.userId);
-      this.props.fetchUserPhotos(newProps.match.params.userId);
+      this.props.fetchUser(newProps.match.params.userId).then(() => {
+        this.setState({ loading: false });
+      });
+      this.props.fetchUserPhotos(newProps.match.params.userId).then(() => {
+        this.setState({ loading: false, photos: this.props.photos });
+      });
         }
   }
 
@@ -93,8 +99,8 @@ class UserIndexPhotos extends React.Component {
   }
 
   displayPhotos() {
-    return this.props.loading ? (
-      <BeatLoader color={"#123abc"} loading={this.props.loading} />
+    return this.state.loading ? (
+      <LoadingSpinner />
     ) : (
       <div className="photo-container">
         <div className="photo-index">

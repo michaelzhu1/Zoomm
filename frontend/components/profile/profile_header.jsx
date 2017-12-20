@@ -4,6 +4,8 @@ import Modal from "react-modal";
 import merge from "lodash/merge";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
+import LoadingSpinner from "../loading_spinner";
+
 
 const customStyles = {
   overlay: {
@@ -25,7 +27,6 @@ const customStyles = {
     left: "50%",
     right: "auto",
     bottom: "auto",
-    // marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     zIndex: 11,
     maxWidth: "650px",
@@ -52,7 +53,8 @@ class ProfileHeader extends React.Component {
       profile_img_url: "",
       cover_img_url: "",
       followers: this.props.followers,
-      followings: this.props.followings
+      followings: this.props.followings,
+      loading: true
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -90,11 +92,14 @@ class ProfileHeader extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUser(this.props.match.params.userId).then(() =>
+
+    this.props.fetchUser(this.props.match.params.userId).then(() => {
       this.setState({
         profile_img_url: this.props.user.profile_img_url,
-        cover_img_url: this.props.user.cover_img_url
-      })
+        cover_img_url: this.props.user.cover_img_url,
+        loading: false
+      });
+    }
     );
   }
 
@@ -103,7 +108,8 @@ class ProfileHeader extends React.Component {
       this.props.fetchUser(nextProps.match.params.userId).then(() =>
         this.setState({
           profile_img_url: nextProps.user.profile_img_url,
-          cover_img_url: nextProps.user.cover_img_url
+          cover_img_url: nextProps.user.cover_img_url,
+          loading: false
         })
       );
     }
@@ -262,7 +268,9 @@ class ProfileHeader extends React.Component {
   }
 
   render() {
-    return (
+    return this.state.loading ? (
+      <LoadingSpinner />
+    ) : (
       <div className="profile-form">
         {this.coverPhoto()}
         {this.profilePhoto()}

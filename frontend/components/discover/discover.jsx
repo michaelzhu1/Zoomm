@@ -1,7 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
 import { Link } from "react-router-dom";
-import { BeatLoader } from "react-spinners";
 import DiscoverIndexItems from "./discover_index_items";
 import LoadingSpinner from "../loading_spinner";
 
@@ -34,7 +33,6 @@ class Discover extends React.Component {
     this.state = {
       photo: {},
       modalIsOpen: false,
-      loading: true,
       user: {},
       photos: [],
       mount: true
@@ -49,7 +47,6 @@ class Discover extends React.Component {
   componentDidMount() {
     this.props.fetchPhotos().then(() =>
       this.setState({
-        loading: false,
         photos: this.shuffle(this.props.photos)
       })
     );

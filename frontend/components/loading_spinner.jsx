@@ -2,7 +2,7 @@ import React from 'react';
 import { BeatLoader } from "react-spinners";
 
 const LoadingSpinner = () => (
-  <div className="single4"></div>
+  <div className="loader"></div>
 );
 
 export default LoadingSpinner;

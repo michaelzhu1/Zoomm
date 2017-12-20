@@ -1,5 +1,6 @@
 import { START_LOADING } from "../actions/loading_action";
 import { RECEIVE_PHOTO, RECEIVE_ALL_PHOTOS } from "../actions/photo_action";
+import { RECEIVE_USER } from "../actions/profile_action";
 
 const _initialState = {
   loading: false

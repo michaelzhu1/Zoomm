@@ -1,7 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
 import { Link } from "react-router-dom";
-import { BeatLoader } from "react-spinners";
 import FeedIndexItems from "./feed_index_items";
 import LoadingSpinner from "../loading_spinner";
 
@@ -32,7 +31,7 @@ const customStyles = {
 class FeedIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { photo: {}, loading: this.props.loading, user: {}, photos: [] };
+    this.state = { photo: {}, user: {}, photos: [] };
     this.displayPhotos = this.displayPhotos.bind(this);
     this.openPhoto = this.openPhoto.bind(this);
     this.openModal = this.openModal.bind(this);
@@ -41,7 +40,7 @@ class FeedIndex extends React.Component {
   componentDidMount() {
     this.props
       .fetchUserFeed()
-      .then(() => this.setState({ loading: false, photos: this.props.photos }));
+      .then(() => this.setState({photos: this.props.photos }));
   }
 
   openModal() {
@@ -76,7 +75,7 @@ class FeedIndex extends React.Component {
       );
     } else {
       return this.props.loading ? (
-          <LoadingSpinner />
+        <LoadingSpinner />
       ) : (
         <div className="photo-container">
           <h1 className="page-title">~Check Out Your Feed~</h1>
