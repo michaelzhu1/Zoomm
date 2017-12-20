@@ -3,6 +3,7 @@ import Modal from "react-modal";
 import { Link } from "react-router-dom";
 import DiscoverIndexItems from "./discover_index_items";
 import LoadingSpinner from "../loading_spinner";
+import { DiscoverPeopleItems } from "./discover_people_items";
 
 const customStyles = {
   overlay: {
@@ -91,7 +92,6 @@ class Discover extends React.Component {
       <LoadingSpinner />
     ) : (
       <div className="photo-container">
-        <h1 className="page-title">~Discover Your New Inspiration~</h1>
         <div className="photo-index">
           {this.state.photos.map((photo, idx) => (
             <DiscoverIndexItems
@@ -132,9 +132,38 @@ class Discover extends React.Component {
     }
   }
 
+  arrayUnique(arr) {
+    const flags = {}, output = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (flags[arr[i].author_id]) {
+        continue;
+      }
+      flags[arr[i].author_id] = true;
+      output.push(arr[i]);
+    }
+    return output;
+  }
+
+  discoverPeople() {
+    return this.props.loading ? (
+      <LoadingSpinner />
+    ) : (
+      <div className="people-container">
+        <div className="page-title">~Treading Photographers~</div>
+        <div className="people-index">
+          {
+            this.arrayUnique(this.state.photos.slice(0,4)).map((photo, idx) => (
+              <DiscoverPeopleItems photo={photo} key={idx}/>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   render() {
     return (
       <div>
+        {this.discoverPeople()}
         {this.discoverPhotos()}
         <Modal
           isOpen={this.state.modalIsOpen}

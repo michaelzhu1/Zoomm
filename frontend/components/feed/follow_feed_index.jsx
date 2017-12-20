@@ -78,7 +78,7 @@ class FeedIndex extends React.Component {
         <LoadingSpinner />
       ) : (
         <div className="photo-container">
-          <h1 className="page-title">~Check Out Your Feed~</h1>
+          <h1 className="page-title">~Your Feed~</h1>
           <div className="photo-index">
             {this.state.photos.map((photo, idx) => {
               return (

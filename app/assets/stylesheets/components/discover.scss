@@ -67,14 +67,25 @@
   transition: 0.3s;
 }
 
-.page-title {
+.people-container .page-title {
+  margin-bottom: 35px;
+  text-align: center;
+  font-family: cursive;
+  color: $charcoal;
+  background-color: inherit;
+  font-size: 32px;
+  // text-decoration: underline;
+}
+
+.photo-container .page-title {
   margin-top: 70px;
   text-align: center;
   font-family: cursive;
   color: $charcoal;
   background-color: inherit;
   font-size: 32px;
-  text-decoration: underline;
+  // text-decoration: underline;
+
 }
 
 div.photo-index-item-desc {
@@ -121,4 +132,46 @@ div.photo-index-item-desc {
     font-size: 12px;
     color: #b9c1c7;
   }
+}
+
+.people-container {
+  // width: 100%;
+  margin-top: 20px;
+  height: 160px;
+  display: flex;
+  // flex-flow: column;
+  align-items: flex-end;
+  justify-content: center;
+  // margin: 20px;
+  list-style: none;
+  background-color: white;
+}
+
+.people-index {
+  display: inline-flex;
+  justify-content: center;
+  min-width: 500px;
+  border-radius: 5px;
+  li {
+    flex-direction: column;
+    margin-right: 10px;
+  }
+  div {
+    text-align: center;
+    font-size: 16px;
+  }
+}
+
+.feature-user-avatar {
+  // float: left;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+  // margin-right: 12px;
+}
+
+.discover-people-name:hover {
+  text-decoration: underline;
 }
