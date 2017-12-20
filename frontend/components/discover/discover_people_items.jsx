@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 export const DiscoverPeopleItems = ({photo}) => (
   <li>
-    <div>
-      <Link className="discover-people-name" to={`/user/${photo.author_id}`}>{photo.owner}</Link>
+    <div className="discover-people-name">
+      <Link  to={`/user/${photo.author_id}`}>{photo.owner}</Link>
     </div>
     <div>
       <Link to={`/user/${photo.author_id}`}>

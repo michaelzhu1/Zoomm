@@ -156,22 +156,23 @@ div.photo-index-item-desc {
     flex-direction: column;
     margin-right: 10px;
   }
-  div {
-    text-align: center;
-    font-size: 16px;
-  }
 }
 
 .feature-user-avatar {
-  // float: left;
   width: 80px;
   height: 80px;
   object-fit: cover;
   border-radius: 50%;
   cursor: pointer;
-  // margin-right: 12px;
 }
 
-.discover-people-name:hover {
+.discover-people-name {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: arial;
+  text-align: center;
+}
+
+.discover-people-name :hover {
   text-decoration: underline;
 }
