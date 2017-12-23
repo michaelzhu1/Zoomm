@@ -41,8 +41,9 @@
   color: $charcoal;
   height: 50px;
   transition: height 1s;
-  border-bottom: white solid 2px;
-  border-bottom: 2px $light-gray solid;
+  // border-bottom: white solid 2px;
+  // border-bottom: 2px $light-gray solid;
+  box-shadow: 0px 3px 10px $light-gray;
 }
 
 .session-nav {
