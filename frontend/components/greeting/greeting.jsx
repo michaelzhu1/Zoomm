@@ -6,7 +6,7 @@ const sessionLinks = () => (
   <nav>
     <div className="splash-nav">
       <Link className="homepage-nav-logo" to="/">
-        <h3>Zoomm</h3>
+        <i className="fa fa-camera-retro" aria-hidden="true"></i><span>ZOOMM</span>
       </Link>
       <div className="nav-bar-span">
         <div className="splash-page-navbar-right">
@@ -40,7 +40,7 @@ const personalGreeting = (currentUser, logout) => {
       <div className="session-nav">
         <div className="navbar-left">
           <Link
-            to={currentUser ? `/feed/${currentUser.id}` : "/"}
+            to="/"
             className="website-logo"
           >
           <div><i className="fa fa-camera-retro" aria-hidden="true"></i><span>ZOOMM</span></div>
