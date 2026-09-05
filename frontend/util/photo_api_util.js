@@ -14,7 +14,7 @@ export const postPhoto = photo =>
 export const fetchPhoto = id =>
   $.ajax({
     method: "GET",
-    url: `api/photo/${id}`
+    url: `/api/photos/${id}`
   });
 
 export const removePhoto = id =>

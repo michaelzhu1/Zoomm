@@ -15,7 +15,12 @@ class Api::FollowsController < ApplicationController
 
   def destroy
     @follow = Follow.find_by(following_id: params[:user_id], follower_id: current_user.id)
-    @follow.destroy!
+    unless @follow
+      render json: ["Follow not found"], status: :not_found
+      return
+    end
+
+    @follow.destroy
     @user = User.find(params[:user_id])
     render 'api/users/show'
   end

@@ -1,4 +1,7 @@
 class Api::CommentsController < ApplicationController
+  before_action :require_logged_in, only: [:create, :update, :destroy]
+  before_action :set_owned_comment, only: [:update, :destroy]
+
   def index
     @comments = Comment.where(photo_id: params[:photo_id]).includes(:author)
   end
@@ -10,26 +13,23 @@ class Api::CommentsController < ApplicationController
     if @comment.save
       render :show
     else
-      render json: @comment.errors.full_messages, status: 402
+      render json: @comment.errors.full_messages, status: :unprocessable_entity
     end
   end
 
   def show
-    @comment = Comment.includes(:author).where(id: params[:id]).first
+    @comment = Comment.includes(:author).find(params[:id])
   end
 
   def update
-    @comment = current_user.comments.find_by(id: prams[:id])
-
-    if @comment && @comment.update_attributes(comment_params)
+    if @comment.update(comment_params)
       render :show
     else
-      render json: @comment.errors.full_messages, status: 402
+      render json: @comment.errors.full_messages, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @comment = current_user.comments.find_by(id: params[:id])
     @comment.destroy
     render :show
   end
@@ -37,7 +37,12 @@ class Api::CommentsController < ApplicationController
 
   private
 
-  def comments_params
+  def comment_params
     params.require(:comment).permit(:body)
+  end
+
+  def set_owned_comment
+    @comment = current_user.comments.includes(:author).find_by(id: params[:id])
+    render json: ["Comment not found"], status: :not_found unless @comment
   end
 end

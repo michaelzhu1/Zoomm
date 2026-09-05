@@ -1,6 +1,7 @@
 class Api::PhotosController < ApplicationController
 
   before_action :require_logged_in
+  before_action :set_owned_photo, only: [:update, :destroy]
 
   def index
     if params[:id]
@@ -22,34 +23,41 @@ class Api::PhotosController < ApplicationController
 
 
   def create
-    @photo = Photo.new(photo_params)
-    @photo.author_id = current_user.id
+    @photo = current_user.photos.new(photo_params)
     if @photo.save
       render "api/photos/show"
     else
-      render json: @photo.erros.full_messages, status: 422
+      render json: @photo.errors.full_messages, status: :unprocessable_entity
     end
   end
 
+  def show
+    @photo = Photo.includes(:owner, comments: :author).find(params[:id])
+    render "api/photos/show"
+  end
+
   def destroy
-    @photo = Photo.find(params[:id])
     @photo.destroy
     render "api/photos/show"
   end
 
   def update
-    @photo = Photo.find(params[:id])
     if @photo.update(photo_params)
       render "api/photos/show"
     else
-      render json: @photo.erros.full_messages, status: 422
+      render json: @photo.errors.full_messages, status: :unprocessable_entity
     end
   end
 
   private
 
   def photo_params
-    params.require(:photo).permit(:photo_title, :photo_description, :author_id, :photo_url)
+    params.require(:photo).permit(:photo_title, :photo_description, :photo_url)
+  end
+
+  def set_owned_photo
+    @photo = current_user.photos.includes(:owner, comments: :author).find_by(id: params[:id])
+    render json: ["Photo not found"], status: :not_found unless @photo
   end
 
 end
