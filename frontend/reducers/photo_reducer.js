@@ -2,8 +2,7 @@ import merge from "lodash/merge";
 import {
   RECEIVE_ALL_PHOTOS,
   RECEIVE_PHOTO,
-  DELETE_PHOTO,
-  UPDATE_PHOTO
+  DELETE_PHOTO
 } from "../actions/photo_action";
 
 const PhotoReducer = (state = {}, action) => {

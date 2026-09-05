@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: Zoomm_production
-  username: Zoomm
-  password: <%= ENV['ZOOMM_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
