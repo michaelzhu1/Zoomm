@@ -1,7 +1,10 @@
 <script id="bootstrap-current-user" type="text/javascript">
   <% if logged_in? %>
-  	window.currentUser = <%= render("api/users/user.json.jbuilder",
-  		user: current_user).html_safe %>
+    window.currentUser = <%= raw json_escape(render(
+      partial: "api/users/user",
+      formats: [:json],
+      locals: { user: current_user }
+    )) %>;
   <% end %>
 </script>
 
