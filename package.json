@@ -47,8 +47,7 @@
   "homepage": "https://github.com/michaelzhu1/Zoomm#readme",
   "devDependencies": {
     "redux-devtools-extension": "^2.13.2",
-    "redux-logger": "^3.0.6",
-    "terser-webpack-plugin": "^5.6.1"
+    "redux-logger": "^3.0.6"
   },
   "engines": {
     "node": "24.x",
